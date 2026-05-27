@@ -1,0 +1,2855 @@
+<!DOCTYPE html>
+<html lang="ms-MY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yang Mana Keutamaan? — Memimpin & Mempengaruhi — WMB DIGITAL</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #faf8f5;
+    --text: #2c1810;
+    --text-light: #7a6a5a;
+    --accent: #c49564;
+    --accent-dark: #8b6914;
+    --crimson: #e94560;
+    --chapter-bg: #1a1a2e;
+    --chapter-bg2: #2d2d44;
+    --gold: #d4a574;
+    --border: #e8e0d5;
+    --quote-bg: #f5f0ea;
+    --sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --display: 'Playfair Display', Georgia, serif;
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--serif);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Cover ── */
+  .cover {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 40%, #16213e 100%);
+    overflow: hidden;
+    padding: 2rem;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(201, 149, 100, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 20%, rgba(233, 69, 96, 0.06) 0%, transparent 50%);
+  }
+  .cover-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(212, 165, 116, 0.08); }
+  .cover-deco.d1 { width: 500px; height: 500px; top: -100px; right: -100px; }
+  .cover-deco.d2 { width: 400px; height: 400px; bottom: -80px; left: -80px; }
+  .cover-deco.d3 { width: 200px; height: 200px; top: 20%; left: 10%; border-color: rgba(233, 69, 96, 0.06); }
+
+  .cover-content { position: relative; z-index: 1; text-align: center; max-width: 700px; }
+  .cover-subbrand { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; opacity: 0.7; }
+  .cover-booknum { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 4px; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.5rem; opacity: 0.8; }
+  .cover-title { font-family: var(--display); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; color: #f5e6ca; line-height: 1.15; margin-bottom: 0.75rem; }
+  .cover-title em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .cover-subtitle { font-family: var(--serif); font-size: clamp(0.95rem, 1.8vw, 1.25rem); color: rgba(245, 230, 202, 0.7); font-style: italic; margin-bottom: 2.5rem; line-height: 1.6; }
+  .cover-line { width: 80px; height: 2px; background: var(--accent); margin: 0 auto 2rem; opacity: 0.5; }
+  .cover-author { font-family: var(--sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(245, 230, 202, 0.5); }
+  .cover-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: var(--sans); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(245, 230, 202, 0.3); animation: fadeUp 2s ease-in-out infinite; }
+
+  @keyframes fadeUp { 0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); } 50% { opacity: 0.8; transform: translateX(-50%) translateY(-6px); } }
+
+  /* ── TOC ── */
+  .toc { padding: 5rem 2rem; max-width: 720px; margin: 0 auto; }
+  .toc h2 { font-family: var(--display); font-size: 1.75rem; color: var(--text); text-align: center; margin-bottom: 3rem; letter-spacing: -0.5px; }
+  .toc hr { border: none; height: 1px; background: var(--border); margin-bottom: 2.5rem; }
+  .toc-act { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-dark); margin: 2rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .toc-item { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.4rem 0; text-decoration: none; color: var(--text); transition: color 0.2s; }
+  .toc-item:hover { color: var(--accent-dark); }
+  .toc-num { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; color: var(--accent); min-width: 2rem; text-align: right; }
+  .toc-title { font-size: 1rem; flex: 1; }
+  .toc-sub { font-size: 0.8rem; color: var(--text-light); font-style: italic; }
+  .toc-app { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .toc-app .toc-item { font-size: 0.9rem; }
+
+  /* ── Act Divider ── */
+  .act-divider {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .act-divider::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(212, 165, 116, 0.06) 0%, transparent 70%);
+  }
+  .act-divider-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+  .act-label { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); opacity: 0.6; }
+  .act-number { font-family: var(--display); font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; color: rgba(245, 230, 202, 0.08); margin: 0.5rem 0; line-height: 1; }
+  .act-title { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.25rem); color: #f5e6ca; font-weight: 700; margin-bottom: 0.75rem; }
+  .act-desc { font-family: var(--serif); font-size: 0.95rem; color: rgba(245, 230, 202, 0.6); font-style: italic; line-height: 1.6; }
+
+  /* ── Chapter Page ── */
+  .chapter-page { position: relative; }
+
+  .chapter-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+  }
+  .chapter-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+  }
+  .chapter-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 26, 46, 0.85) 0%, rgba(26, 26, 46, 0.3) 50%, rgba(26, 26, 46, 0.1) 100%);
+  }
+  .chapter-hero-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .chapter-hero-text .chap-num {
+    font-family: var(--display);
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    color: rgba(212, 165, 116, 0.15);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .chapter-hero-text h1 {
+    font-family: var(--display);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: #f5e6ca;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+  }
+  .chapter-hero-text .chap-sub {
+    font-family: var(--serif);
+    font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+    color: rgba(245, 230, 202, 0.65);
+    font-style: italic;
+  }
+
+  /* ── Chapter Body ── */
+  .chapter-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .chapter-body p {
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .chapter-body h2 {
+    font-family: var(--display);
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    letter-spacing: -0.3px;
+  }
+
+  .chapter-body h3 {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 2rem 0 0.75rem;
+  }
+
+  .chapter-body h4 {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .chapter-body blockquote {
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--accent);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: #3d2e1f;
+    border-radius: 0 4px 4px 0;
+  }
+  .chapter-body blockquote p { margin-bottom: 0; font-size: 1rem; }
+
+  .chapter-body hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+    margin: 2.5rem auto;
+    width: 60%;
+    opacity: 0.4;
+  }
+
+  .chapter-body ul, .chapter-body ol {
+    margin: 1rem 0 1.25rem 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+  .chapter-body li { margin-bottom: 0.4rem; }
+
+  .chapter-body strong { font-weight: 600; color: var(--text); }
+  .chapter-body em { font-style: italic; }
+
+  .chapter-body .refleksi {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #f5f0ea, #faf8f5);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .chapter-body .refleksi h3 {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 1rem;
+    border: none;
+  }
+  .chapter-body .refleksi ol { margin-bottom: 0; }
+  .chapter-body .refleksi li { margin-bottom: 0.75rem; }
+
+  .chapter-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+  }
+  .chapter-body th {
+    background: var(--chapter-bg);
+    color: #f5e6ca;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    font-weight: 500;
+  }
+  .chapter-body td {
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .chapter-body tr:nth-child(even) td { background: #f5f0ea; }
+
+  .chapter-body pre {
+    background: var(--chapter-bg);
+    color: #f5e6ca;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 1.25rem 0;
+  }
+  .chapter-body code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    background: var(--quote-bg);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+  }
+  .chapter-body pre code { background: none; padding: 0; }
+
+  .chapter-body .epigraph {
+    text-align: center;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-light);
+    margin: 2rem 0 1.5rem;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .chapter-body .epigraph p { margin-bottom: 0; }
+
+  .chapter-body .continue-reading {
+    text-align: center;
+    margin: 2.5rem 0 1rem;
+    padding: 1rem;
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Appendix ── */
+  .appendix-body { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  .appendix-body h2 {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+  }
+  .appendix-body h3 {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 1.5rem 0 0.75rem;
+  }
+  .appendix-body p { margin-bottom: 1rem; line-height: 1.8; }
+  .appendix-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-family: var(--sans); font-size: 0.85rem; }
+  .appendix-body th { background: var(--chapter-bg); color: #f5e6ca; padding: 0.5rem 0.7rem; text-align: left; font-weight: 500; }
+  .appendix-body td { padding: 0.4rem 0.7rem; border-bottom: 1px solid var(--border); }
+  .appendix-body tr:nth-child(even) td { background: #f5f0ea; }
+  .appendix-body blockquote {
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--accent);
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+  }
+  .appendix-body hr { border: none; height: 1px; background: linear-gradient(to right, transparent, var(--accent), transparent); margin: 2rem auto; width: 50%; opacity: 0.3; }
+  .appendix-body ul, .appendix-body ol { margin: 0.75rem 0 1rem 1.5rem; line-height: 1.8; }
+
+  /* ── Footer ── */
+  .book-footer {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+    color: rgba(245, 230, 202, 0.5);
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+  .book-footer strong { color: var(--accent); font-weight: 500; }
+  .book-footer h3 { font-family: var(--display); color: #f5e6ca; margin-bottom: 1.5rem; font-size: 1.25rem; }
+  .book-footer a { color: var(--accent); text-decoration: none; }
+  .book-footer a:hover { text-decoration: underline; }
+  .footer-trilogi { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 2rem 0; }
+  .footer-trilogi a { display: block; padding: 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(212,165,116,0.15); border-radius: 8px; min-width: 180px; text-decoration: none; transition: background 0.3s; }
+  .footer-trilogi a:hover { background: rgba(255,255,255,0.06); }
+  .footer-trilogi .ft-num { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--crimson); }
+  .footer-trilogi .ft-title { font-family: var(--display); font-size: 1rem; color: #f5e6ca; margin: 0.4rem 0; }
+  .footer-trilogi .ft-sub { font-size: 0.75rem; color: rgba(245,230,202,0.5); }
+
+  /* ── Print ── */
+  @media print {
+    .chapter-hero { height: 40vh; min-height: 300px; }
+    .cover { min-height: 100vh; }
+    body { font-size: 12pt; }
+    .chapter-body { max-width: 100%; }
+    .cover-deco, .cover-scroll { display: none; }
+    .chapter-hero img { opacity: 0.4; }
+  }
+
+  /* ── Tablet (≤1024px) ── */
+  @media (max-width: 1024px) {
+    .chapter-hero { height: 50vh; min-height: 350px; max-height: 500px; }
+    .chapter-hero-text { padding: 2.5rem 2rem; }
+    .chapter-hero-text h1 { font-size: clamp(1.5rem, 5vw, 2.25rem); }
+  }
+
+  /* ── Mobile Landscape (≤768px) ── */
+  @media (max-width: 768px) {
+    html { font-size: 15px; }
+    .cover { min-height: 100vh; padding: 1.5rem; }
+    .cover-title { font-size: clamp(2rem, 8vw, 3.5rem); }
+    .cover-subtitle { font-size: clamp(0.8rem, 2.5vw, 1rem); }
+    .cover-deco.d1 { width: 300px; height: 300px; top: -50px; right: -50px; }
+    .cover-deco.d2 { width: 250px; height: 250px; bottom: -40px; left: -40px; }
+    .cover-deco.d3 { width: 120px; height: 120px; top: 15%; left: 5%; }
+
+    .toc { padding: 3rem 1.5rem; }
+    .toc h2 { font-size: 1.5rem; margin-bottom: 2rem; }
+    .toc-item { gap: 0.5rem; padding: 0.5rem 0; }
+    .toc-title { font-size: 0.95rem; }
+    .toc-sub { display: none; }
+    .toc-num { min-width: 1.5rem; font-size: 0.7rem; }
+    .toc-act { font-size: 0.65rem; letter-spacing: 2px; margin: 1.5rem 0 0.5rem; }
+
+    .act-divider { padding: 3rem 1.5rem; }
+
+    .chapter-hero { height: 40vh; min-height: 280px; max-height: 400px; }
+    .chapter-hero-text { padding: 1.5rem; }
+    .chapter-hero-text .chap-num { font-size: clamp(2rem, 10vw, 3.5rem); }
+    .chapter-hero-text h1 { font-size: clamp(1.25rem, 5vw, 2rem); }
+    .chapter-hero-text .chap-sub { font-size: clamp(0.75rem, 2vw, 0.95rem); }
+
+    .chapter-body { padding: 2rem 1.25rem 3rem; max-width: 100%; }
+    .chapter-body p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+    .chapter-body h2 { font-size: 1.35rem; margin: 2rem 0 0.75rem; }
+    .chapter-body h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+    .chapter-body h4 { font-size: 0.85rem; }
+    .chapter-body ul, .chapter-body ol { font-size: 0.95rem; margin-left: 1.25rem; }
+    .chapter-body blockquote { padding: 1rem; margin: 1.25rem 0; font-size: 0.9rem; }
+    .chapter-body .refleksi { padding: 1.25rem; margin: 1.5rem 0; }
+    .chapter-body .refleksi li { margin-bottom: 0.5rem; }
+    .chapter-body .epigraph { font-size: 1rem; padding: 1rem; }
+    .chapter-body .continue-reading { margin: 2rem 0 0.5rem; font-size: 0.85rem; }
+    .chapter-body hr { margin: 2rem auto; width: 70%; }
+
+    .chapter-body table { font-size: 0.75rem; display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+    .chapter-body th, .chapter-body td { padding: 0.4rem 0.5rem; }
+    .chapter-body pre { font-size: 0.7rem; padding: 0.75rem; }
+
+    .appendix-body { padding: 2rem 1.25rem 3rem; max-width: 100%; }
+    .appendix-body h2 { font-size: 1.25rem; }
+    .appendix-body h3 { font-size: 1rem; }
+    .appendix-body p { font-size: 0.95rem; }
+    .appendix-body table { font-size: 0.7rem; display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+    .appendix-body th, .appendix-body td { padding: 0.35rem 0.5rem; }
+
+    .book-footer { padding: 2.5rem 1.25rem; font-size: 0.7rem; }
+    .footer-trilogi { gap: 1rem; }
+    .footer-trilogi a { min-width: 140px; padding: 1rem; }
+  }
+
+  /* ── Mobile Portrait (≤480px) ── */
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .cover { min-height: 90vh; padding: 1rem; }
+    .cover-subbrand { font-size: 0.6rem; letter-spacing: 3px; margin-bottom: 1.5rem; }
+    .cover-title { font-size: clamp(1.75rem, 9vw, 2.5rem); }
+    .cover-subtitle { font-size: 0.8rem; margin-bottom: 1.5rem; }
+    .cover-line { width: 50px; margin-bottom: 1.25rem; }
+    .cover-author { font-size: 0.7rem; letter-spacing: 2px; }
+    .cover-deco.d1 { width: 200px; height: 200px; top: -30px; right: -30px; }
+    .cover-deco.d2 { width: 150px; height: 150px; bottom: -20px; left: -20px; }
+    .cover-deco.d3 { display: none; }
+
+    .toc { padding: 2rem 1rem; }
+    .toc h2 { font-size: 1.35rem; margin-bottom: 1.5rem; }
+    .toc-item { padding: 0.6rem 0; }
+    .toc-title { font-size: 0.85rem; }
+    .toc-num { font-size: 0.65rem; }
+
+    .act-divider { padding: 2.5rem 1rem; }
+    .act-number { font-size: clamp(2rem, 10vw, 3.5rem); }
+    .act-title { font-size: clamp(1.15rem, 5vw, 1.75rem); }
+    .act-desc { font-size: 0.8rem; }
+
+    .chapter-hero { height: 35vh; min-height: 240px; max-height: 320px; }
+    .chapter-hero-text { padding: 1rem 1rem; }
+    .chapter-hero-text .chap-num { font-size: clamp(1.5rem, 10vw, 2.5rem); }
+    .chapter-hero-text h1 { font-size: clamp(1.1rem, 5.5vw, 1.5rem); }
+    .chapter-hero-text .chap-sub { font-size: 0.7rem; }
+
+    .chapter-body { padding: 1.5rem 1rem 2.5rem; }
+    .chapter-body p { font-size: 0.9rem; line-height: 1.75; }
+    .chapter-body h2 { font-size: 1.2rem; margin: 1.75rem 0 0.5rem; padding-bottom: 0.35rem; }
+    .chapter-body h3 { font-size: 1rem; }
+    .chapter-body h4 { font-size: 0.8rem; letter-spacing: 0.5px; }
+    .chapter-body ul, .chapter-body ol { font-size: 0.9rem; margin-left: 1rem; }
+    .chapter-body blockquote { padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.85rem; border-left-width: 3px; }
+    .chapter-body .refleksi { padding: 1rem 1rem; border-radius: 6px; }
+    .chapter-body .epigraph { font-size: 0.9rem; padding: 0.85rem; }
+
+    .appendix-body { padding: 1.5rem 1rem 2.5rem; }
+    .appendix-body h2 { font-size: 1.15rem; }
+    .appendix-body table { font-size: 0.65rem; }
+
+    .book-footer { padding: 2rem 1rem; font-size: 0.65rem; }
+    .footer-trilogi a { min-width: 120px; padding: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════ COVER ════════════════════════════════════════ -->
+<section class="cover" id="atas">
+  <div class="cover-deco d1"></div>
+  <div class="cover-deco d2"></div>
+  <div class="cover-deco d3"></div>
+  <div class="cover-content">
+    <p class="cover-booknum">Buku Ketiga &amp; Penutup Trilogi</p>
+    <p class="cover-subbrand">WMB Digital</p>
+    <h1 class="cover-title">Yang Mana<br><em>Keutamaan?</em></h1>
+    <p class="cover-subtitle">Memimpin &amp; Mempengaruhi &mdash; Dari Diri ke Orang Lain, Dari Impak ke Legasi</p>
+    <div class="cover-line"></div>
+    <p class="cover-author">WMB Digital</p>
+  </div>
+  <p class="cover-scroll">Baca Buku</p>
+</section>
+
+<!-- ════════════════════════════════════════ TOC ════════════════════════════════════════ -->
+<nav class="toc" id="isi-kandungan">
+  <h2>Isi Kandungan</h2>
+  <hr>
+
+  <p class="toc-act">Act 1 &mdash; Lead Self</p>
+  <a class="toc-item" href="#bab1"><span class="toc-num">1</span><span class="toc-title">Emotional Intelligence</span><span class="toc-sub">&mdash; Asas Semua Kepimpinan</span></a>
+  <a class="toc-item" href="#bab2"><span class="toc-num">2</span><span class="toc-title">Grit</span><span class="toc-sub">&mdash; Passion + Perseverance Untuk Jangka Panjang</span></a>
+  <a class="toc-item" href="#bab3"><span class="toc-num">3</span><span class="toc-title">Drive</span><span class="toc-sub">&mdash; Apa Yang Sebenarnya Memotivasikan Kita</span></a>
+
+  <p class="toc-act">Act 2 &mdash; Lead Others</p>
+  <a class="toc-item" href="#bab4"><span class="toc-num">4</span><span class="toc-title">The Coaching Habit</span><span class="toc-sub">&mdash; Tanya, Jangan Suruh</span></a>
+  <a class="toc-item" href="#bab5"><span class="toc-num">5</span><span class="toc-title">Radical Candor</span><span class="toc-sub">&mdash; Caring Personally + Challenging Directly</span></a>
+  <a class="toc-item" href="#bab6"><span class="toc-num">6</span><span class="toc-title">Multipliers</span><span class="toc-sub">&mdash; Pemimpin Yang Menggandakan Kecerdasan</span></a>
+  <a class="toc-item" href="#bab7"><span class="toc-num">7</span><span class="toc-title">Give and Take</span><span class="toc-sub">&mdash; Kenapa "Givers" Paling Berjaya</span></a>
+
+  <p class="toc-act">Act 3 &mdash; Lead Systems</p>
+  <a class="toc-item" href="#bab8"><span class="toc-num">8</span><span class="toc-title">The Culture Code</span><span class="toc-sub">&mdash; Bina Budaya Keutamaan</span></a>
+  <a class="toc-item" href="#bab9"><span class="toc-num">9</span><span class="toc-title">Good to Great</span><span class="toc-sub">&mdash; Kenapa "Cukup Baik" Musuh Paling Bahaya</span></a>
+  <a class="toc-item" href="#bab10"><span class="toc-num">10</span><span class="toc-title">The Infinite Game</span><span class="toc-sub">&mdash; Main Permainan Tanpa Akhir</span></a>
+  <a class="toc-item" href="#bab11"><span class="toc-num">11</span><span class="toc-title">Turning Pro</span><span class="toc-sub">&mdash; Dari Amatur ke Profesional</span></a>
+  <a class="toc-item" href="#bab12"><span class="toc-num">12</span><span class="toc-title">Trilogi &mdash; Penutup</span><span class="toc-sub">&mdash; Apa Yang Kita Dah Pelajari &amp; Ke Mana Seterusnya</span></a>
+
+  <div class="toc-app">
+    <a class="toc-item" href="#lampiran"><span class="toc-num">&bull;</span><span class="toc-title">Lampiran &amp; Lembaran Kerja</span></a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════ ACT 1 ════════════════════════════════════════ -->
+<section class="act-divider">
+  <div class="act-divider-inner">
+    <p class="act-label">Act 1</p>
+    <p class="act-number">ACT 1</p>
+    <h2 class="act-title">Lead Self</h2>
+    <p class="act-desc">Memimpin Diri Sendiri &mdash; EQ, Grit, dan Drive sebagai asas kepimpinan dari dalam</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ BAB 1 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab1">
+  <div class="chapter-hero">
+    <img src="images/bab01-emotional-intelligence.png" alt="Emotional Intelligence">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 1</p>
+      <h1>Emotional Intelligence</h1>
+      <p class="chap-sub">Asas Semua Kepimpinan</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <hr>
+
+    <h2>Dari V1 &amp; V2...</h2>
+
+    <p>Dalam V1 &mdash; <em>Yang Mana Keutamaan?</em> &mdash; kau dah belajar satu prinsip yang mengubah cara kau melihat masa: <strong>Clock vs Compass</strong>. Ingat lagi? Clock ialah jadual kau, jadual, deadline. Compass pula ialah hala tuju, values, apa yang benar-benar penting dalam hidup kau. Kita selalu sibuk dengan Clock &mdash; benda mendesak yang menjerit minta perhatian &mdash; tapi kita lupa semak Compass. Akhirnya, kita produktif tapi tak produktif ke arah mana-mana. Banyak sangat yang <code>urgent</code>, sedikit sangat yang <code>important</code>.</p>
+
+    <p>V2 pula kau dibawa lebih dalam tentang <strong>Energy Management</strong>. Bukan pasal urus masa lagi &mdash; tapi pasal urus tenaga. Sebab apa guna kau ada jadual paling perfect kalau kau penat sangat sampai tak boleh fikir? Kita belajar tentang four energy dimensions: fizikal, emosi, mental, spiritual. Tentang kenapa rehat bukan pembaziran tapi pelaburan. Tentang marathon vs sprint &mdash; hidup ni bukan pecut seratus meter, tapi ultramarathon.</p>
+
+    <p>Sekarang, dalam V3 ni &mdash; buku penutup trilogi &mdash; kita akan bawa semua itu ke tahap seterusnya. Kalau V1 ajar kau TAHU apa yang penting, V2 ajar kau TAHU cara jaga tenaga untuk kejar yang penting, maka V3 ni ajar kau TAHU cara PIMPIN dan PENGARUHI orang lain untuk bergerak ke arah yang sama.</p>
+
+    <p>Dan semuanya bermula dengan satu kemahiran yang mungkin kau sangka remeh: <strong>Emotional Intelligence</strong>.</p>
+
+    <p>Sebab apa? Sebab kau boleh ada visi paling jelas, strategi paling mantap, tenaga paling optimum &mdash; tapi kalau kau tak boleh baca emosi, kau tak boleh kawal reaksi, kau tak boleh faham apa yang orang lain rasa &mdash; kau akan pandu sorang-sorang. Pemimpin tanpa EQ ibarat nakhoda yang tahu haluan tapi tak boleh ajak anak kapal supaya percaya padanya.</p>
+
+    <p>Mari kita mulakan.</p>
+
+    <hr>
+
+    <h2>Cerita Pembuka: "Boss, Kenapa Kau Macam Tu?"</h2>
+
+    <p>Fatimah baru dua bulan jadi ketua pasukan di sebuah agensi kerajaan di Putrajaya. Sebelum ni, dia adalah pekerja contoh &mdash; cekap, tepat, siap kerja awal. Dia dinaikkan pangkat sebab prestasi dia cemerlang.</p>
+
+    <p>Tapi dalam dua bulan jadi bos, pasukan dia mula menunjukkan tanda-tanda keretakan.</p>
+
+    <p>"Kak Fatimah ni kalau briefing mesti keras sangat," bisik Aina kepada Maisara di kantin. "Bukan apa, cara dia tegur tu macam kita ni budak-budak. Pagi tadi dia cakap 'Laporan kau tu entah apa-apa. Buat balik.' Habis terus semangat Aina."</p>
+
+    <p>Yang lebih teruk &mdash; Fatimah sendiri tak sedar ada masalah. Dalam meeting, dia cakap, "Team kita kena improve. Target bulan ni belum capai." Dia fikir dengan cakap macam tu, orang akan faham dan terus bertindak. Tapi apa yang terjadi? Orang diam.</p>
+
+    <p>Satu petang, Fatimah ternampak Aina menangis di surau. "Aina, kau ok ke?" "Kak, aku tahu Kak maksud baik. Tapi cara Kak cakap... sakit. Rasa macam aku ni tak guna." Fatimah tersentak. Inilah saat Fatimah mula belajar tentang Emotional Intelligence.</p>
+
+    <hr>
+
+    <h2>Konsep Utama: EQ Bukan Sekadar "Jaga Hati"</h2>
+
+    <p>Daniel Goleman definisikan EQ sebagai:</p>
+
+    <blockquote><p>"Kemampuan untuk mengenali, memahami, dan mengurus emosi &mdash; emosi sendiri dan emosi orang lain."</p></blockquote>
+
+    <p>Goleman pecahkan EQ kepada <strong>lima komponen</strong>:</p>
+
+    <h3>1. Self-Awareness &mdash; Kenal Diri Sendiri</h3>
+    <p>Kau tahu apa yang kau rasa, bagaimana perasaan tu mempengaruhi pemikiran dan tindakan kau. Tanda kau kurang self-awareness: kau selalu terkejut bila orang kecil hati dengan kau.</p>
+
+    <h3>2. Self-Regulation &mdash; Kawal Diri Bukan Simpan Perasaan</h3>
+    <p>Bukan simpan sampai meletup. Tapi kau TAHU apa yang kau rasa, dan kau PILIH cara yang sesuai untuk meluahkannya. Bos dengan EQ rendah akan menjerit. Bos dengan EQ tinggi akan sedar dia kecewa, tarik nafas, dan cakap dengan tenang. Perbezaan? Satu attack person, satu attack problem.</p>
+
+    <h3>3. Motivation &mdash; Bukan Gaji Semata</h3>
+    <p>Goleman kata orang dengan EQ tinggi biasanya secara intrinsic termotivasi &mdash; mereka buat benda bukan sebab duit atau status, tapi sebab mereka rasa kerja itu bermakna.</p>
+
+    <h3>4. Empati &mdash; Bukan Simpati</h3>
+    <p><strong>Simpati</strong>: "Aduh, kesiannya kau." <strong>Empati</strong>: "Aku rasa apa yang kau rasa. Aku faham kenapa kau rasa macam tu."</p>
+
+    <h3>5. Social Skills &mdash; Bukan Main Politik</h3>
+
+    <table>
+      <tr><th>EQ Tinggi</th><th>EQ Rendah</th></tr>
+      <tr><td>Bina hubungan ikhlas</td><td>Bina hubungan untuk kepentingan</td></tr>
+      <tr><td>Selesaikan konflik</td><td>Elak konflik atau sebabkan konflik</td></tr>
+      <tr><td>Dengar untuk faham</td><td>Dengar untuk jawab</td></tr>
+      <tr><td>Pengaruh melalui kepercayaan</td><td>Pengaruh melalui takut atau hutang budi</td></tr>
+      <tr><td>Team success &gt; self success</td><td>Self success &gt; team success</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>EQ vs IQ &mdash; Mana Lagi Penting?</h2>
+    <p>Goleman mendapati: Untuk jawatan senior, EQ menyumbang kepada 80-90% perbezaan antara pemimpin biasa dengan pemimpin cemerlang.</p>
+
+    <hr>
+
+    <h2>RULER Framework: Cara Sistematik Tingkatkan EQ</h2>
+    <p>Marc Brackett cipta framework <strong>RULER</strong>:</p>
+
+    <h3>R &mdash; Recognize: Kenali Emosi</h3>
+    <p>Ambil masa tiga kali sehari &mdash; pagi, tengah hari, petang &mdash; dan tanya diri sendiri: "Apa perasaan aku sekarang?"</p>
+
+    <h3>U &mdash; Understand: Fahami Punca</h3>
+    <p>Tanya: "Kenapa aku rasa macam ni?" Kadang-kadang emosi kau teruk bukan sebab apa-apa &mdash; tapi sebab tenaga kau dah habis.</p>
+
+    <h3>L &mdash; Label: Namakan</h3>
+    <p>Dalam neuroscience, "name it to tame it." Bila kau cakap "Aku rasa kecewa," otak kau activate prefrontal cortex &mdash; bahagian yang rasional.</p>
+
+    <h3>E &mdash; Express: Luahkan Dengan Sesuai</h3>
+    <p>Guna "I feel" statements: "Saya rasa kecewa bila laporan tak siap on time." Elak "You" statements: "Kau ni malas lah."</p>
+
+    <h3>R &mdash; Regulate: Urus Emosi</h3>
+    <p>Strategi: Mindful breathing, cognitive reappraisal, situation modification, social support.</p>
+
+    <hr>
+
+    <h2>Praktikal: Cara Tingkatkan EQ Harian (Konteks Malaysia)</h2>
+
+    <h3>1. Morning Check-In (3 Minit)</h3>
+    <p>Setiap pagi: "Apa satu perkataan untuk perasaan aku sekarang?"</p>
+
+    <h3>2. The 5-Second Rule for Leaders</h3>
+    <p>Kira 5 saat dalam hati sebelum respon.</p>
+
+    <h3>3. Empati Walk</h3>
+    <p>Sekali seminggu, duduk dengan anak buah &mdash; bukan meeting formal. Tanya: "Apa benda paling susah dalam kerja kau sekarang?"</p>
+
+    <h3>4. Jurnal Emosi</h3>
+    <p>Setiap hujung hari, tulis 3 ayat tentang situasi mencabar, apa yang kau rasa, dan apa yang boleh buat lain kali.</p>
+
+    <h3>5. Dapatkan Maklum Balas (Feedback)</h3>
+    <p>Tanya: "Bila aku marah, apa yang kau rasa?" Dan bila orang bagi feedback, jangan defend. Cuma: "Terima kasih. Saya dengar."</p>
+
+    <hr>
+
+    <h2>EQ dalam Budaya Kerja Malaysia &mdash; Realiti &amp; Cabaran</h2>
+
+    <p><strong>Cabaran 1: Budaya Hierarki</strong> &mdash; Staff junior tak berani cakap. Pemimpin tak sedar dia ada masalah EQ.</p>
+    <p><strong>Cabaran 2: Budaya "Jaga Hati"</strong> &mdash; Bila keterlaluan, ia jadi penghalang kepada kejujuran.</p>
+    <p><strong>Cabaran 3: Budaya "Sudah-Sudah"</strong> &mdash; Masalah yang tak diurus bukan hilang &mdash; ia mereput.</p>
+    <p><strong>Cabaran 4: Stereotaip Jantina &amp; Emosi</strong> &mdash; Perempuan tegas dipanggil "garang." Lelaki sensitif dipanggil "lembut."</p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>5 Soalan Reflektif</h3>
+      <ol>
+        <li>Bayangkan kau adalah orang bawahan kau sendiri. Dalam skala 1-10, berapa selesa mereka rasa untuk bagi maklum balas negatif pada kau?</li>
+        <li>Fikirkan satu konflik baru-baru ni. Adakah kau attack person atau attack problem?</li>
+        <li>Dalam budaya kerja Malaysia: "Biar betul, jangan marah." Tapi realitinya? Di mana kau dalam spektrum ni?</li>
+        <li>Apa emosi yang paling susah untuk kau kawal? Apa strategi konkrit yang kau boleh guna?</li>
+        <li>RULER ada 5 langkah. Langkah mana yang paling lemah untuk kau?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"Dalam era digital ni, technical skills kau boleh diautomasi. Tapi keupayaan kau untuk memahami dan mengurus emosi &mdash; itu yang tak boleh diganti AI. Itu competitive advantage sebenar." &mdash; Adaptasi dari Daniel Goleman</p></blockquote>
+
+    <hr>
+
+    <p>Dalam bab seterusnya, kita akan bincang tentang satu kualiti yang melengkapi EQ: <strong>Grit</strong>. EQ ajar kau baca emosi dan urus hubungan. Tapi Grit &mdash; ketabahan &mdash; ajar kau macam mana nak bertahan bila jalan jadi sukar.</p>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 2 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 2 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab2">
+  <div class="chapter-hero">
+    <img src="images/bab02-grit.png" alt="Grit">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 2</p>
+      <h1>Grit</h1>
+      <p class="chap-sub">Passion + Perseverance Untuk Jangka Panjang</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <hr>
+
+    <h2>Dari V1 &amp; V2...</h2>
+
+    <p>Dalam V1, kau belajar tentang <strong>Clock vs Compass</strong> &mdash; membezakan antara yang mendesak dengan yang penting.</p>
+
+    <p>V2 membawa kau lebih dalam tentang <strong>Energy Management</strong>. Sebab bukan masa yang terhad &mdash; tenaga kau juga.</p>
+
+    <p>Sekarang bayangkan kau dah ada compass yang jelas &mdash; kau tahu arah yang kau nak pergi. Kau dah ada energy management yang baik &mdash; kau tahu macam mana nak jaga tenaga untuk perjalanan jauh. <strong>Tapi apa yang jadi bila jalan berbatu?</strong> Di situlah <strong>Grit</strong> masuk.</p>
+
+    <hr>
+
+    <h2>Cerita Pembuka: Dari Menjual Nasi Lemak ke Syarikat RM100 Juta</h2>
+
+    <p>Aizat memulakan perniagaannya pada tahun 2009 dengan modal RM5,000. Dia buka gerai nasi lemak tepi jalan di Shah Alam. Banyak kali dia fikir nak berhenti, tapi dia tanya diri: "Lepas ni, 10 tahun dari sekarang, aku nak tengok diri aku kat mana?" 2023 &mdash; syarikat dia dilaporkan bernilai lebih RM100 juta. Rahsia dia? Bukan business plan yang genius. Tapi dia tak berhenti. <strong>Itu Grit.</strong></p>
+
+    <hr>
+
+    <h2>Konsep Utama: Grit &mdash; Apa Itu Sebenarnya?</h2>
+
+    <blockquote><p>"Gabungan minat yang mendalam dan ketabahan untuk mencapai matlamat jangka panjang." &mdash; Angela Duckworth</p></blockquote>
+
+    <p><strong>Grit = Passion + Perseverance</strong></p>
+
+    <p>Duckworth buat kajian di West Point, National Spelling Bee, dan kalangan guru-guru. Keputusannya konsisten: <strong>Grit &gt; IQ. Grit &gt; Bakat. Grit &gt; Segala-galanya.</strong></p>
+
+    <hr>
+
+    <h2>Empat Cara Bina Grit: The 4 Psychological Assets</h2>
+
+    <h3>1. Interest &mdash; Minat Yang Dalam</h3>
+    <p>Grit bermula dengan passion. Bukan minat cetek. Kau takkan rasa "in love" dengan sesuatu dari hari pertama. Bagi masa.</p>
+
+    <h3>2. Practice &mdash; Latihan Yang Bertujuan</h3>
+
+    <table>
+      <tr><th>Latihan Biasa</th><th>Deliberate Practice</th></tr>
+      <tr><td>Buat apa yang dah tahu</td><td>Buat apa yang belum boleh</td></tr>
+      <tr><td>Main-main, tak fokus</td><td>Fokus penuh, effort maksimum</td></tr>
+      <tr><td>Henti bila boring</td><td>Terus walaupun susah</td></tr>
+      <tr><td>Nak feedback? Tak penting</td><td>Feedback adalah WAJIB</td></tr>
+    </table>
+
+    <h3>3. Purpose &mdash; Kenapa Ni Penting?</h3>
+    <p>Grit paling kuat bila ia bukan untuk diri semata-mata. Bila kau rasa kerja kau menyumbang kepada sesuatu yang lebih besar.</p>
+
+    <h3>4. Hope &mdash; Harapan Bila Semua Gelap</h3>
+    <p>Keyakinan aktif bahawa usaha kau akan bawa hasil, walaupun sekarang belum nampak. Growth mindset: "Aku belum pandai. Tapi aku boleh belajar."</p>
+
+    <hr>
+
+    <h2>Grit vs Self-Care &mdash; Jangan Keliru</h2>
+    <p>Grit tanpa self-care = burnout. Self-care tanpa grit = malas. Grit + Self-care = pertumbuhan mampan jangka panjang.</p>
+
+    <hr>
+
+    <h2>Memupuk Grit dalam Pasukan &amp; Organisasi</h2>
+    <ol>
+      <li><strong>Raikan Usaha, Bukan Hasil Semata</strong></li>
+      <li><strong>Cerita Tentang Perjuangan</strong> &mdash; Kongsi cabaran, bukan hanya kejayaan</li>
+      <li><strong>Bina Budaya "Belum"</strong> &mdash; "Kau belum capai target" bukan "Kau gagal"</li>
+      <li><strong>Beri Autonomi + Sokongan</strong></li>
+      <li><strong>Latih "Mengapa"</strong> &mdash; Bukan Sekadar "Apa"</li>
+      <li><strong>Guna Bahasa "Masih Dalam Perjalanan"</strong></li>
+    </ol>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>5 Soalan Reflektif</h3>
+      <ol>
+        <li>Fikir satu matlamat besar dalam hidup kau yang kau pernah tinggalkan. Kenapa kau berhenti?</li>
+        <li>Dalam skala 1-10, berapa tinggi Grit kau? Empat psychological assets mana yang paling lemah?</li>
+        <li>Siapa dalam hidup kau yang kau kagumi sebab Grit dia?</li>
+        <li>Fikir tentang pasukan kau. Adakah budaya tempat kau raikan usaha atau hasil semata?</li>
+        <li>Macam mana kau nak pastikan yang kau cukup tabah &mdash; tapi cukup bijak untuk jaga diri?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"Bakat adalah seberapa cepat kau bertambah baik. Tapi Grit adalah berapa lama kau sanggup terus bertambah baik. Dan dalam jangka masa panjang, Grit-lah yang menang." &mdash; Angela Duckworth</p></blockquote>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 3: DRIVE                                     -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab3">
+  <div class="chapter-hero">
+    <img src="images/bab03-drive.png" alt="Drive &mdash; Apa Yang Sebenarnya Memotivasikan Kita" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 3</span>
+        <h2>Drive &mdash; Apa Yang Sebenarnya Memotivasikan Kita</h2>
+        <p class="chapter-subtitle">Dari carrot-and-stick ke Autonomy, Mastery, Purpose</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <hr>
+
+    <h3>Dari V1 &amp; V2...</h3>
+
+    <p>V1 bermula dengan satu pertanyaan yang nampak simple tapi dalam: <strong>Apa yang sebenarnya penting untuk kau?</strong> Dalam hiruk-pikuk hidup, antara seribu satu tugasan dan deadline, kita jarang berhenti untuk tanya soalan tu. Clock vs Compass &mdash; itu yang jadi tema utama V1. Kau belajar bahawa hidup bukan tentang mengisi setiap minit dengan produktiviti, tapi tentang memastikan setiap minit itu bergerak ke arah yang betul. Compass kau &mdash; nilai, visi, tujuan hidup &mdash; adalah perkara yang paling penting untuk dijaga.</p>
+
+    <p>V2 membawa kau ke peringkat seterusnya. <strong>Energy Management</strong>. Bukan masa yang kau perlukan &mdash; tapi tenaga. Dan tenaga, tidak seperti masa, boleh diperbaharui. Kita belajar tentang fizikal, emosi, mental, spiritual &mdash; empat dimensi tenaga yang kena dijaga. Belajar tentang rehat, tentang ritma, tentang bagaimana untuk bekerja dengan bijak, bukan sekadar keras.</p>
+
+    <p>Kemudian dalam V3, Bab 1, kau belajar tentang <strong>Emotional Intelligence</strong> &mdash; kemahiran untuk membaca dan mengurus emosi, asas kepada segala kepimpinan. Kau belajar tentang lima komponen EQ Goleman, tentang RULER framework Brackett. Tentang bagaimana EQ bukan sekadar "jaga hati" tapi senjata paling powerful untuk pemimpin.</p>
+
+    <p>Bab 2 membawa <strong>Grit</strong> &mdash; ketabahan untuk teruskan walaupun jalan berbatu. Kau belajar bahawa bakat tidak menjamin kejayaan, tapi ketabahan &mdash; keupayaan untuk terus berlatih, terus cuba, terus percaya &mdash; itulah yang membezakan mereka yang berjaya dengan mereka yang berhenti.</p>
+
+    <p><strong>Sekarang, di bab terakhir trilogi ini, kita akan menjawab soalan yang paling asas:</strong></p>
+
+    <p><em>Apa yang buat manusia bergerak?</em></p>
+
+    <p>Bukan dari segi fizikal &mdash; tapi dari segi psikologi. Kenapa sesetengah orang bangun pagi dengan penuh semangat, sementara yang lain rasa macam nak tarik selimut balik? Kenapa ada pekerja yang buat lebih dari apa yang disuruh &mdash; dan ada yang buat sekadar cukup-cukup? Kenapa kau sendiri kadang-kadang rasa terbakar, dan kadang-kadang rasa terbantut?</p>
+
+    <p>Jawapannya terletak pada apa yang Daniel Pink panggil <strong>Drive</strong> &mdash; motivasi sebenar di sebalik tindakan manusia.</p>
+
+    <p>Mari kita bongkar.</p>
+
+    <hr>
+
+    <h3>Cerita Pembuka: Encik Ramli dan Kad Laporan</h3>
+
+    <p>Encik Ramli, 54 tahun, kerani kanan di sebuah jabatan kerajaan di Johor Bahru. Dah 28 tahun dia kerja kat situ. Setiap hari sama: datang pukul 8, sign in, buka komputer, buat kerja rutin, lunch pukul 1, balik pukul 5.</p>
+
+    <p>"Boring tak?" orang tanya.</p>
+
+    <p>"Membosankan," dia jawab jujur. "Tapi kerja kerajaan. Makan gaji buta."</p>
+
+    <p>Encik Ramli bukannya tak pandai. Masa muda, dia dapat tawaran kerja swasta &mdash; gaji tiga kali ganda. Tapi ayah dia kata, "Kerja kerajaan lebih selamat. Ada pencen." Jadi dia pilih jalan selamat.</p>
+
+    <p>28 tahun kemudian, dia duduk depan komputer yang sama, buat kerja yang sama, rasa macam robot.</p>
+
+    <p>"Tapi kau tak nak bersara awal?"</p>
+
+    <p>"Takde duit. Anak-anak masih belajar."</p>
+
+    <p>Encik Ramli terperangkap. Bukan dalam kerjanya &mdash; tapi dalam caranya berfikir tentang kerja. Dia bekerja untuk duit. Gaji. Bonus. Pencen.</p>
+
+    <p><strong>Dan itulah masalahnya.</strong></p>
+
+    <p>Daniel Pink, dalam buku <em>Drive: The Surprising Truth About What Motivates Us</em>, berhujah bahawa cara kita berfikir tentang motivasi &mdash; terutamanya dalam organisasi &mdash; adalah peninggalan zaman industri yang sudah lapuk. Kita masih fikir kalau nak orang buat kerja, kena bagi ganjaran atau ancam dengan hukuman. <strong>Carrot and stick.</strong></p>
+
+    <p>Tapi kata Pink &mdash; untuk kerja-kerja yang memerlukan kreativiti, pemikiran kompleks, dan inisiatif &mdash; carrot and stick tak berkesan. Malah, ia <strong>memusnahkan motivasi</strong>.</p>
+
+    <hr>
+
+    <h3>Konsep Utama: Motivation 2.0 vs 3.0</h3>
+
+    <p>Pink terangkan evolusi motivasi manusia dalam tiga babak:</p>
+
+    <h4>Motivation 1.0 &mdash; Survival</h4>
+
+    <p>Zaman manusia purba. Apa yang memotivasikan kita? Lapar. Sejuk. Bahaya. Kita bertindak untuk terus hidup. Basic biological drive.</p>
+
+    <h4>Motivation 2.0 &mdash; Carrot and Stick</h4>
+
+    <p>Revolusi Industri. Manusia jadi pekerja dalam kilang dan pejabat. Cara kita motivasi orang? Simple.</p>
+
+    <ul>
+      <li>Buat baik &rarr; bagi bonus, hadiah, naik pangkat. (Carrot)</li>
+      <li>Buat salah &rarr; denda, turun pangkat, buang kerja. (Stick)</li>
+    </ul>
+
+    <p>Model ni berkesan... untuk kerja-kerja <strong>mekanistik</strong>. Kalau kau suruh pekerja pasang skru yang sama 1,000 kali sehari &mdash; ya, sistem rewards and punishments berfungsi.</p>
+
+    <p>Tapi masalahnya: <strong>Kebanyakan kerja hari ini bukan mekanistik.</strong> Pekerja kita &mdash; termasuk kau &mdash; bukan robot. Kau perlu selesaikan masalah rumit, buat keputusan, kreatif, bekerjasama.</p>
+
+    <h4>Motivation 3.0 &mdash; Intrinsic Drive</h4>
+
+    <p>Inilah yang Pink panggil <em>Type I behavior</em> &mdash; motivasi dalaman yang datang dari tiga elemen:</p>
+
+    <ol>
+      <li><strong>Autonomy</strong> &mdash; Keinginan untuk mengawal hidup sendiri</li>
+      <li><strong>Mastery</strong> &mdash; Keinginan untuk menjadi lebih baik dalam sesuatu yang bermakna</li>
+      <li><strong>Purpose</strong> &mdash; Keinginan untuk menyumbang kepada sesuatu yang lebih besar dari diri sendiri</li>
+    </ol>
+
+    <p>Tiga elemen ni &mdash; Pink panggil <strong>The Three Pillars of Intrinsic Motivation</strong>.</p>
+
+    <hr>
+
+    <h3>Autonomy &mdash; Beri Ruang, Dapat Hasil</h3>
+
+    <p>Kita mulakan dengan autonomy. Apa maksud autonomy?</p>
+
+    <p>Autonomy bukanlah "bebas buat apa-apa." Jangan confuse dengan anarki. Autonomy dalam konteks kerja bermaksud: <strong>Kau ada pilihan tentang apa yang kau buat, bila kau buat, macam mana kau buat, dan dengan siapa kau buat.</strong></p>
+
+    <p>Pink huraikan empat dimensi autonomy:</p>
+
+    <h4>1. Autonomy over Task &mdash; Pilih Apa Nak Buat</h4>
+
+    <p>Google ada program dipanggil "20% Time." Pekerja dibenarkan guna 20% masa kerja mereka untuk projek peribadi &mdash; apa-apa yang mereka minat. Dari program ni lahir Gmail, Google News, AdSense.</p>
+
+    <p>Kau tahu apa yang berlaku? Produktiviti tak jatuh. Inovasi naik. Sebab bila orang buat apa yang mereka minat, mereka buat lebih baik.</p>
+
+    <p><strong>Dalam konteks Malaysia:</strong> "20% Time" bunyi macam mimpi dalam budaya kerja kita. Dalam banyak organisasi &mdash; terutamanya kerajaan &mdash; semuanya ditetapkan. Skop kerja tetap. SOP tetap. Kau ikut je.</p>
+
+    <p>Tapi autonomy bukan pasal program besar. Antara kau ada pilihan dalam perkara kecil... <strong>Kajian menunjukkan</strong>: Pekerja yang rasa ada autonomy lapor 56% lebih kepuasan kerja dan 34% lebih produktif.</p>
+
+    <h4>2. Autonomy over Time &mdash; Bila Nak Buat</h4>
+
+    <p>Pandangan tradisional: Kerja adalah 9-5. Kau kena duduk di opis. Kalau nampak sibuk, maknanya produktif.</p>
+
+    <p>Padahal, produktiviti tak ada kena mengena dengan waktu. Ada orang paling kreatif pukul 10 pagi. Ada yang pukul 2 pagi. Otak kita tak semuanya ikut jam yang sama.</p>
+
+    <h4>3. Autonomy over Technique &mdash; Macam Mana</h4>
+
+    <p>Ini yang paling simple tapi powerful. Beritahu staff: "Ini target yang nak dicapai. Kau tentukan sendiri macam mana nak sampai."</p>
+
+    <h4>4. Autonomy over Team &mdash; Dengan Siapa</h4>
+
+    <p>Paling susah dalam konteks kita. Kita biasa dengan "team dah ditetapkan." Tapi Australian software company Atlassian ada program "ShipIt Days" &mdash; 24 jam di mana pekerja boleh pilih sendiri pasukan dan projek.</p>
+
+    <hr>
+
+    <h3>Mastery &mdash; Keinginan Untuk Jadi Lebih Baik</h3>
+
+    <p>Komponen kedua Drive ialah <strong>Mastery</strong> &mdash; keinginan semula jadi manusia untuk menjadi lebih baik dalam perkara yang bermakna.</p>
+
+    <h4>Tiga Hukum Mastery</h4>
+
+    <p><strong>Hukum 1: Mastery Adalah Mindset</strong> &mdash; Ingat Carol Dweck &mdash; <em>Growth Mindset</em>? Orang yang percaya mereka boleh menjadi lebih baik akan menjadi lebih baik.</p>
+
+    <p><strong>Hukum 2: Mastery Adalah Proses Menyakitkan</strong> &mdash; Ini yang orang tak suka. Mastery memerlukan <em>deliberate practice</em> &mdash; latihan yang susah, fokus penuh, dan sentiasa di luar comfort zone.</p>
+
+    <p><strong>Hukum 3: Mastery Adalah Pengorbanan</strong> &mdash; Ini yang paling berat. Kau takkan pernah <em>sampai</em>. Mastery bukan destinasi. Kau takkan dapat check "Mastered" dalam to-do list.</p>
+
+    <hr>
+
+    <h3>Purpose &mdash; Kenapa WHY Lebih Penting Dari WHAT</h3>
+
+    <p>Komponen ketiga &mdash; dan mungkin paling penting dalam konteks Malaysia &mdash; ialah <strong>Purpose</strong>.</p>
+
+    <p>Simon Sinek, dalam TED Talk terkenal (dan buku <em>Start With Why</em>), pernah kata:</p>
+
+    <blockquote><p><em>"People don't buy WHAT you do. They buy WHY you do it."</em></p></blockquote>
+
+    <p>Tapi konsep purpose dalam Drive lebih dari marketing. Ia tentang <strong>makna</strong> &mdash; tentang mengapa kau bangun pagi bukan semata-mata untuk gaji.</p>
+
+    <hr>
+
+    <h3>Aplikasi dalam Team dan Organisasi di Malaysia</h3>
+
+    <p>Macam mana nak aplikasi Drive dalam realiti Malaysia? Ini cadangan praktikal:</p>
+
+    <h4>1. Ubah Cara Kau Beri Maklum Balas</h4>
+    <h4>2. Beri Ruang untuk "20%"</h4>
+    <h4>3. Bina Purpose Statement Untuk Pasukan</h4>
+    <h4>4. Elakkan "Motivation Killers" Dalam Budaya Malaysia</h4>
+
+    <table>
+      <tr><th>Pembunuh Drive</th><th>Alternatif</th></tr>
+      <tr><td>Mikromanage &mdash; semak setiap langkah</td><td>Bagi autonomy, ukur hasil akhir</td></tr>
+      <tr><td>Meeting tak berkesudahan</td><td>Kurangkan meeting, guna async communication</td></tr>
+      <tr><td>"Dulu pun buat macam ni"</td><td>"Apa yang boleh kita buat lagi baik?"</td></tr>
+      <tr><td>Gaji ikut seniority, bukan skill</td><td>Gaji ikut nilai dan sumbangan</td></tr>
+      <tr><td>Takut silap, hukum kesalahan</td><td>Raikan pembelajaran dari kesilapan</td></tr>
+      <tr><td>Sistem "siapa cepat dia dapat"</td><td>Kerjasama melebihi persaingan</td></tr>
+    </table>
+
+    <h4>5. Model Type I Behavior</h4>
+
+    <p>Paling penting: <strong>Kau kena jadi contoh.</strong></p>
+
+    <hr>
+
+    <h3>Encik Ramli &mdash; Epilog</h3>
+
+    <p>Encik Ramli, kerani 28 tahun, tak pernah baca buku Daniel Pink. Tapi pada satu taklimat, ketua jabatan baru &mdash; Puan Sarah &mdash; buat sesuatu yang tak pernah dibuat sebelum ni.</p>
+
+    <p>Dia tanya staff: "Anta semua, kalau anta boleh ubah satu benda pasal kerja anta &mdash; apa dia?"</p>
+
+    <p>Kali pertama dalam 28 tahun, Ramli rasa kerjanya ada <strong>purpose</strong>.</p>
+
+    <p><strong>Itulah kuasa Drive.</strong></p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>5 Soalan Reflektif</h3>
+      <ol>
+        <li>Cuba fikir kerja atau tugas yang kau buat sekarang. Dalam skala 1-10, berapa tinggi autonomy yang kau rasa?</li>
+        <li>Bila kali terakhir kau rasa "Yes! Aku dah jadi lebih baik!" dalam sesuatu?</li>
+        <li>Tulis satu ayat: Kenapa kerja kau penting? Bukan untuk gaji &mdash; tapi untuk orang lain.</li>
+        <li>Fikir tentang organisasi kau. Senaraikan tiga perkara dalam budaya tempat kerja yang membunuh motivasi intrinsic.</li>
+        <li><strong>Soalan paling penting:</strong> Kalau kau ada semua duit yang kau perlukan &mdash; apa yang kau akan buat dengan masa kau?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p><em>"The secret to high performance isn't our biological drive or our reward-and-punishment drive. It's our third drive &mdash; our deep-seated desire to direct our own lives, to extend and expand our abilities, and to live a life of purpose."</em><br>&mdash; Daniel Pink</p></blockquote>
+
+    <hr>
+
+    <h3>Penutup Trilogi: Clock, Energy, Drive</h3>
+
+    <p>Tiga buku. Tiga perjalanan.</p>
+
+    <p><strong>V1</strong> ajar kau tentang <strong>Clock vs Compass</strong> &mdash; membezakan yang mendesak dengan yang penting.</p>
+
+    <p><strong>V2</strong> ajar kau tentang <strong>Energy Management</strong> &mdash; bahawa masa bukan satu-satunya sumber yang terhad.</p>
+
+    <p><strong>V3</strong> &mdash; buku yang kau pegang sekarang &mdash; membawa kau ke peringkat akhir. Kau belajar tiga kemahiran paling asas untuk memimpin dan mempengaruhi: Emotional Intelligence, Grit, dan Drive.</p>
+
+    <hr style="border: none; height: 2px; background: var(--gold); width: 60px; margin: 2rem auto;">
+
+    <p><strong>Satu pesanan terakhir:</strong></p>
+
+    <p>Kau tak perlu jadi perfek. Kau tak perlu jadi CEO. Kau tak perlu ada ribuan pengikut. Tapi kau perlu jadi PEMIMPIN untuk satu orang yang paling penting: <strong>Diri kau sendiri.</strong></p>
+
+    <hr style="border: none; height: 2px; background: var(--gold); width: 60px; margin: 2rem auto;">
+
+    <h3>Akhir Kata</h3>
+
+    <p>Trilogi <em>Yang Mana Keutamaan?</em> ditulis untuk satu tujuan: <strong>Membantu kau hidup dengan lebih sedar, lebih sengaja, dan lebih bermakna.</strong></p>
+
+    <p>Bukan dengan bagi kau jawapan. Tapi dengan bagi kau soalan yang betul.</p>
+
+    <p>Sekarang, terpulang pada kau.</p>
+
+    <p>Compass dah ada. Tenaga dah jaga. EQ, Grit, Drive dah di tangan.</p>
+
+    <p><strong>Apa yang kau nak buat dengan semua ni?</strong></p>
+
+    <p>Jalan masih panjang. Tapi kau tak jalan sorang-sorang lagi.</p>
+
+    <p><em>Selamat melangkah.</em></p>
+
+    <p>&mdash; WMB DIGITAL</p>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 4 &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- ACT 2 DIVIDER                                  -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="act-divider" id="act2">
+  <div class="act-divider-content">
+    <p class="act-label">ACT 2</p>
+    <h2>Lead Others &mdash; Memimpin Orang Lain</h2>
+    <p class="act-subtitle">Dari Diri ke Orang Lain: Coaching, Candor, Multipliers, Giving</p>
+    <div class="act-line"></div>
+    <p>Kau dah kuasai diri. Sekarang masa untuk bawa orang lain bersama.</p>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 4: THE COACHING HABIT                         -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab4">
+  <div class="chapter-hero">
+    <img src="images/bab04-coaching-habit.png" alt="The Coaching Habit &mdash; Tanya, Jangan Suruh" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 4</span>
+        <h2>The Coaching Habit &mdash; Tanya, Jangan Suruh</h2>
+        <p class="chapter-subtitle">Tujuh soalan yang akan ubah cara kau memimpin</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <h3>Dari V1 &amp; V2...</h3>
+
+    <p>Dari V1, kau dah belajar tentang Empat Kuadran &mdash; dan Kuadran II adalah tempat di mana kepimpinan sebenar berlaku. Bukan dalam keadaan panik last minute (Kuadran I), bukan dalam pelarian ke hiburan (Kuadran IV), tapi dalam ruang di mana kau ada masa untuk berfikir, membina hubungan, dan membuat keputusan strategik.</p>
+
+    <p>Dari V2, kau dah belajar tiga skill kritikal: Seni Delegasi (supaya kau tak jadi bottleneck), Crucial Conversations (supaya kau boleh cakap benda susah tanpa rosakkan hubungan), dan Boundary Setting (supaya kau tak terbakar).</p>
+
+    <p>Sekarang kita masuk ke V3 &mdash; buku penutup trilogi ini. Dan kita mulakan dengan satu kemahiran yang paling underrated dalam kepimpinan: <strong>coaching</strong>.</p>
+
+    <hr>
+
+    <h3>"Apa Kata Bos?"</h3>
+
+    <p>Kau duduk dalam meeting room di tingkat 20 sebuah bangunan di KLCC. Di depan kau ada tujuh orang staf &mdash; masing-masing dengan muka serius. Kau baru je selesai bagi taklimat pasal target suku tahun ketiga.</p>
+
+    <p>"Siapa ada soalan?" kau tanya. Sunyi.</p>
+
+    <p>Baru kau nak bangun, Farid &mdash; staf yang dah tujuh tahun dalam team &mdash; angkat tangan. "Bos, saya nak tanya. Projek X tu macam mana kita nak handle? Deadline dia overlap dengan projek Y. Saya tak cukup orang."</p>
+
+    <p>Dalam hati: <em>Dia ni tak boleh fikir ke?</em> Tapi kau senyum. "Farid, awak cuba buat macam ni: minta tolong pasukan A untuk handle sebahagian, and then shift priority untuk projek Y. Faham?"</p>
+
+    <p>Farid mengangguk. Tapi dalam matanya, kau nampak satu cahaya yang pudar. Bukan cahaya terima kasih. Tapi cahaya kecewa. Dia nak kau percaya dia boleh fikir sendiri. Tapi kau tak bagi peluang.</p>
+
+    <p>Ni antara detik paling kritikal dalam kepimpinan &mdash; dan kebanyakan kita gagal.</p>
+
+    <hr>
+
+    <h3>Kenapa Manager Gagal Jadi Coach</h3>
+
+    <p>Michael Bungay Stanier, dalam buku <em>The Coaching Habit</em>, buat satu diagnosis yang menampar muka: <strong>Kita terlalu suka memberi nasihat.</strong></p>
+
+    <p>Stanier panggil ni sebagai <strong>Advice Monster</strong> &mdash; raksasa dalam diri yang sentiasa nak memberi nasihat. Dan raksasa ni bahaya sebab mematikan inisiatif, mewujudkan dependency, membuang masa kau, dan tak develop next generation leaders.</p>
+
+    <hr>
+
+    <h3>Tujuh Soalan Coaching Power</h3>
+
+    <h4>The Karpman Drama Triangle</h4>
+
+    <p>Stephen Karpman jumpa satu pattern dalam perhubungan manusia yang dipanggil <strong>Drama Triangle</strong>. Ada tiga peranan:</p>
+
+    <ol>
+      <li><strong>Victim</strong> (Mangsa) &mdash; "Aku tak power la. Sistem ni tak adil."</li>
+      <li><strong>Persecutor</strong> (Pendera) &mdash; "Ni semua salah kau!"</li>
+      <li><strong>Rescuer</strong> (Penyelamat) &mdash; "Biar aku settlekan. Aku je yang boleh."</li>
+    </ol>
+
+    <p>Stanier kata: <strong>"The best way to escape the Drama Triangle is to stop giving advice."</strong></p>
+
+    <hr>
+
+    <h4>Soalan #1: The Kickstart Question</h4>
+    <p><strong>"Apa yang ada dalam fikiran awak sekarang?"</strong></p>
+
+    <h4>Soalan #2: The AWE Question</h4>
+    <p><strong>"Dan apa lagi?"</strong> &mdash; <em>And What Else?</em></p>
+
+    <h4>Soalan #3: The Focus Question</h4>
+    <p><strong>"Apa cabaran sebenar di sini?"</strong></p>
+
+    <h4>Soalan #4: The Foundation Question</h4>
+    <p><strong>"Apa yang awak nak?"</strong></p>
+
+    <h4>Soalan #5: The Lazy Question</h4>
+    <p><strong>"Macam mana saya boleh bantu?"</strong></p>
+
+    <h4>Soalan #6: The Strategic Question</h4>
+    <p><strong>"Kalau awak cakap 'Ya' untuk ni, apa yang awak terpaksa cakap 'Tidak'?"</strong></p>
+
+    <h4>Soalan #7: The Learning Question</h4>
+    <p><strong>"Apa yang paling berguna dari perbualan kita ni?"</strong></p>
+
+    <hr>
+
+    <h3>Coaching dalam Budaya Hierarki Malaysia</h3>
+
+    <p>Budaya kerja Malaysia adalah <strong>challenge</strong> untuk coaching model ni. Sebab senioriti, face, paternalistik, dan "tak selesa." Tapi sebenarnya, ni lah tempat di mana coaching <strong>paling diperlukan</strong>.</p>
+
+    <p><strong>Cara adaptasi untuk Malaysia:</strong> Mulakan dengan konteks, guna pendekatan "kita", beri permission untuk jujur, praktis dengan isu kecil dulu, dan normalize "Aku tak tahu."</p>
+
+    <hr>
+
+    <h3>Tiga Perangkap Coaching yang Wajib Dielak</h3>
+
+    <p><strong>Perangkap #1:</strong> Coaching Jadi Interogasi<br>
+    <strong>Perangkap #2:</strong> Coaching Tanpa Tindakan<br>
+    <strong>Perangkap #3:</strong> Coaching Hanya Untuk Masalah</p>
+
+    <h3>Latihan Praktikal: 30 Hari Cabaran Coaching</h3>
+
+    <p><strong>Minggu 1:</strong> Observe &mdash; Catat apa yang kau buat bila staf datang dengan masalah.<br>
+    <strong>Minggu 2:</strong> Satu Soalan Sehari &mdash; Guna Kickstart Question setiap hari.<br>
+    <strong>Minggu 3:</strong> Tiga "Dan Apa Lagi?" &mdash; Dalam setiap perbualan.<br>
+    <strong>Minggu 4:</strong> Refleksi &amp; Komitmen &mdash; Tanya staf pasal perubahan kau.</p>
+
+    <hr>
+
+    <h3>Coaching untuk Diri Sendiri</h3>
+
+    <p>Sebelum kau coach orang lain, kau kena coach diri sendiri. Setiap kali kau hadapi masalah, tanya diri: Apa yang ada dalam fikiran aku? Dan apa lagi? Apa cabaran sebenar? Apa yang aku nak? Macam mana aku boleh bantu diri sendiri? Kalau aku cakap Ya, apa yang aku kena cakap Tidak? Apa yang aku belajar?</p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Dalam situasi apa kau paling kuat rasa nak "goreng" jawapan untuk orang lain?</li>
+        <li>Siapa dalam team kau yang paling kerap datang dengan masalah?</li>
+        <li>Pernah kau jadi Victim dalam Drama Triangle?</li>
+        <li>Antara tujuh soalan coaching, mana satu yang paling susah untuk kau guna?</li>
+        <li>Berapa ramai orang dalam organisasi kau yang boleh kau kata "bertambah bijak" sebab kau?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"The advice that people most need to hear is usually the advice they most need to discover for themselves."<br>&mdash; Michael Bungay Stanier, <em>The Coaching Habit</em></p></blockquote>
+
+    <hr>
+
+    <h3>Ringkasan Bab 4</h3>
+    <ul>
+      <li><strong>Masalah:</strong> Manager terlalu suka bagi nasihat, yang membunuh inisiatif.</li>
+      <li><strong>Punca:</strong> Advice Monster, budaya hierarki, takut lambat, tak percaya orang lain.</li>
+      <li><strong>Penyelesaian:</strong> Gantikan nasihat dengan tujuh soalan coaching power.</li>
+      <li><strong>Karpman Drama Triangle:</strong> Jangan jadi Rescuer &mdash; jadikan staf Creator.</li>
+      <li><strong>Adaptasi Malaysia:</strong> Mulakan dengan konteks, guna pendekatan "kita".</li>
+      <li><strong>Mantra baru:</strong> Tanya, jangan suruh.</li>
+    </ul>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 5 &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 5: RADICAL CANDOR                            -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab5">
+  <div class="chapter-hero">
+    <img src="images/bab05-radical-candor.png" alt="Radical Candor &mdash; Caring Personally + Challenging Directly" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 5</span>
+        <h2>Radical Candor &mdash; Caring Personally + Challenging Directly</h2>
+        <p class="chapter-subtitle">Cakap benar dengan kasih sayang</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <h3>Dari V1 &amp; V2...</h3>
+
+    <p>Dari V1, kau dah belajar tentang Empat Kuadran &mdash; dan antara cabaran terbesar dalam Kuadran II adalah keberanian untuk berhadapan dengan konflik. V1 dah ajar kau yang keberanian adalah bahan api untuk kepimpinan.</p>
+
+    <p>Dari V2, kau dah belajar tentang Crucial Conversations &mdash; seni untuk bercakap tentang isu kritikal tanpa merosakkan hubungan.</p>
+
+    <p>Sekarang, kita ambil satu langkah lagi. Crucial Conversations ajar kau <em>bagaimana</em> nak bercakap tentang benda susah. Tapi apa yang jadi kalau kau tak bercakap langsung?</p>
+
+    <hr>
+
+    <h3>"Diam Itu Emas" &mdash; Mitos Paling Bahaya dalam Organisasi</h3>
+
+    <p>Minggu lepas, kau tengok presentation dari unit pemasaran. Slide demi slide penuh dengan angka hijau &mdash; semua KPI tercapai. Semua orang tepuk tangan. Bos besar senyum.</p>
+
+    <p>Tapi dalam hati, kau tahu yang angka tu dicapah. Kau tahu yang vendor sebenarnya tak deliver.</p>
+
+    <p>Apalah kau buat? Kalau kau macam kebanyakan orang Malaysia, kau akan diam. Sebab kita takut nak <strong>challenge</strong> secara langsung.</p>
+
+    <p>Kim Scott, dalam buku <em>Radical Candor</em>, panggil ni sebagai <strong>Ruinous Empathy</strong> &mdash; empati yang merosakkan.</p>
+
+    <hr>
+
+    <h3>Dua Dimensi, Empat Kuadran</h3>
+
+    <table>
+      <tr><th>Paksi</th><th>Maksud</th></tr>
+      <tr><td><strong>Care Personally</strong> (Y)</td><td>Kau ambil berat tentang staf kau sebagai manusia. Bukan mesin.</td></tr>
+      <tr><td><strong>Challenge Directly</strong> (X)</td><td>Kau berani cakap apa yang patut, walaupun susah.</td></tr>
+    </table>
+
+    <p><strong>Kuadran 1: Radical Candor</strong> (Tinggi Care, Tinggi Challenge) &mdash; "Amin, aku tahu kau dah usaha keras. Tapi slide ke-5 tu, data dia tak tepat. Jom kita repair sama-sama."</p>
+
+    <p><strong>Kuadran 2: Obnoxious Aggression</strong> (Rendah Care, Tinggi Challenge) &mdash; "Slide kau ni salah. Buat balik." Nada kasar, judgemental.</p>
+
+    <p><strong>Kuadran 3: Ruinous Empathy</strong> (Tinggi Care, Rendah Challenge) &mdash; "Presentasi kau okay je. Ada sikit je yang boleh improve." Tapi dalam hati: <em>Ini teruk.</em></p>
+
+    <p><strong>Kuadran 4: Manipulative Insincerity</strong> (Rendah Care, Rendah Challenge) &mdash; "Best sangat presentation!" Lepas tu balik cakap dengan kawan: "Adui, teruk."</p>
+
+    <hr>
+
+    <h3>Cara Nak Bagi Feedback Pedas Tapi Diterima</h3>
+
+    <p><strong>Langkah 1:</strong> Check Niat Kau &mdash; Nak membantu dia berkembang? Atau nak lepaskan geram?</p>
+    <p><strong>Langkah 2:</strong> "I'm About to Give You Some Feedback" &mdash; Bagi heads-up. Jangan terus terjah.</p>
+    <p><strong>Langkah 3:</strong> Guna SBI Framework (Situation, Behavior, Impact)</p>
+
+    <table>
+      <tr><th>Komponen</th><th>Contoh</th></tr>
+      <tr><td><strong>Situation</strong></td><td>"Semalam dalam meeting dengan klien..."</td></tr>
+      <tr><td><strong>Behavior</strong></td><td>"...bila kau potong cakap Mr. Tan tiga kali..."</td></tr>
+      <tr><td><strong>Impact</strong></td><td>"...aku perasan muka dia berubah. Kita hampir hilang kepercayaan dia."</td></tr>
+    </table>
+
+    <p><strong>Langkah 4:</strong> The Art of Receiving Feedback &mdash; Dengar dulu, ucap terima kasih, tanya untuk clarify, ambil masa untuk proses, follow up.</p>
+
+    <p><strong>Langkah 5:</strong> Radical Candor Itu Bukan Sekali &mdash; Ia adalah <strong>amalan berterusan</strong>.</p>
+
+    <hr>
+
+    <h3>Senario Praktikal</h3>
+
+    <p><strong>Senario 1:</strong> Presentasi yang Teruk &mdash; Radical Candor: "Aku tahu kau dah usaha. Tapi ada tiga perkara: slide terlalu padat, kau tak jawab soalan CEO dengan langsung, mesej utama tak clear. Jom kita practice."</p>
+
+    <p><strong>Senario 2:</strong> Staf Selalu Lambat &mdash; Radical Candor: "Kau selalu hantar lewat. Bukan sebab kau tak buat kerja &mdash; tapi sebab kau perfectionist. Kita kena cari balance."</p>
+
+    <p><strong>Senario 3:</strong> Bos yang Dominan &mdash; Radical Candor: "Bos, aku perhatikan bos selalu potong sebelum orang habis cakap. Boleh kita try biar semua orang habis dulu?"</p>
+
+    <p><strong>Senario 4:</strong> Rakan Sepasukan Tak Menyumbang &mdash; Radical Candor: "Aku perhatikan kau tak selesaikan bahagian kau. Team terpaksa cover. Ada masalah?"</p>
+
+    <hr>
+
+    <h3>Membina Budaya Feedback dalam Team</h3>
+
+    <p><strong>Langkah 1:</strong> Model Dari Atas<br>
+    <strong>Langkah 2:</strong> Cipta Structured Moments &mdash; Start/Stop/Continue, Plus/Delta<br>
+    <strong>Langkah 3:</strong> Beri Anugerah untuk Keberanian</p>
+
+    <h3>Tiga Amalan Harian Radical Candor</h3>
+    <p><strong>1. Morning Check:</strong> Setiap pagi, tanya diri: "Hari ni, dalam situasi apa aku paling takut nak cakap benar?"<br>
+    <strong>2. The 24-Hour Rule:</strong> Kalau ada feedback yang kau tangguh, kau kena sampaikan dalam 24 jam.<br>
+    <strong>3. Feedback Sandwich Songsang:</strong> Kritik terus terang - Bincang - Akhiri dengan sokongan.</p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Ingat satu situasi kau diam je padahal kau tahu kau patut cakap.</li>
+        <li>Siapa dalam hidup kau yang selalu cakap apa yang kau <em>nak dengar</em> &mdash; dan siapa yang cakap apa yang kau <em>perlu dengar</em>?</li>
+        <li>Antara Ruinous Empathy, Obnoxious Aggression, Manipulative Insincerity &mdash; yang mana satu dosa besar kau?</li>
+        <li>Pernah kau menerima feedback yang pedas tapi kau hargai?</li>
+        <li>Kalau kau boleh ubah satu perkara pasal budaya feedback dalam organisasi kau &mdash; apa dia?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"Radical Candor is humble enough to admit that you might be wrong, but brave enough to say it anyway."<br>&mdash; Kim Scott, <em>Radical Candor</em></p></blockquote>
+
+    <hr>
+
+    <h3>Ringkasan Bab 5</h3>
+    <ul>
+      <li><strong>Dua paksi:</strong> Care Personally &amp; Challenge Directly.</li>
+      <li><strong>Empat kuadran:</strong> Radical Candor (terbaik), Ruinous Empathy (terlalu baik), Obnoxious Aggression (kasar), Manipulative Insincerity (hipokrit).</li>
+      <li><strong>Masalah Malaysia:</strong> Budaya jaga air muka, hierarki, dan "tak apa."</li>
+      <li><strong>Penyelesaian:</strong> Guna SBI framework, minta izin, semak niat.</li>
+      <li><strong>Bina budaya:</strong> Model dari atas, cipta structured moments.</li>
+      <li><strong>Mantra baru:</strong> Care personally. Challenge directly. Always.</li>
+    </ul>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 6 &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 6: MULTIPLIERS                               -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab6">
+  <div class="chapter-hero">
+    <img src="images/bab06-multipliers.png" alt="Multipliers &mdash; Pemimpin Yang Menggandakan Kecerdasan" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 6</span>
+        <h2>Multipliers &mdash; Pemimpin Yang Menggandakan Kecerdasan</h2>
+        <p class="chapter-subtitle">Dari Diminisher ke Multiplier</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <h3>Dari V1 &amp; V2...</h3>
+
+    <p>Dari V1, kau dah belajar yang kepimpinan bukan tentang berapa banyak yang kau buat sendiri &mdash; tapi tentang berapa banyak yang kau capai <em>melalui orang lain</em>.</p>
+
+    <p>Dari V2, kau dah belajar delegasi bukan sekadar "bagi kerja" &mdash; ia adalah satu seni untuk membesarkan orang.</p>
+
+    <p>Sekarang, kita bawa konsep ni ke tahap yang paling tinggi. Bab ni bukan pasal <em>apa</em> kau buat sebagai pemimpin. Tapi pasal <em>siapa</em> kau jadi &mdash; sama ada seorang <strong>Multiplier</strong> atau <strong>Diminisher</strong>.</p>
+
+    <hr>
+
+    <h3>Dua Jenis Pemimpin</h3>
+
+    <p>Liz Wiseman, dalam buku <em>Multipliers</em>, jumpa dua pola:</p>
+
+    <p><strong>The Diminisher:</strong> Pemimpin yang mengecutkan kecerdasan orang sekeliling. Bila dia masuk bilik, IQ semua orang turun 20 mata.</p>
+
+    <p><strong>The Multiplier:</strong> Pemimpin yang menggandakan kecerdasan orang sekeliling. Bila dia masuk bilik, IQ semua orang naik 20 mata.</p>
+
+    <p>Yang mengejutkan: <strong>Kebanyakan Diminishers tak sedar yang mereka Diminishers.</strong></p>
+
+    <hr>
+
+    <h3>The Diminisher: Kenapa Dia Tak Sedar</h3>
+
+    <p><strong>1. The Genius Maker</strong> &mdash; Dia rasa dia orang paling pandai dalam bilik. Kesan: Staf berhenti berfikir.</p>
+    <p><strong>2. The Know-It-All</strong> &mdash; Dia selalu ada jawapan. Kesan: Staf jadi pasif dan dependent.</p>
+    <p><strong>3. The Decision Maker</strong> &mdash; Semua keputusan mesti melalui dia. Kesan: Bottleneck.</p>
+    <p><strong>4. The Micro-Manager</strong> &mdash; Dia nak tahu setiap detail. Kesan: Autonomy = sifar.</p>
+
+    <p>Dan yang paling ironik: <strong>Diminisher rasa dia tengah buat kerja dengan baik.</strong> Sebab "Aku detail-oriented" dan "Aku maintain standard."</p>
+
+    <hr>
+
+    <h3>The Multiplier: Lima Disiplin</h3>
+
+    <p><strong>Disiplin #1: The Talent Magnet</strong> &mdash; Multiplier tarik bakat &mdash; dan guna mereka sepenuhnya. "Aku nampak kau pandai buat presentasi. Kau nak lead session client next week?"</p>
+
+    <p><strong>Disiplin #2: The Liberator</strong> &mdash; Multiplier cipta persekitaran di mana orang rasa selamat untuk berfikir. "Kita nak cuba approach baru. Kalau gagal, kita belajar. Aku janji takkan marah."</p>
+
+    <p><strong>Disiplin #3: The Challenger</strong> &mdash; Multiplier regangkan orang &mdash; dan percaya yang mereka boleh capai lebih. Guna "stretch assignments" dan "The Question": "What would you do if you weren't afraid?"</p>
+
+    <p><strong>Disiplin #4: The Debate Maker</strong> &mdash; Multiplier guna percanggahan pendapat untuk hasilkan keputusan yang lebih baik. "Siapa nak jadi devil's advocate?"</p>
+
+    <p><strong>Disiplin #5: The Investor</strong> &mdash; Multiplier melabur dalam orang &mdash; dan bagi mereka ownership. Guna "70% rule" &mdash; kalau staf boleh buat 70% sebaik kau, bagi dia.</p>
+
+    <hr>
+
+    <h3>Kuasa "The Vacuum"</h3>
+
+    <p>Satu konsep menarik dari Liz Wiseman ialah <strong>"The Vacuum"</strong> &mdash; ruang kosong yang ditinggalkan bila seorang pemimpin berhenti mengawal. Bila kau sebagai pemimpin <em>sengaja</em> mengosongkan ruang, kau paksa orang lain untuk mengisinya.</p>
+
+    <hr>
+
+    <h3>Pelan Tindakan 90 Hari Menjadi Multiplier</h3>
+
+    <p><strong>Hari 1-30:</strong> Fasa Diagnosa &mdash; Rekodkan berapa kali kau bagi jawapan vs tanya soalan.</p>
+    <p><strong>Hari 31-60:</strong> Fasa Lepasan &mdash; Pilih satu projek kecil. Lepaskan sepenuhnya.</p>
+    <p><strong>Hari 61-90:</strong> Fasa Pengukuhan &mdash; Lantik seorang "replacement" &mdash; ajar dia buat kerja kau.</p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Siapa dalam hidup kau yang buat kau rasa <strong>lebih pandai</strong> setiap kali lepas bercakap dengan dia?</li>
+        <li>Siapa yang buat kau rasa <strong>kurang pandai</strong>?</li>
+        <li>Dalam skala 1-10, kau rasa kau lebih Multiplier atau Diminisher?</li>
+        <li>Bayangkan staf kau boleh bagi feedback tanpa nama: Apa yang depa akan tulis pasal kau?</li>
+        <li>Satu perkara yang kau boleh <em>stop buat</em> hari ni &mdash; yang akan buat orang sekeliling kau rasa lebih bijak?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"Multipliers get more than their fair share of the talent around them &mdash; but not by hoarding it. They give it back multiplied."<br>&mdash; Liz Wiseman, <em>Multipliers</em></p></blockquote>
+
+    <hr>
+
+    <h3>Ringkasan Bab 6</h3>
+    <ul>
+      <li><strong>Dua jenis pemimpin:</strong> Multiplier (menggandakan IQ team) vs Diminisher (mengecutkan IQ team).</li>
+      <li><strong>Lima disiplin Multiplier:</strong> Talent Magnet, Liberator, Challenger, Debate Maker, Investor.</li>
+      <li><strong>Cabaran Malaysia:</strong> Senioriti, hormat yang mencekik, "biar aku buat" mentality.</li>
+      <li><strong>Ujian utama:</strong> Kalau kau cuti sebulan, boleh tak organisasi kau berjalan macam biasa?</li>
+      <li><strong>Mantra baru:</strong> Bukan jadi yang terbaik &mdash; tapi buat orang lain jadi yang terbaik.</li>
+    </ul>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 7 &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 7: GIVE AND TAKE                             -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab7">
+  <div class="chapter-hero">
+    <img src="images/bab07-give-and-take.png" alt="Give and Take &mdash; Kenapa Givers Paling Berjaya" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 7</span>
+        <h2>Give and Take &mdash; Kenapa "Givers" Paling Berjaya</h2>
+        <p class="chapter-subtitle">Memberi dengan bijak, bukan memberi tanpa batas</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <h3>Dari V1 &amp; V2...</h3>
+
+    <p>Dari V1, kau dah belajar bahawa kepimpinan bukan tentang kelajuan &mdash; tapi tentang arah. Empat Kuadran ajar kau untuk fokus pada apa yang <em>penting</em>, bukan apa yang <em>urgent</em>.</p>
+
+    <p>Dari V2, kau dah belajar tiga pillar interpersonal: Crucial Conversations, Delegasi, dan Boundary Setting.</p>
+
+    <p>Sekarang, kita akhiri trilogi ini dengan satu bab yang paling counter-intuitive. Selama ini kita diajar: "Dunia ni persaingan." Tapi Adam Grant jumpa satu kebenaran yang mengejutkan: <strong>Dalam jangka panjang, orang yang paling kerap memberi &mdash; Givers &mdash; adalah yang paling berjaya.</strong></p>
+
+    <hr>
+
+    <h3>Tiga Jenis Manusia</h3>
+
+    <p><strong>Givers (Pemberi)</strong> &mdash; Memberi tanpa mengharap balasan. "Macam mana aku boleh bantu kau?"</p>
+    <p><strong>Takers (Pengambil)</strong> &mdash; Ambil lebih dari apa yang dia bagi. "Apa yang aku dapat dari orang ni?"</p>
+    <p><strong>Matchers (Penyeimbang)</strong> &mdash; Bagi setimpal dengan apa yang dia terima. "Awak tolong saya, saya tolong awak."</p>
+
+    <hr>
+
+    <h3>Kenapa Givers Ada di Atas dan di Bawah</h3>
+
+    <p>Adam Grant jumpa satu penemuan yang counter-intuitive: <strong>Givers menduduki dua hujung ekstrem prestasi.</strong> Hujung teratas: Givers yang berjaya. Hujung terbawah: Givers yang terbakar dan dimanipulasi.</p>
+
+    <p><strong>Kenapa ada Givers di bawah?</strong> Terlalu memberi sampai lupa diri, tak pandai kata "tidak", dimakan oleh Takers.</p>
+    <p><strong>Kenapa ada Givers di atas?</strong> Mereka give strategically, protect themselves, dan expand the pie.</p>
+
+    <hr>
+
+    <h3>The 5-Minute Favor</h3>
+
+    <p>Adam Grant ada satu konsep yang dipanggil <strong>The 5-Minute Favor</strong> &mdash; kau boleh buat perbezaan besar dalam hidup orang lain dengan meluangkan masa sesikit 5 minit.</p>
+
+    <p><strong>Bentuk 5-Minute Favor:</strong> Introductions, sharing resources, mentoring ringkas, recommendations, feedback.</p>
+
+    <hr>
+
+    <h3>Self-Protective Giving &mdash; Rahsia Givers Yang Berjaya</h3>
+
+    <p><strong>1. "Generous Triage"</strong> &mdash; Tak semua orang layak dapat bantuan kau. Triage macam doktor di emergency room.</p>
+
+    <table>
+      <tr><th>Kategori</th><th>Respons</th></tr>
+      <tr><td>High need + High potential</td><td>Bagi sepenuh hati</td></tr>
+      <tr><td>Low need + High potential</td><td>Bagi sikit &mdash; dorong dia buat sendiri</td></tr>
+      <tr><td>High need + Low potential</td><td>Bagi asas &mdash; jangan over-invest</td></tr>
+      <tr><td>Takers (confirmed)</td><td>Stop. Jangan bagi langsung</td></tr>
+    </table>
+
+    <p><strong>2. Boundary Giving</strong> &mdash; "Aku boleh bantu 15 minit. Lepas tu kena pergi."</p>
+    <p><strong>3. Giving in Your Strength Zone</strong> &mdash; Jangan bagi dari kelemahan kau. Bagi dari kekuatan kau.</p>
+    <p><strong>4. The "No, But..."</strong> &mdash; "No, I can't do that. But I can show you how."</p>
+    <p><strong>5. The "Giver's Network"</strong> &mdash; Bina komuniti Givers.</p>
+
+    <hr>
+
+    <h3>Membina Budaya Giving dalam Organisasi</h3>
+
+    <p><strong>Langkah 1:</strong> Model Giving Dari Atas &mdash; Bagi kredit untuk orang lain. Bagi masa untuk mentoring.</p>
+    <p><strong>Langkah 2:</strong> Ganjarkan Giving &mdash; Masukkan "collaboration" dalam KPI.</p>
+    <p><strong>Langkah 3:</strong> Buang Takers &mdash; Satu Taker dalam team boleh racun seluruh budaya.</p>
+    <p><strong>Langkah 4:</strong> Cipta Sistem &mdash; Skill-Sharing Friday, Help Wanted Channel, Gratitude Board.</p>
+    <p><strong>Langkah 5:</strong> Ukur dan Raikan Giving &mdash; Peer recognition system.</p>
+    <p><strong>Langkah 6:</strong> Cipta "Help-Seeking" Culture &mdash; Leader minta tolong secara terbuka.</p>
+
+    <hr>
+
+    <h3>Penutup Trilogi</h3>
+
+    <p>Kita dah sampai ke penghujung. Tiga buku. Beratus-ratus muka surat.</p>
+
+    <p>Dari V1 &mdash; di mana kau belajar tentang Keutamaan, tentang Empat Kuadran, tentang apa yang benar-benar penting dalam hidup. Ke V2 &mdash; di mana kau belajar tentang Delegasi, Crucial Conversations, dan cara jaga diri sendiri. Dan akhirnya V3 &mdash; di mana kau belajar tentang <strong>Memimpin dan Mempengaruhi</strong>.</p>
+
+    <p>Tapi sebenarnya, semua ilmu ni boleh diringkaskan dalam satu ayat:</p>
+
+    <p><strong>Keutamaan sebenar bukan pada apa yang kau capai. Tapi pada siapa kau jadi &mdash; dan siapa yang kau bantu untuk jadi lebih baik.</strong></p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Dalam skala 1-10, di mana kau berdiri sebagai Giver, Taker, atau Matcher?</li>
+        <li>Siapa dalam hidup kau yang pernah bagi dengan ikhlas tanpa harapkan balasan?</li>
+        <li>Pernah kau jadi Giver yang terbakar?</li>
+        <li>Siapa Taker dalam hidup kau yang kau biarkan terus ambil?</li>
+        <li>Kalau hari ni adalah hari terakhir kau dalam organisasi ni &mdash; apa yang orang akan ingat pasal kau?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"The best way to succeed is to help others succeed. Give without remembering, and receive without forgetting."<br>&mdash; Adam Grant, <em>Give and Take</em></p></blockquote>
+
+    <hr>
+
+    <h3>Ringkasan Bab 7</h3>
+    <ul>
+      <li><strong>Tiga jenis manusia:</strong> Givers, Takers, Matchers.</li>
+      <li><strong>Paradoks:</strong> Givers berada di hujung teratas &mdash; dan terbawah. Bezanya: Self-Protective Giving.</li>
+      <li><strong>The 5-Minute Favor:</strong> Bantu orang dalam 5 minit &mdash; kesannya berkali ganda.</li>
+      <li><strong>Self-Protective Giving:</strong> Generous triage, boundary giving, "No, but...", bina Giver's Network.</li>
+      <li><strong>Bina budaya giving:</strong> Model dari atas, ganjarkan giving, buang Takers.</li>
+      <li><strong>Mantra baru:</strong> Give without remembering. Receive without forgetting.</li>
+    </ul>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 8 &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- ACT 3 DIVIDER                                  -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="act-divider" id="act3">
+  <div class="act-divider-content">
+    <p class="act-label">ACT 3</p>
+    <h2>Lead Systems &mdash; Memimpin Sistem &amp; Legasi</h2>
+    <p class="act-subtitle">Dari Impak ke Legasi: Culture, Greatness, Infinite Game, Turning Pro</p>
+    <div class="act-line"></div>
+    <p>Bina sistem yang akan hidup lebih lama daripada kau.</p>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 8: THE CULTURE CODE                          -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab8">
+  <div class="chapter-hero">
+    <img src="images/bab08-culture-code.png" alt="The Culture Code &mdash; Bina Budaya Keutamaan" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 8</span>
+        <h2>The Culture Code &mdash; Bina Budaya Keutamaan</h2>
+        <p class="chapter-subtitle">Build Safety, Share Vulnerability, Establish Purpose</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <hr>
+
+    <h3>Cerita Pembuka: Office Yang Mati</h3>
+
+    <p>Aku takkan lupa pengalaman pertama bekerja di sebuah syarikat di pusat bandar Kuala Lumpur. Hari pertama, aku masuk dengan baju kemeja baru, semangat membara.</p>
+
+    <p>Realitinya? Pejabat itu senyap macam perpustakaan universiti waktu exam. Orang bercakap dalam bisikan. Budak senior yang tunjuk ajar aku pun buat dalam nada suara yang perlahan: "Ni macam ni. Hantar email. Jangan tanya soalan banyak-banyak. Nanti orang ingat kau tak pandai."</p>
+
+    <p>Tak ada yang ketawa. Tak ada yang borak pasal hujung minggu. Budaya macam zombie.</p>
+
+    <p>Aku bertahan setahun setengah. Lepas tu aku resign. Bila aku bagi surat berhenti, bos aku tanya, "Kenapa? Gaji kurang?" Aku cakap, "Bukan gaji, bos. Tapi tempat ni... takde jiwa."</p>
+
+    <hr>
+
+    <h3>Dari V1 &amp; V2...</h3>
+
+    <p>Dari V1, kau dah belajar tentang <em>Sharpen the Saw</em> &mdash; pentingnya jaga diri sebelum kau boleh jaga orang lain.</p>
+
+    <p>Dari V2, kau dah selami konsep <em>Legacy Thinking</em> &mdash; apa yang kau nak tinggalkan bila kau dah tiada nanti.</p>
+
+    <p>Sekarang, di V3, kita tanya soalan yang lebih besar lagi. Bukan pasal kau sorang. Tapi pasal <strong>pasukan kau. Budaya kau. Sistem yang kau bina.</strong></p>
+
+    <hr>
+
+    <h3>Apakah Budaya Sebenarnya? (Menurut Coyle)</h3>
+
+    <p>Daniel Coyle, dalam bukunya <em>The Culture Code</em>, habiskan bertahun-tahun mengkaji pasukan paling hebat di dunia. Apa yang dia jumpa? Bukan strategi hebat. Bukan gaji besar. Bukan bos genius. Tapi <strong>budaya</strong>.</p>
+
+    <p>Coyle definisikan budaya sebagai satu set isyarat &mdash; signals &mdash; yang memberitahu anggota pasukan: "Kau selamat di sini" atau "Kau kena berhati-hati."</p>
+
+    <h3>Tiga Kemahiran Budaya</h3>
+
+    <p><strong>1. Build Safety &mdash; Bina Rasa Selamat</strong></p>
+    <p>Amy Edmondson definisikan psychological safety sebagai: "Keyakinan bahawa kau tak akan dihina, dikritik, atau dihukum kerana bersuara."</p>
+
+    <p><strong>2. Share Vulnerability &mdash; Kongsi Kelemahan</strong></p>
+    <p>Pasukan paling hebat diketuai oleh orang yang <strong>berani menunjukkan kelemahan</strong>. "Aku tak tau jawapan dia. Jom kita fikir sama-sama."</p>
+
+    <p><strong>3. Establish Purpose &mdash; Tetapkan Tujuan</strong></p>
+    <p>Purpose adalah <strong>kompas kolektif</strong> yang jawab soalan: "Kenapa kita wujud sebagai satu pasukan?"</p>
+
+    <hr>
+
+    <h3>Contoh Malaysia</h3>
+
+    <p><strong>JCorp:</strong> Perkenalkan konsep "Rumah Terbuka" &mdash; sesi mingguan di mana mana-mana pekerja boleh masuk jumpa CEO tanpa janji temu. Isyarat: <strong>Kau penting. Suara kau didengari.</strong></p>
+
+    <p><strong>AirAsia:</strong> Semua orang &mdash; dari CEO sampai pramugara &mdash; panggil satu sama lain dengan nama. Tiada "Datuk" atau "Tan Sri" dalam pejabat. Isyarat: <strong>Kita sama.</strong></p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Dalam organisasi kau, isyarat apa yang dihantar setiap hari? "Kau selamat" atau "Kau kena berhati-hati"?</li>
+        <li>Bila kali terakhir kau dengar orang dalam pasukan kau cakap "Saya tak tau" atau "Saya silap"?</li>
+        <li>Apakah purpose sebenar pasukan kau &mdash; bukan yang tertulis di dinding, tapi yang dirasai?</li>
+        <li>Dalam skala 1-10, sejauh mana kau rasa selamat untuk bersuara?</li>
+        <li>Siapa dalam organisasi kau yang paling hebat bina budaya? Apa yang dia buat?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"A great culture is not about perks. It's about a place where people feel safe, connected, and part of something bigger than themselves."<br>&mdash; Daniel Coyle, <em>The Culture Code</em></p></blockquote>
+
+    <hr>
+
+    <h3>Ringkasan Bab</h3>
+    <p>Tiga kemahiran budaya dari Daniel Coyle &mdash; Build Safety, Share Vulnerability, Establish Purpose &mdash; adalah asas kepada mana-mana pasukan yang hebat. Budaya bukan soft stuff &mdash; ia hard stuff yang menentukan segalanya.</p>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 9 &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 9: GOOD TO GREAT                             -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab9">
+  <div class="chapter-hero">
+    <img src="images/bab09-good-to-great.png" alt="Good to Great &mdash; Kenapa Cukup Baik Musuh Paling Bahaya" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 9</span>
+        <h2>Good to Great &mdash; Kenapa "Cukup Baik" Musuh Paling Bahaya</h2>
+        <p class="chapter-subtitle">Level 5 Leadership, Hedgehog Concept, Flywheel Effect</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <hr>
+
+    <h3>Cerita Pembuka: Nasi Lemak Biasa vs Nasi Lemak Hebat</h3>
+
+    <p>Tahun 2019, lepas Asar, aku singgah di gerai tepi jalan dekat Bangi. Aku order nasi lemak dengan ayam goreng. Dalam 5 minit sampai. Nasi lemak biasa. Sambal manis biasa. Ayam goreng keras macam batu. Habis bayar RM5. Tak ada yang tinggal dalam ingatan.</p>
+
+    <p>Seminggu kemudian, seorang kawan ajak aku singgah di satu gerai di Kajang. Queue panjang. Aku tunggu 25 minit untuk nasi lemak. Bila sampai, nasi berlauk wangi, sambal tumis segar, ayam berempah rangup di luar lembut di dalam. Setiap suapan, aku rasa.</p>
+
+    <p>Habis makan, aku cakap: "Inilah nasi lemak terbaik yang pernah aku makan." Kawan aku senyum: "Itu la yang orang panggil <em>great</em>. Bukan setakat <em>good</em>."</p>
+
+    <hr>
+
+    <h3>Level 5 Leadership &mdash; Bos Yang Paling Bahaya Adalah Bos Yang Paling Rendah Hati</h3>
+
+    <p>Jim Collins dan pasukan penyelidiknya menghabiskan 5 tahun mengkaji 1,435 syarikat. Hanya 11 yang berjaya beralih dari <em>good</em> ke <em>great</em>. Apa yang membezakan? Bukan strategi. Tapi <strong>kepimpinan</strong>.</p>
+
+    <p><strong>Level 5 Leaders</strong> adalah gabungan <em>personal humility</em> (rendah hati) dan <em>professional will</em> (semangat kental).</p>
+
+    <p><strong>Sisi 1: Rendah Hati (Humility)</strong> &mdash; Bila syarikat berjaya, mereka tunjuk ke luar: "Pasukan saya." Bila gagal, cermin ke dalam: "Saya yang bertanggungjawab."</p>
+
+    <p><strong>Sisi 2: Keazaman Kental (Fierce Resolve)</strong> &mdash; Bila perlu, mereka boleh buat keputusan telanjang. <em>Lembut sebagai manusia, keras sebagai pemimpin.</em></p>
+
+    <hr>
+
+    <h3>First Who, Then What &mdash; Orang Yang Tepat Dulu</h3>
+
+    <p>Collins guna metafora bas. Pemimpin <em>great</em>: 1. First Who &mdash; Naikkan orang yang tepat. 2. Then What &mdash; Baru tentukan destinasi.</p>
+
+    <p>Prinsip yang sama untuk hidup: <strong>Kau adalah purata 5 orang yang paling kerap kau luangkan masa dengan.</strong> Pilih circle kau dengan bijak.</p>
+
+    <hr>
+
+    <h3>The Hedgehog Concept</h3>
+
+    <p>Persimpangan tiga soalan:</p>
+
+    <ol>
+      <li><strong>Apa yang kau boleh jadi TERBAIK di dunia?</strong></li>
+      <li><strong>Apa yang buat kau BERSEMANGAT?</strong></li>
+      <li><strong>Apa yang buat kau DAPAT DUIT?</strong></li>
+    </ol>
+
+    <p>Di persimpangan ketiga-tiga bulatan ni &mdash; di situlah <em>greatness</em> berada.</p>
+
+    <hr>
+
+    <h3>The Flywheel Effect</h3>
+
+    <p>Syarikat <em>great</em> tak pernah buat transformasi secara dramatik. Perubahan berlaku perlahan-lahan &mdash; macam roda tenaga (flywheel). Setiap tolakan kecil menambah momentum. Tiba-tiba, pada satu titik &mdash; <em>breakthrough</em>.</p>
+
+    <p>Greatness tak datang dari revolusi. Ia datang dari <strong>konsistensi yang berterusan</strong>.</p>
+
+    <hr>
+
+    <h3>Stockdale Paradox</h3>
+
+    <p>Laksamana James Stockdale, tawanan perang Vietnam selama 8 tahun, bertahan dengan satu prinsip:</p>
+
+    <blockquote><p>"Kau tak boleh campur adukkan kepercayaan yang kau akan menang pada akhirnya &mdash; dengan disiplin untuk hadapi realiti paling brutal."</p></blockquote>
+
+    <p><strong>Paradoks:</strong> Kepercayaan tak tergoyah + Kesediaan hadapi realiti paling pahit.</p>
+
+    <hr>
+
+    <h3>5 Langkah Peribadi: Dari Good ke Great</h3>
+    <p><strong>Langkah 1:</strong> Jujur dengan Realiti &mdash; Tulis jawapan jujur tentang area mana kau "cukup baik."<br>
+    <strong>Langkah 2:</strong> Tanya Soalan Hedgehog &mdash; Cari persimpangan tiga bulatan kau.<br>
+    <strong>Langkah 3:</strong> Dapatkan Orang Yang Tepat &mdash; Kenal pasti siapa yang add value dan drain energy.<br>
+    <strong>Langkah 4:</strong> Mula Tolak Flywheel &mdash; Satu tolakan kecil hari ni.<br>
+    <strong>Langkah 5:</strong> Praktis Stockdale Paradox &mdash; Realiti pahit + Harapan teguh.</p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Dalam area mana hidup kau sekarang "cukup baik tapi tak hebat"?</li>
+        <li>Siapa 5 orang paling rapat dengan kau &mdash; adakah diorang tolak kau ke arah greatness?</li>
+        <li>Apa satu perkara yang kau rasa kau boleh jadi terbaik di dunia dalam 5 tahun?</li>
+        <li>Flywheel kau apa sekarang? Satu tolakan kecil apa yang kau boleh buat <em>hari ni</em>?</li>
+        <li>Adakah kau praktis Stockdale Paradox &mdash; atau cenderung pada satu sahaja?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"Good is the enemy of great. And that is one of the key reasons why we have so little that becomes great."<br>&mdash; Jim Collins, <em>Good to Great</em></p></blockquote>
+
+    <hr>
+
+    <h3>Ringkasan Bab</h3>
+    <ul>
+      <li><strong>Level 5 Leadership:</strong> Rendah hati + azam kental.</li>
+      <li><strong>First Who, Then What:</strong> Orang yang tepat adalah pelaburan terbaik.</li>
+      <li><strong>Hedgehog Concept:</strong> Greatness ada di persimpangan bakat, semangat, dan ekonomi.</li>
+      <li><strong>Flywheel Effect:</strong> Konsistensi lebih berkuasa dari intensiti.</li>
+      <li><strong>Stockdale Paradox:</strong> Hadapi realiti tanpa putus harapan.</li>
+    </ul>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 10 &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 10: THE INFINITE GAME                        -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab10">
+  <div class="chapter-hero">
+    <img src="images/bab10-infinite-game.png" alt="The Infinite Game &mdash; Main Permainan Tanpa Akhir" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 10</span>
+        <h2>The Infinite Game &mdash; Main Permainan Tanpa Akhir</h2>
+        <p class="chapter-subtitle">Just Cause, Worthy Rival, Existential Flexibility</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <hr>
+
+    <h3>Cerita Pembuka: Perlawanan Badminton yang Tak Pernah Habis</h3>
+
+    <p>Tahun 2006. Aku tengok perlawanan badminton antara Lee Chong Wei dan Lin Dan di TV. Perlawanan itu sengit. Akhirnya, Lin Dan menang.</p>
+
+    <p>Esoknya, Chong Wei bagi kenyataan: "Saya akan cuba lagi. Saya akan datang lebih kuat." Dan Lin Dan pun: "Chong Wei adalah lawan yang hebat. Saya kena berlatih lebih keras."</p>
+
+    <p>Ini berlangsung selama <strong>15 tahun</strong>. Pada 2019, kedua-duanya bersara. Dan apa yang tinggal? Bukan pingat. Tapi <strong>hormat</strong>. Legasi. Dan satu standar baru.</p>
+
+    <p>Apa yang buat mereka terus berjuang selama 15 tahun? Mereka faham satu perkara: <strong>Mereka sedang main <em>infinite game</em>.</strong></p>
+
+    <hr>
+
+    <h3>Finite vs Infinite Game</h3>
+
+    <table>
+      <tr><th>Aspek</th><th>Finite Game</th><th>Infinite Game</th></tr>
+      <tr><td>Matlamat</td><td>Menang</td><td>Terus main</td></tr>
+      <tr><td>Pemain</td><td>Tetap, dikenali</td><td>Berubah-ubah</td></tr>
+      <tr><td>Peraturan</td><td>Sama untuk semua</td><td>Boleh berubah</td></tr>
+      <tr><td>Penamat</td><td>Ada</td><td>Tiada</td></tr>
+      <tr><td>Pemenang</td><td>Ditentukan markah</td><td>Tiada pemenang mutlak</td></tr>
+      <tr><td>Mindset</td><td>Lawan, kalahkan</td><td>Maju, kekal relevan</td></tr>
+    </table>
+
+    <p>Masalahnya: <strong>Kebanyakan pemimpin gagal sebab mereka treat infinite game macam finite game.</strong></p>
+
+    <hr>
+
+    <h3>Just Cause &mdash; Kenapa Kau Wujud?</h3>
+
+    <p>Sinek kata Just Cause mesti ada 5 ciri: Affirmative, Inclusive, Service-oriented, Resilient, Idealistic.</p>
+
+    <p><strong>Contoh Just Cause:</strong></p>
+    <ul>
+      <li>Tesla: "Mempercepatkan transisi dunia kepada tenaga mampan."</li>
+      <li>SpaceX: "Menjadikan manusia spesis multiplanet."</li>
+      <li>Seorang guru di Felda: "Setiap anak Felda berpeluang ke universiti."</li>
+    </ul>
+
+    <hr>
+
+    <h3>Worthy Rival &mdash; Bukan Musuh, Tapi Pendorong</h3>
+
+    <p>Dalam infinite game, pesaing bukan musuh. Tapi <strong>Worthy Rival</strong> &mdash; pasangan sparring yang bantu kau naik level.</p>
+
+    <p>Chong Wei pernah kata: "Tanpa Lin Dan, aku mungkin dah bersara awal. Dia buat aku sedar yang aku kena berlatih lebih keras."</p>
+
+    <hr>
+
+    <h3>Existential Flexibility &mdash; Berani Ubah Haluan</h3>
+
+    <p>Keupayaan untuk mengubah strategi, struktur, atau pendekatan &mdash; tanpa mengorbankan Just Cause.</p>
+
+    <p><strong>Contoh Netflix:</strong> Dari DVD-by-mail ke streaming ke produksi kandungan asli. Just Cause kekal: "Memberi hiburan kepada dunia."</p>
+
+    <hr>
+
+    <h3>5 Langkah ke Infinite Mindset</h3>
+    <p><strong>1.</strong> Kenal Pasti Just Cause<br>
+    <strong>2.</strong> Kenal Pasti Worthy Rival<br>
+    <strong>3.</strong> Tetapkan Existential Flexibility<br>
+    <strong>4.</strong> Main untuk Terus Main, Bukan untuk Menang<br>
+    <strong>5.</strong> Jaga Stamina &mdash; Ini Perlumbaan Jarak Jauh</p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Permainan apa yang kau main sekarang? Adakah kau treat infinite game sebagai finite?</li>
+        <li>Apa Just Cause kau? Cuba tulis dalam satu ayat.</li>
+        <li>Siapa Worthy Rival kau sekarang?</li>
+        <li>Dalam 5 tahun, kalau dunia berubah 180 darjah &mdash; apa yang kau akan ubah? Apa yang takkan kau ubah?</li>
+        <li>Adakah kau ukur kejayaan dengan pencapaian finite atau kemajuan infinite?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"In an infinite game, the primary objective is not to win &mdash; it is to keep playing."<br>&mdash; Simon Sinek, <em>The Infinite Game</em></p></blockquote>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 11 &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 11: TURNING PRO                              -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab11">
+  <div class="chapter-hero">
+    <img src="images/bab11-turning-pro.png" alt="Turning Pro &mdash; Dari Amatur ke Profesional" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 11</span>
+        <h2>Turning Pro &mdash; Dari Amatur ke Profesional</h2>
+        <p class="chapter-subtitle">Lawannya Resistance, Bina Ritual, Jawab Panggilan</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <hr>
+
+    <h3>Cerita Pembuka: Malam Itu di Dapur Kecil</h3>
+
+    <p>Aku kenal seorang &mdash; panggil je nama dia Mat. Mat kerja sebagai kerani di sebuah pejabat kerajaan di Putrajaya. Tapi setiap malam, lepas Isyak, Mat duduk di depan komputer lama dan dia menulis cerita. Dia menulis dengan penuh semangat, kadang-kadang sampai pukul 3 pagi.</p>
+
+    <p>Mat ada impian: nak jadi penulis. Tapi Mat tak pernah hantar mana-mana cerita dia ke penerbit. "Sekadar hobi." "Lepas ni." "Kalau tak laku, malu."</p>
+
+    <p>Tahun demi tahun. Mat terus menulis. Tapi Mat tak pernah <em>menjadi</em> penulis. Hard disk itu satu hari nanti rosak. Dan dengan itu, lenyaplah beribu-ribu jam kerja.</p>
+
+    <p>Mat bukan sorang. Kita semua ada Mat dalam diri kita. Suara yang kata: "Belum ready lagi." "Nanti dulu."</p>
+
+    <p>Inilah yang Steven Pressfield panggil <strong>Resistance</strong>. Dan satu-satunya cara untuk mengalahkan Resistance? <strong>Turn Pro.</strong></p>
+
+    <hr>
+
+    <h3>Resistance &mdash; Musuh Paling Senyap</h3>
+
+    <p>Steven Pressfield, dalam bukunya <em>The War of Art</em>, memperkenalkan satu konsep yang paling penting: <strong>Resistance</strong>. Bukan musuh luar. Tapi musuh <strong>dalam</strong>.</p>
+
+    <p><strong>Macam mana Resistance bunyi?</strong></p>
+    <ul>
+      <li>Bila kau nak mula menulis: "Buka Facebook kejap."</li>
+      <li>Bila kau nak bersenam: "Hari ni hujan. Esok je lah."</li>
+      <li>Bila kau nak apply kerja idaman: "Kau qualified ke?"</li>
+    </ul>
+
+    <p><strong>Bentuk-bentuk Resistance:</strong> Prokrastinasi, Perfectionism, Self-Doubt, Distraction, Busy-ness, Comparison.</p>
+
+    <p>Pressfield kata: <strong>"The more important a call or action is to our soul's evolution, the more Resistance we will feel."</strong> Makin besar potensi kau, makin kuat Resistance.</p>
+
+    <hr>
+
+    <h3>Amatur vs Professional</h3>
+
+    <table>
+      <tr><th>Amatur</th><th>Profesional</th></tr>
+      <tr><td>Main-main</td><td>Serious</td></tr>
+      <tr><td>Bila ada mood</td><td>Setiap hari</td></tr>
+      <tr><td>Tunggu inspirasi</td><td>Buat kerja walau takde mood</td></tr>
+      <tr><td>Takut kritik</td><td>Guna kritik untuk maju</td></tr>
+      <tr><td>Berhenti bila susah</td><td>Teruskan walau apa pun</td></tr>
+      <tr><td>Nak pengiktirafan</td><td>Nak hasil yang bermakna</td></tr>
+    </table>
+
+    <hr>
+
+    <h3>Turning Pro: Satu Keputusan, Bukan Proses</h3>
+
+    <p>Pressfield tekankan: <strong>Turning pro bukan proses. Ia keputusan.</strong> Satu detik. Bukan "saya akan jadi pro dalam 6 bulan." Tapi "Mulai saat ini, saya adalah pro."</p>
+
+    <p><strong>Tanda kau dah turn pro:</strong></p>
+    <ul>
+      <li>Kau berhenti cakap "saya try" dan mula cakap "saya buat"</li>
+      <li>Kau berhenti bagi alasan</li>
+      <li>Kau terima bahawa 90% adalah tentang persembahan &mdash; bukan perasaan</li>
+      <li>Kau fokus pada proses, bukan hasil</li>
+      <li>Kau tak tunggu pengiktirafan</li>
+    </ul>
+
+    <hr>
+
+    <h3>Professional Habits &mdash; Ritual Harian</h3>
+
+    <p>Pro tak tunggu motivasi. Pro ada <strong>ritual</strong>.</p>
+
+    <p><strong>Ritual Seorang Penulis:</strong> 5:00 pagi bangun, kopi, mula menulis 5:30, selesai 7:30. Setiap hari.</p>
+    <p><strong>Ritual Seorang Usahawan:</strong> Senaman 6 pagi, review sasaran 7 pagi, buat kerja paling penting dulu sebelum buka email.</p>
+
+    <p><strong>Prinsip Ritual Pro:</strong> Konsisten bukan intensiti. Mula dengan kemenangan kecil. Hilangkan friction. Lindungi ritual dengan garisan tegas.</p>
+
+    <hr>
+
+    <h3>7 Langkah Turning Pro</h3>
+    <p><strong>Langkah 1:</strong> Kenali Resistance &mdash; Apa yang kau paling takut nak buat? Itulah petunjuk panggilan kau.<br>
+    <strong>Langkah 2:</strong> Buat Keputusan &mdash; Tulis: "Mulai hari ini, aku adalah seorang [pro dalam bidang apa]."<br>
+    <strong>Langkah 3:</strong> Bina Ritual Harian &mdash; Pilih satu ritual, konsisten lebih penting dari tempoh.<br>
+    <strong>Langkah 4:</strong> Sediakan Ruang Kerja &mdash; Tempat khusus untuk kerja pro kau.<br>
+    <strong>Langkah 5:</strong> Hapuskan Gangguan &mdash; Telefon silent, social media block.<br>
+    <strong>Langkah 6:</strong> Accept It's a Long Game &mdash; Pro tak jadi pro dalam seminggu.<br>
+    <strong>Langkah 7:</strong> Cari Komuniti Pro &mdash; Mereka faham perjuangan kau.</p>
+
+    <hr>
+
+    <h3>Epilog: Trilogi Selesai, Tapi Permainan Masih Berjalan</h3>
+
+    <p>Dan sampailah kita ke penghujung.</p>
+
+    <p><strong>V1:</strong> Yang Mana Keutamaan &mdash; pasal <em>apa yang paling penting</em>. Kau belajar seni berkata tidak, mental models, 7 habits, energy management.</p>
+
+    <p><strong>V2:</strong> Yang Mana Keutamaan &mdash; Memimpin Diri &mdash; pasal <em>penguasaan diri</em>. Kau belajar flow state, digital minimalism, antifragile, legacy thinking.</p>
+
+    <p><strong>V3:</strong> Yang Mana Keutamaan &mdash; Memimpin &amp; Mempengaruhi &mdash; pasal <em>kesan kau pada dunia</em>. Kau belajar budaya pasukan, good vs great, infinite game, dan akhirnya &mdash; turning pro.</p>
+
+    <p>Tiga buku. Bertahun penulisan. Tapi pada akhirnya, semuanya bermuara pada satu soalan: <strong>Apa yang kau nak buat dengan ilmu ini?</strong></p>
+
+    <p>Kau boleh simpan dalam kepala. Atau kau boleh <strong>turn pro</strong>.</p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Apakah satu perkara yang paling kau takut nak buat? (Itulah panggilan kau.)</li>
+        <li>Adakah kau jenis yang "main-main" atau "serius" dalam bidang paling penting dalam hidup kau?</li>
+        <li>Apa satu ritual yang kau boleh mulakan <em>esok pagi</em> tanpa alasan?</li>
+        <li>Siapa dalam hidup kau yang dah <em>turn pro</em>?</li>
+        <li>Jika kau mati esok &mdash; adakah kau sudah menjawab panggilan kau?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote><p>"The amateur believes he must first overcome his fears; then he can do his work. The professional knows that fear can never be overcome. He learns to live with it."<br>&mdash; Steven Pressfield, <em>The War of Art</em></p></blockquote>
+
+    <hr>
+
+    <h3>Penutup &mdash; Dari Penulis</h3>
+
+    <p>Terima kasih kerana membaca trilogi ini hingga ke penghujung. Perjalanan ini &mdash; dari V1, V2, ke V3 &mdash; adalah perjalanan yang sama yang aku lalui sendiri.</p>
+
+    <p>Sekarang giliran kau. Tak ada yang boleh buat kerja kau &mdash; kecuali kau. Tak ada yang boleh jawab panggilan kau &mdash; kecuali kau.</p>
+
+    <p><strong>TAMAT &mdash; Trilogi "Yang Mana Keutamaan?"</strong></p>
+    <p><em>"Hidup bukan tentang berapa banyak yang kau capai. Tapi tentang siapa kau jadi dalam proses."</em><br>&mdash; WMB DIGITAL</p>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 12 &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- BAB 12: TRILOGI PENUTUP                          -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="bab12">
+  <div class="chapter-hero">
+    <img src="images/bab12-trilogi-closing.png" alt="Trilogi &mdash; Penutup Perjalanan 36 Bab" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Bab 12</span>
+        <h2>Trilogi &mdash; Apa Yang Kita Dah Pelajari &amp; Ke Mana Seterusnya</h2>
+        <p class="chapter-subtitle">36 Bab, Tiga Buku, Satu Perjalanan</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <blockquote><p>"The way to get started is to quit talking and begin doing."<br>&mdash; Walt Disney</p></blockquote>
+
+    <hr>
+
+    <h3>Dari V1 &amp; V2 ke V3: Satu Perjalanan, Tiga Langkah</h3>
+
+    <p>Tiga buku. Tiga puluh enam bab. Lebih setahun penulisan, penelitian, dan renungan.</p>
+
+    <p>Kalau kau baca buku ini tanpa tahu V1 dan V2, jangan risau &mdash; kau tak ketinggalan. Buku ketiga ini memang direka untuk berdiri sendiri. Tapi untuk betul-betul faham kenapa trilogi ini wujud, dan untuk kau dapat memanfaatkan bab akhir ini sepenuhnya, izinkan saya bawa kau melihat semula perjalanan penuh.</p>
+
+    <h4>V1: "Yang Mana Keutamaan?" &mdash; Mengenali (Act 1-3)</h4>
+
+    <p>Buku pertama lahir daripada satu pertanyaan mudah yang kita semua pernah hadapi: <em>"Kenapa aku sibuk sangat tapi tak ada apa-apa yang selesai?"</em></p>
+
+    <p>Kita hidup dalam dunia yang menjerit pada kita setiap saat. Notifikasi. Emel. Group chat pejabat yang berbunyi pukul 11 malam. Tuntutan dari bos, dari keluarga, dari kawan, dari diri sendiri. Semua nak perhatian kita. Semua rasa penting.</p>
+
+    <p>V1 adalah buku tentang <strong>memilih</strong>. Bukan tentang buat lebih, tapi tentang buat lebih sedikit &mdash; dengan lebih fokus.</p>
+
+    <p><strong>Act 1: Mengenali Masalah</strong> &mdash; Kita mulakan dengan faham kenapa kita rasa tertekan. Clock vs Compass: kau sibuk tapi entah ke mana. Balang Kehidupan: batu besar vs pasir. Empat Kuadran: urgen vs penting. Sebelum kau boleh ubah apa-apa, kau kena faham apa yang tak kena.</p>
+
+    <p><strong>Act 2: Memahami Keutamaan</strong> &mdash; Lepas faham masalah, kau kena ada alat untuk bezakan yang penting dari yang tak penting. Essentialism: buat lebih sedikit tapi lebih baik. The One Thing: apa satu benda yang buat segala-galanya lebih mudah atau tak perlu? Circle of Influence: jangan bazir tenaga pada apa yang kau tak kuasai.</p>
+
+    <p><strong>Act 3: Melaksanakan</strong> &mdash; Tahu mana keutamaan tak guna kalau kau tak buat. Deep Work: fokus dalam dunia yang penuh gangguan. Atomic Habits: perubahan kecil, hasil besar. Habit Loop: faham psikologi sebalik tabiat. Sharpen the Saw: jaga diri sendiri. Prinsip &amp; Purpose: hidup berlandaskan sesuatu yang lebih besar.</p>
+
+    <p>V1 berakhir dengan satu pelan 30 hari. Tiga puluh hari untuk mula berubah. Untuk mula hidup dengan keutamaan, bukan dengan reaksi.</p>
+
+    <h4>V2: "Yang Mana Keutamaan? &mdash; Melangkah Lebih Jauh" (Act 1-3)</h4>
+
+    <p>Tapi 30 hari tak cukup. Kau boleh mula dalam 30 hari, tapi transformasi sebenar memerlukan lebih masa, lebih kedalaman, lebih banyak kemahiran.</p>
+
+    <p>V2 adalah buku tentang <strong>memperdalam</strong>. Bila kau dah boleh pilih keutamaan, sekarang kau kena belajar untuk melindungi dan mengembangkan keupayaan kau.</p>
+
+    <p><strong>Act 1: Melindungi Masa &amp; Tenaga</strong> &mdash; Seni Berkata Tidak: sempadan yang melindungi keutamaan kau. Decision Fatigue: kenapa terlalu banyak pilihan melemahkan kau. Mental Models: cara berfikir yang lebih tajam.</p>
+
+    <p><strong>Act 2: Mengoptimumkan Prestasi</strong> &mdash; Flow State: prestasi puncak tanpa usaha. Energy Management: masa tak penting kalau kau tak ada tenaga. Digital Minimalism: teknologi sebagai alat, bukan tuan.</p>
+
+    <p><strong>Act 3: Meluaskan Impak</strong> &mdash; Seni Delegasi: kau tak boleh buat semuanya sendiri. Start With Why: tujuan sebagai bahan api. Crucial Conversations: bercakap pasal benda sukar. Antifragile: jadi lebih kuat dari setiap cabaran. Legacy Thinking: apa yang kau nak tinggalkan?</p>
+
+    <p>V2 berakhir dengan Pelan 100 Hari. Satu rangka masa yang lebih panjang untuk benar-benar membina kehidupan yang selaras dengan keutamaan kau.</p>
+
+    <h4>V3: "Yang Mana Keutamaan? &mdash; Memimpin &amp; Mempengaruhi" (Buku Ini)</h4>
+
+    <p>Dan sekarang, V3.</p>
+
+    <p>Buku ketiga ini adalah tentang <strong>memimpin</strong>. Bila kau dah boleh pilih keutamaan sendiri, dah boleh lindungi dan kembangkannya &mdash; sekarang apa? Sekarang kau bawa orang lain bersama kau.</p>
+
+    <p>V3 adalah buku tentang peralihan paling penting dalam mana-mana perjalanan kepimpinan: dari <strong>diri ke orang lain</strong>, dari <strong>impak peribadi ke impak sistemik</strong>.</p>
+
+    <p><strong>Act 1: Lead Self &mdash; Memimpin Diri Sendiri</strong> &mdash; Emotional Intelligence: asas semua kepimpinan. Grit: ketahanan jangka panjang. Drive: motivasi intrinsik yang tak pernah padam.</p>
+
+    <p><strong>Act 2: Lead Others &mdash; Memimpin Orang Lain</strong> &mdash; The Coaching Habit: tanya, jangan suruh. Radical Candor: feedback yang pedas tapi penyayang. Multipliers: gandakan kecerdasan team kau. Give and Take: givers akhirnya menang.</p>
+
+    <p><strong>Act 3: Lead Systems &mdash; Memimpin Sistem &amp; Legasi</strong> &mdash; The Culture Code: bina budaya yang hidup. Good to Great: dari cukup baik ke hebat. The Infinite Game: main permainan yang tak pernah tamat. Turning Pro: dari amatur ke profesional.</p>
+
+    <p>Dan di sinilah kau sekarang. Di bab terakhir. Di penutup tiga buku, 36 bab, satu perjalanan.</p>
+
+    <hr>
+
+    <h3>Peta Jalan Lengkap: 36 Bab, Tiga Buku, Satu Perjalanan</h3>
+
+    <p>Sebelum kita pergi lebih jauh, mari kita lihat semula semua 36 bab dalam bentuk jadual. Setiap bab adalah satu batu bata dalam bangunan yang sama: kehidupan yang dipimpin dengan keutamaan.</p>
+
+    <h4>V1: Yang Mana Keutamaan? &mdash; <em>"Kenali &amp; Pilih"</em></h4>
+
+    <table>
+      <tr><th>Bab</th><th>Tajuk</th><th>Pelajaran Utama</th></tr>
+      <tr><td>1</td><td>Clock vs Compass</td><td>Kesibukan bukan produktiviti. Pastikan arah kau betul sebelum kau bergerak laju.</td></tr>
+      <tr><td>2</td><td>Balang Kehidupan</td><td>Batu besar kau mesti masuk dulu. Yang lain akan menyesuaikan diri.</td></tr>
+      <tr><td>3</td><td>Empat Kuadran</td><td>Hidup dalam Kuadran II (penting tapi tak urgen) adalah rahsia pemimpin yang berkesan.</td></tr>
+      <tr><td>4</td><td>Essentialism</td><td>Kurang tapi lebih baik. Berani tinggalkan yang baik demi yang terbaik.</td></tr>
+      <tr><td>5</td><td>The One Thing</td><td>Satu fokus pada satu masa. Domino effect dalam produktiviti.</td></tr>
+      <tr><td>6</td><td>Circle of Influence</td><td>Tenaga kau paling mujarab bila kau fokus pada apa yang kau boleh kawal.</td></tr>
+      <tr><td>7</td><td>Deep Work</td><td>Fokus dalam adalah superpower zaman gangguan. Latih ia seperti otot.</td></tr>
+      <tr><td>8</td><td>Atomic Habits</td><td>Perubahan 1% setiap hari membawa hasil yang luar biasa dalam jangka panjang.</td></tr>
+      <tr><td>9</td><td>Habit Loop</td><td>Isyarat &rarr; Rutin &rarr; Ganjaran. Fahami gelung ini, dan kau boleh ubah apa sahaja.</td></tr>
+      <tr><td>10</td><td>Sharpen the Saw</td><td>Jaga empat dimensi diri: fizikal, mental, emosi, spiritual.</td></tr>
+      <tr><td>11</td><td>Prinsip &amp; Purpose</td><td>Prinsip adalah kompas yang tak pernah goyah. Purpose adalah bahan api yang tak pernah habis.</td></tr>
+      <tr><td>12</td><td>Pelan 30 Hari</td><td>Tiga puluh hari pertama perjalanan kau. Mula dengan satu keutamaan, satu tabiat.</td></tr>
+    </table>
+
+    <h4>V2: Yang Mana Keutamaan? &mdash; Melangkah Lebih Jauh &mdash; <em>"Lindungi &amp; Kembangkan"</em></h4>
+
+    <table>
+      <tr><th>Bab</th><th>Tajuk</th><th>Pelajaran Utama</th></tr>
+      <tr><td>1</td><td>Seni Berkata Tidak</td><td>Setiap ya pada sesuatu adalah tidak pada yang lain. Pilih dengan sedar.</td></tr>
+      <tr><td>2</td><td>Decision Fatigue</td><td>Kurangkan keputusan kecil untuk jimatkan tenaga untuk keputusan besar.</td></tr>
+      <tr><td>3</td><td>Mental Models</td><td>Cara kau melihat dunia menentukan cara kau bertindak. Luaskan perspektif kau.</td></tr>
+      <tr><td>4</td><td>Flow State</td><td>Prestasi puncak datang bila cabaran sepadan dengan kemahiran. Cari zon itu.</td></tr>
+      <tr><td>5</td><td>Energy Management</td><td>Bukan berapa jam kau ada, tapi berapa banyak tenaga kau ada dalam setiap jam.</td></tr>
+      <tr><td>6</td><td>Digital Minimalism</td><td>Teknologi adalah alat. Jangan biarkan ia menjadi tuan kau.</td></tr>
+      <tr><td>7</td><td>Seni Delegasi</td><td>Lepaskan untuk berkembang. Pemimpin besar bukan buat segalanya.</td></tr>
+      <tr><td>8</td><td>Start With Why</td><td>Orang tak beli APA kau buat, mereka beli KENAPA kau buat.</td></tr>
+      <tr><td>9</td><td>Crucial Conversations</td><td>Dialog yang paling sukar adalah yang paling penting. Jangan elak.</td></tr>
+      <tr><td>10</td><td>Antifragile</td><td>Sesetengah benda jadi lebih kuat bila diuji. Jadi seperti itu.</td></tr>
+      <tr><td>11</td><td>Legacy Thinking</td><td>Apa yang kau nak tinggalkan? Hidup bukan tentang apa kau dapat, tapi apa kau beri.</td></tr>
+      <tr><td>12</td><td>Pelan 100 Hari</td><td>Seratus hari untuk membina momentum. Dari percubaan ke tabiat, dari tabiat ke gaya hidup.</td></tr>
+    </table>
+
+    <h4>V3: Yang Mana Keutamaan? &mdash; Memimpin &amp; Mempengaruhi &mdash; <em>"Pimpin &amp; Ganda"</em></h4>
+
+    <table>
+      <tr><th>Bab</th><th>Tajuk</th><th>Pelajaran Utama</th></tr>
+      <tr><td>1</td><td>Emotional Intelligence</td><td>IQ dapat kerja. EQ naikkan pangkat. Asas semua kepimpinan adalah kenali diri.</td></tr>
+      <tr><td>2</td><td>Grit</td><td>Bakat tak cukup. Passion + perseverance adalah ramuan kejayaan jangka panjang.</td></tr>
+      <tr><td>3</td><td>Drive</td><td>Autonomi, penguasaan, tujuan &mdash; tiga unsur motivasi intrinsik yang sebenar.</td></tr>
+      <tr><td>4</td><td>The Coaching Habit</td><td>Pemimpin terbaik bukan ada semua jawapan. Mereka tahu soalan apa yang nak ditanya.</td></tr>
+      <tr><td>5</td><td>Radical Candor</td><td>Pedas secara peribadi, ambil peduli secara langsung. Itu resipi feedback berkesan.</td></tr>
+      <tr><td>6</td><td>Multipliers</td><td>Pemimpin yang bijak menggandakan kecerdasan orang sekeliling. Diminisher kurangkannya.</td></tr>
+      <tr><td>7</td><td>Give and Take</td><td>Pemberi akhirnya paling berjaya, selagi mereka pandai melindungi diri.</td></tr>
+      <tr><td>8</td><td>The Culture Code</td><td>Budaya hebat dibina atas keselamatan, kerentanan, dan tujuan bersama.</td></tr>
+      <tr><td>9</td><td>Good to Great</td><td>Level 5 Leadership: rendah diri + kemahuan kuat. Itu rahsia kehebatan.</td></tr>
+      <tr><td>10</td><td>The Infinite Game</td><td>Jangan main untuk menang. Main untuk terus bermain. Fokus pada Just Cause.</td></tr>
+      <tr><td>11</td><td>Turning Pro</td><td>Setiap hari kau pilih untuk jadi profesional. Bukan sebab mood, tapi sebab komitmen.</td></tr>
+      <tr><td>12</td><td>Trilogi &mdash; Penutup</td><td>Semua 36 bab adalah satu perjalanan. Sekarang giliran kau untuk teruskan.</td></tr>
+    </table>
+
+    <hr>
+
+    <h3>Tema Besar Trilogi: Kenal Pasti &rarr; Hidup &rarr; Memimpin</h3>
+
+    <p>Tiga buku. Tiga tema. Satu garis masa.</p>
+
+    <p>Kalau kau lihat semula perjalanan ini, ada satu pola yang jelas. Setiap buku menjawab satu soalan asas:</p>
+
+    <p><strong>V1: "Apa yang penting?"</strong> &mdash; <em>Kenal Pasti</em></p>
+
+    <p>Buku pertama adalah tentang <strong>kesedaran</strong>. Kau belajar untuk membezakan antara yang urgen dan yang penting, antara yang mendesak dan yang bermakna. Kau belajar bahawa kebanyakan perkara yang kau risaukan sebenarnya tak penting. Kau belajar tentang kuasa fokus, tentang kesan kumulatif tabiat kecil, tentang kepentingan prinsip yang kukuh.</p>
+
+    <p>Ini adalah fasa <strong>mengenal pasti</strong>. Macam kau berdiri di tengah hutan dan akhirnya tahu arah mana nak tuju.</p>
+
+    <p><strong>V2: "Macam mana nak lindungi apa yang penting?"</strong> &mdash; <em>Hidup</em></p>
+
+    <p>Buku kedua adalah tentang <strong>pelaksanaan dan perlindungan</strong>. Bila kau dah tahu apa yang penting, sekarang kau kena belajar untuk melindunginya. Kau belajar untuk berkata tidak tanpa rasa bersalah. Kau belajar untuk urus tenaga, bukan sekadar masa. Kau belajar untuk bercakap tentang perkara sukar, untuk mewakilkan, untuk membina legasi.</p>
+
+    <p>Ini adalah fasa <strong>hidup dengan keutamaan</strong>. Kau dah mula berjalan ke arah yang kau pilih.</p>
+
+    <p><strong>V3: "Macam mana nak bawa orang lain bersama?"</strong> &mdash; <em>Memimpin</em></p>
+
+    <p>Buku ketiga ini adalah tentang <strong>impak dan penggandaan</strong>. Bila kau dah boleh pimpin diri sendiri, sekarang kau pimpin orang lain. Kau belajar tentang kecerdasan emosi, tentang menjadi pemimpin yang melipatgandakan kecerdasan team, tentang memberi dan mempengaruhi, tentang membina sistem yang hidup lebih lama daripada kau.</p>
+
+    <p>Ini adalah fasa <strong>memimpin dan mewariskan</strong>.</p>
+
+    <hr>
+
+    <h3>The 1-Year Transformation Plan: 310 Hari Perjalanan Penuh</h3>
+
+    <p>Sekarang, mari kita gabungkan semuanya. V1 ada Pelan 30 Hari. V2 ada Pelan 100 Hari. V3 akan perkenalkan Pelan 180 Hari. Gabungan ketiga-tiganya adalah <strong>The 1-Year Transformation Plan</strong> &mdash; satu tahun penuh transformasi dari seorang yang sibuk dan reactive, kepada seorang pemimpin yang berkesan dan memberi impak.</p>
+
+    <p>Ini bukan satu pelan yang kaku. Ini satu rangka kerja. Ubah suai ikut rentak kau sendiri.</p>
+
+    <h4>Fasa 1: Letakkan Asas (30 Hari) &mdash; Dari V1</h4>
+
+    <p><strong>Objektif:</strong> Bina kesedaran dan mulakan tabiat asas.</p>
+
+    <table>
+      <tr><th>Minggu</th><th>Fokus</th><th>Tindakan Utama</th></tr>
+      <tr><td>1</td><td>Clock vs Compass</td><td>Tulis ulang kaji mingguan. Tanya: "Apa yang paling penting minggu ni?"</td></tr>
+      <tr><td>2</td><td>Balang Kehidupan &amp; Kuadran</td><td>Setiap hari, labelkan tugas ikut Kuadran I-IV. Berapa banyak masa kau habiskan di Kuadran II?</td></tr>
+      <tr><td>3</td><td>Essentialism &amp; One Thing</td><td>Setiap pagi, tanya: "Apa satu benda yang kalau selesai, buat yang lain lebih mudah?"</td></tr>
+      <tr><td>4</td><td>Deep Work &amp; Atomic Habits</td><td>Pilih satu tabiat baru. Lakukan Deep Work 2 jam sehari tanpa gangguan.</td></tr>
+    </table>
+
+    <p><strong>Tanda Berjaya:</strong> Kau boleh bezakan urgent vs important. Kau ada satu tabiat baru yang konsisten.</p>
+
+    <h4>Fasa 2: Perdalam &amp; Lindungi (100 Hari) &mdash; Dari V2</h4>
+
+    <p><strong>Objektif:</strong> Bina sistem yang melindungi keutamaan dan tingkatkan kapasiti.</p>
+
+    <table>
+      <tr><th>Blok</th><th>Hari</th><th>Fokus</th><th>Tindakan Utama</th></tr>
+      <tr><td>1</td><td>1-20</td><td>Seni Berkata Tidak</td><td>Tulis senarai "komitmen berlebihan" kau. Berhenti dari 2 perkara yang tak perlu.</td></tr>
+      <tr><td>2</td><td>21-40</td><td>Energy Management</td><td>Kenalpasti energy-drainers dan energy-givers kau. Jadual kerja ikut tenaga, bukan ikut jam.</td></tr>
+      <tr><td>3</td><td>41-60</td><td>Digital Minimalism</td><td>Detox digital selama 7 hari berturut-turut. Buang app yang tak perlu.</td></tr>
+      <tr><td>4</td><td>61-80</td><td>Crucial Conversations</td><td>Kenal pasti satu perbualan sukar yang kau elakkan. Selesaikan minggu ini.</td></tr>
+      <tr><td>5</td><td>81-100</td><td>Antifragile &amp; Legacy</td><td>Tulis legacy statement kau. Apa yang kau nak dikenang?</td></tr>
+    </table>
+
+    <p><strong>Tanda Berjaya:</strong> Kau ada sistem yang berfungsi. Kau boleh berkata tidak dengan tenang. Kau dah mulakan perbualan sukar yang kau elakkan selama ini.</p>
+
+    <h4>Fasa 3: Pimpin &amp; Ganda (180 Hari) &mdash; Dari V3</h4>
+
+    <p><strong>Objektif:</strong> Kembangkan impak kau kepada orang lain dan sistem.</p>
+
+    <table>
+      <tr><th>Blok</th><th>Hari</th><th>Fokus</th><th>Tindakan Utama</th></tr>
+      <tr><td>1</td><td>1-30</td><td>EQ &amp; Grit</td><td>Ambil EQ Self-Assessment (Lampiran A). Bina satu amalan refleksi harian. Uji Grit Scale (Lampiran B).</td></tr>
+      <tr><td>2</td><td>31-60</td><td>Drive &amp; Coaching</td><td>Cari satu moment setiap hari untuk jadi curious, bukan judge. Guna satu soalan coaching dalam perbualan.</td></tr>
+      <tr><td>3</td><td>61-90</td><td>Radical Candor &amp; Multipliers</td><td>Beri satu feedback yang jujur tapi prihatin minggu ini. Audit gaya kepimpinan kau (Lampiran C).</td></tr>
+      <tr><td>4</td><td>91-120</td><td>Give &amp; Culture</td><td>Lakukan satu 5-minute favor setiap minggu. Mulakan satu ritual team yang bina safety.</td></tr>
+      <tr><td>5</td><td>121-150</td><td>Good to Great &amp; Infinite</td><td>Tulis Just Cause kau. Kenal pasti satu Worthy Rival.</td></tr>
+      <tr><td>6</td><td>151-180</td><td>Turning Pro &amp; Manifesto</td><td>Isi Personal Leadership Manifesto (Lampiran D). Buat majlis ikrar dengan diri sendiri.</td></tr>
+    </table>
+
+    <p><strong>Tanda Berjaya:</strong> Orang sekeliling kau rasa berbeza bila bekerja dengan kau. Kau dah mula membina sesuatu yang lebih besar dari diri kau.</p>
+
+    <h4>Ringkasan 310 Hari</h4>
+
+    <table>
+      <tr><th>Fasa</th><th>Tempoh</th><th>Sumber</th><th>Fokus Utama</th></tr>
+      <tr><td>1</td><td>30 hari</td><td>V1</td><td>Asas: kesedaran, pilihan, tabiat</td></tr>
+      <tr><td>2</td><td>100 hari</td><td>V2</td><td>Perlindungan: sistem, tenaga, keberanian</td></tr>
+      <tr><td>3</td><td>180 hari</td><td>V3</td><td>Kepimpinan: diri &rarr; orang &rarr; sistem</td></tr>
+      <tr><td><strong>Jumlah</strong></td><td><strong>310 hari</strong></td><td><strong>V1+V2+V3</strong></td><td><strong>Transformasi penuh</strong></td></tr>
+    </table>
+
+    <p>Kenapa 310 hari dan bukan 365? Kerana kau perlukan 55 hari rehat, refleksi, dan ruang untuk bernafas. Transformasi bukan marathon tanpa henti. Ia adalah perjalanan yang memerlukan masa untuk memproses, untuk jatuh dan bangun semula, untuk meraikan kemenangan kecil.</p>
+
+    <p>Ambil masa. Mungkin setahun penuh. Mungkin lebih. Yang penting kau mula.</p>
+
+    <hr>
+
+    <h3>Personal Leadership Manifesto</h3>
+
+    <p>Sepanjang tiga buku, kita dah baca tentang banyak pemimpin hebat. Covey dengan prinsipnya. Sinek dengan Why-nya. Pressfield dengan professionalismenya. Collins dengan Level 5-nya. Wiseman dengan Multiplier-nya.</p>
+
+    <p>Tapi sekarang, tiba masa untuk <strong>kau menulis manifesto kau sendiri</strong>.</p>
+
+    <p>Ini bukan latihan menulis. Ini satu ikrar. Satu komitmen pada diri sendiri tentang jenis pemimpin yang kau nak jadi.</p>
+
+    <p>Gunakan template di bawah. Isi tempat kosong dengan jawapan yang jujur.</p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>PERSONAL LEADERSHIP MANIFESTO</h3>
+
+      <p><strong>SAYA, [NAMA PENUH KAU], SEORANG PEMIMPIN, BERJANJI UNTUK:</strong></p>
+
+      <p><strong>Act 1: Lead Self &mdash; Pimpin Diriku</strong></p>
+
+      <ol>
+        <li>Aku akan ____ [contoh: memulakan setiap hari dengan senyap selama 10 minit, bukan dengan telefon].</li>
+        <li>Aku akan melindungi ____ sebagai keutamaan tertinggiku.</li>
+        <li>Bila aku rasa nak berputus asa, aku akan ingat bahawa ____.</li>
+        <li>Aku tak akan benarkan ____ mengawal emosiku.</li>
+        <li>Setiap hari, aku akan bertanya pada diriku: ____.</li>
+      </ol>
+
+      <p><strong>Act 2: Lead Others &mdash; Pimpin Orang Lain</strong></p>
+
+      <ol start="6">
+        <li>Aku akan memimpin dengan ____ [contoh: rasa ingin tahu, bukan dengan penghakiman].</li>
+        <li>Bila aku perlu beri feedback, aku akan ____.</li>
+        <li>Aku percaya pasukanku mampu ____, dan tugas aku adalah untuk ____.</li>
+        <li>Aku akan menjadi seorang ____ [Multiplier / Giver / Coach &mdash; pilih satu] dalam setiap interaksi.</li>
+        <li>Dalam perbualan sukar, aku akan ____.</li>
+      </ol>
+
+      <p><strong>Act 3: Lead Systems &mdash; Pimpin Sistem &amp; Legasi</strong></p>
+
+      <ol start="11">
+        <li>Just Cause aku adalah: ____.</li>
+        <li>Aku nak dikenang sebagai seseorang yang ____.</li>
+        <li>Budaya yang aku nak bina adalah: ____.</li>
+        <li>Aku akan menentang Resistance dengan cara: ____.</li>
+        <li>Permainan yang aku main adalah permainan ____, dan aku akan terus bermain selagi ____.</li>
+      </ol>
+
+      <p><strong>Tandatangan:</strong> __________________</p>
+      <p><strong>Tarikh:</strong> __________________</p>
+      <p><strong>Saksi (pilih seorang yang kau percayai):</strong> __________________</p>
+    </div>
+
+    <p>Ambil serius manifesto ini. Cetak. Tandatangan. Letak di tempat yang kau nampak setiap hari. Dan yang paling penting &mdash; <strong>hidup dengannya</strong>.</p>
+
+    <hr>
+
+    <h3>Perjalanan Diteruskan</h3>
+
+    <p>Tiga buku selesai. Tapi perjalanan kau baru bermula.</p>
+
+    <p>Buku-buku ini adalah peta, bukan destinasi. Mereka adalah alat, bukan penyelesaian. Mereka adalah teman, bukan guru terakhir kau.</p>
+
+    <p>Apa yang kau buat selepas hari ini akan menentukan sama ada perjalanan 36 bab ini bermakna atau hanya satu lagi buku yang habis dibaca dan diletakkan di rak.</p>
+
+    <h4>Cadangan Bacaan Lanjutan</h4>
+
+    <p>Kalau kau nak terus mendalami mana-mana topik dari trilogi ini, ini adalah buku-buku asal yang menjadi sumber inspirasi:</p>
+
+    <p><strong>Untuk Leadership &amp; EQ:</strong></p>
+    <ul>
+      <li><em>Emotional Intelligence</em> &mdash; Daniel Goleman</li>
+      <li><em>Permission to Feel</em> &mdash; Marc Brackett</li>
+      <li><em>Dare to Lead</em> &mdash; Bren&eacute; Brown</li>
+    </ul>
+
+    <p><strong>Untuk Ketahanan &amp; Motivasi:</strong></p>
+    <ul>
+      <li><em>Grit</em> &mdash; Angela Duckworth</li>
+      <li><em>Drive</em> &mdash; Daniel H. Pink</li>
+      <li><em>Mindset</em> &mdash; Carol Dweck</li>
+      <li><em>The War of Art</em> &amp; <em>Turning Pro</em> &mdash; Steven Pressfield</li>
+    </ul>
+
+    <p><strong>Untuk Coaching &amp; Feedback:</strong></p>
+    <ul>
+      <li><em>The Coaching Habit</em> &mdash; Michael Bungay Stanier</li>
+      <li><em>Radical Candor</em> &mdash; Kim Scott</li>
+      <li><em>Thanks for the Feedback</em> &mdash; Douglas Stone &amp; Sheila Heen</li>
+    </ul>
+
+    <p><strong>Untuk Dinamika Team &amp; Budaya:</strong></p>
+    <ul>
+      <li><em>Multipliers</em> &mdash; Liz Wiseman</li>
+      <li><em>Give and Take</em> &mdash; Adam Grant</li>
+      <li><em>The Culture Code</em> &mdash; Daniel Coyle</li>
+      <li><em>The Five Dysfunctions of a Team</em> &mdash; Patrick Lencioni</li>
+    </ul>
+
+    <p><strong>Untuk Strategi &amp; Legasi:</strong></p>
+    <ul>
+      <li><em>Good to Great</em> &mdash; Jim Collins</li>
+      <li><em>The Infinite Game</em> &mdash; Simon Sinek</li>
+      <li><em>Start With Why</em> &mdash; Simon Sinek</li>
+      <li><em>The 7 Habits of Highly Effective People</em> &mdash; Stephen R. Covey</li>
+      <li><em>Man's Search for Meaning</em> &mdash; Viktor Frankl</li>
+    </ul>
+
+    <h4>Sumber Digital &amp; Komuniti</h4>
+
+    <p>Trilogi ini mungkin berakhir, tapi komuniti pembelajaran tidak.</p>
+
+    <p>Ikuti WMB DIGITAL untuk konten lanjutan, artikel, dan perkongsian harian tentang kepimpinan, produktiviti, dan kehidupan berprinsip.</p>
+
+    <p>Carilah mentor. Atau jadi mentor untuk orang lain. Sebab salah satu cara terbaik untuk benar-benar memahami sesuatu adalah dengan mengajarkannya.</p>
+
+    <p>Bincang dengan kawan-kawan yang baca buku ini. Mulakan circle bacaan. Kongsikan apa yang kau belajar. Sebab ilmu yang dikongsikan adalah ilmu yang hidup.</p>
+
+    <hr>
+
+    <h3>Penutup Peribadi dari WMB DIGITAL</h3>
+
+    <p>Saya nak habiskan buku ini dengan cerita peribadi.</p>
+
+    <p>Tiga buku. Saya tak pernah bayangkan akan menulis trilogi. Mula-mula dulu, V1 lahir dari kekecewaan saya sendiri &mdash; kekecewaan melihat ramai orang (termasuk saya) sibuk tapi tak produktif, penat tapi tak puas, bergerak tapi tak ke mana-mana. Saya mula menulis sebagai cara untuk faham, untuk menyusun pemikiran saya sendiri.</p>
+
+    <p>V2 datang setahun kemudian. Saya sedar yang V1 hanya menggaru permukaan. Ada lebih banyak yang perlu dikupas. Dan lebih penting, saya sedar yang transformasi sebenar memerlukan lebih dari 30 hari.</p>
+
+    <p>Dan sekarang V3. Buku yang paling sukar saya tulis. Bukan sebab topiknya berat, tapi sebab saya sedar yang saya sedang menulis tentang sesuatu yang saya sendiri masih belajar. Siapa saya nak menulis tentang kepimpinan? Saya bukan CEO syarikat besar. Saya bukan profesor di universiti. Saya cuma seorang yang percaya yang idea-idea hebat patut dikongsikan, dan yang setiap daripada kita mampu menjadi pemimpin dalam lingkaran pengaruh kita sendiri.</p>
+
+    <p>Tapi itulah sebenarnya point buku ini. Kepimpinan bukan gelaran. Bukan jawatan. Bukan pangkat.</p>
+
+    <p>Kepimpinan adalah pilihan.</p>
+
+    <p>Pilihan untuk memimpin diri sendiri sebelum memimpin orang lain. Pilihan untuk terus bertumbuh walau tak ada yang melihat. Pilihan untuk memberi impak walau dalam skop yang kecil. Pilihan untuk membina sesuatu yang lebih besar dari diri sendiri.</p>
+
+    <p>Sepanjang menulis tiga buku ini, saya belajar beberapa perkara:</p>
+
+    <ol>
+      <li><strong>Menulis adalah cara berfikir.</strong> Saya tak tahu apa yang saya fikir sehingga saya menulisnya. Buku-buku ini adalah pemikiran saya yang disusun.</li>
+      <li><strong>Konsisten mengalahkan intensiti.</strong> Satu muka surat sehari selama setahun menghasilkan lebih dari 100 muka surat yang cuba ditulis dalam satu malam.</li>
+      <li><strong>Kita semua bergelut dengan benda yang sama.</strong> Tak kira umur, latar belakang, atau kerjaya &mdash; soalan asas kita sama: apa yang penting? Dan macam mana nak fokus padanya?</li>
+      <li><strong>Perjalanan tak pernah habis.</strong> Saya masih bergelut dengan disiplin, dengan fokus, dengan keberanian untuk berkata tidak. Tulis buku tak buat saya sempurna. Tapi ia buat saya lebih sedar, dan lebih komited untuk terus belajar.</li>
+      <li><strong>Kau tak perlu tunggu sampai sempurna untuk mula.</strong> Buku pertama saya adalah yang paling kurang sempurna &mdash; dan ia adalah yang paling penting, sebab ia yang memulakan segalanya.</li>
+    </ol>
+
+    <h4>Harapan Saya untuk Kau</h4>
+
+    <p>Saya harap buku ini, dan keseluruhan trilogi ini, bukan sekadar satu lagi koleksi idea yang kau baca dan lupakan.</p>
+
+    <p>Saya harap ia menjadi pemangkin.</p>
+
+    <p>Saya harap selepas membaca bab terakhir ini, kau tutup buku, ambil nafas panjang, dan buat satu keputusan.</p>
+
+    <p>Keputusan untuk berubah. Keputusan untuk memimpin. Keputusan untuk hidup dengan keutamaan, bukan dengan reaksi.</p>
+
+    <p>Kau tak perlu buat semuanya sekali. Tak perlu jadi sempurna. Tak perlu faham semua 36 bab.</p>
+
+    <p>Cuma perlu mula. Dengan satu keutamaan. Satu tabiat. Satu perubahan.</p>
+
+    <p>Dan esok, buat lagi sikit.</p>
+
+    <p>Seperti kata James Clear: <em>"Every action you take is a vote for the type of person you wish to become."</em></p>
+
+    <p>Setiap bab yang kau baca, setiap latihan yang kau buat, setiap keputusan kecil yang kau pilih &mdash; semuanya adalah undi untuk pemimpin yang kau nak jadi.</p>
+
+    <p>Terima kasih kerana sudi membaca. Terima kasih kerana sudi belajar. Terima kasih kerana sudi memimpin.</p>
+
+    <p>Perjalanan ini belum tamat. Ia baru bermula.</p>
+
+    <p>&mdash; WMB DIGITAL</p>
+
+    <hr>
+
+    <div class="refleksi">
+      <h3>5 Soalan Reflektif Akhir</h3>
+      <p>Sebelum kau tutup buku ini, luangkan masa 15-20 minit untuk jawab soalan-soalan ini. Tulis jawapan kau dalam jurnal, dalam nota telefon, atau di mana-mana yang kau boleh rujuk semula.</p>
+      <ol>
+        <li><strong>Perjalanan 36 Bab:</strong> Antara semua bab dalam trilogi ini (V1, V2, V3), yang mana paling menyentuh kau? Kenapa? Satu bab apa yang kau rasa paling perlu kau praktikkan sekarang?</li>
+        <li><strong>Diri ke Sistem:</strong> Di mana kau dalam perjalanan ini? Masih bergelut dengan memimpin diri sendiri? Dah bersedia untuk memimpin orang lain? Atau dah mula memikirkan tentang legasi?</li>
+        <li><strong>Just Cause Kau:</strong> Kalau kau boleh tulis satu ayat yang menerangkan misi hidup kau &mdash; apa yang lebih besar dari diri kau yang kau nak capai &mdash; apakah ayat itu?</li>
+        <li><strong>Pemimpin Yang Kau Nak Jadi:</strong> Cuba bayangkan diri kau setahun dari sekarang, selepas melalui The 1-Year Transformation Plan. Apa yang berbeza tentang kau? Apa yang orang sekeliling kau akan kata tentang perubahan kau?</li>
+        <li><strong>Satu Tindakan Segera:</strong> Apa satu perkara yang kau boleh buat dalam 24 jam akan datang untuk mulakan atau teruskan perjalanan ini? Bukan "nanti-nanti". Bukan "satu hari nanti". Esok. Pukul berapa? Apa tindakan spesifiknya?</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <blockquote>
+      <p>"The key is not to prioritize what's on your schedule, but to schedule your priorities."<br>&mdash; <strong>Stephen R. Covey</strong></p>
+    </blockquote>
+
+    <blockquote>
+      <p>"Leadership is not about being in charge. It is about taking care of those in your charge."<br>&mdash; <strong>Simon Sinek</strong></p>
+    </blockquote>
+
+    <blockquote>
+      <p>"The most important thing you can do is to show up and do your work. Not the work you feel like doing. The work you said you would do."<br>&mdash; <strong>Steven Pressfield</strong></p>
+    </blockquote>
+
+    <p>Tiga suara, tiga perspektif, satu mesej:</p>
+
+    <p>Ketahui apa yang penting. Jadualkannya. Pimpin dengan mengambil berat. Dan terus muncul, hari demi hari, buat kerja yang kau kata kau akan buat.</p>
+
+    <p><strong>Itulah Yang Mana Keutamaan.</strong></p>
+
+    <p style="text-align: center; font-size: 1.5rem; font-family: var(--display); color: var(--accent); margin: 2rem 0;">&mdash; TAMAT TRILOGI &mdash;</p>
+
+    <p class="continue-reading">&mdash; Bersambung ke Lampiran &mdash;</p>
+
+  </div>
+</article>
+<!-- ══════════════════════════════════════════════ -->
+<!-- LAMPIRAN: LEMBARAN KERJA & ALAT PENILAIAN DIRI   -->
+<!-- ══════════════════════════════════════════════ -->
+<article class="chapter" id="lampiran">
+  <div class="chapter-hero">
+    <img src="images/lampiran.png" alt="Lampiran &mdash; Lembaran Kerja &amp; Alat Penilaian Diri" loading="lazy">
+    <div class="chapter-hero-overlay">
+      <div class="chapter-hero-content">
+        <span class="chapter-number">Lampiran</span>
+        <h2>Lembaran Kerja &amp; Alat Penilaian Diri</h2>
+        <p class="chapter-subtitle">EQ Assessment, Grit Scale, Leadership Audit, Manifesto, Tracker, Rujukan</p>
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <blockquote><p>"What gets measured gets managed."<br>&mdash; Peter Drucker</p></blockquote>
+
+    <p>Lampiran ini mengandungi enam alat penilaian diri dan template yang dirujuk sepanjang buku. Fotokopi, cetak, atau salin ke dalam jurnal kau. Gunakannya dengan jujur. Alat-alat ini hanya berguna kalau kau berani jawab dengan ikhlas.</p>
+
+    <hr>
+
+    <h3>Lampiran A: EQ Self-Assessment</h3>
+    <p><strong>15 Soalan untuk Menilai Kecerdasan Emosi Diri</strong></p>
+    <p>Skala: 1 (Sangat Tidak Setuju) &mdash; 2 (Tidak Setuju) &mdash; 3 (Neutral) &mdash; 4 (Setuju) &mdash; 5 (Sangat Setuju)</p>
+
+    <h4>Self-Awareness (Kesedaran Diri)</h4>
+    <table>
+      <tr><th>No.</th><th>Pernyataan</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+      <tr><td>1</td><td>Saya boleh mengenal pasti emosi yang saya rasa pada bila-bila masa.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>2</td><td>Saya faham bagaimana emosi saya mempengaruhi keputusan dan tindakan saya.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>3</td><td>Saya tahu kekuatan dan kelemahan diri saya dengan jelas.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+    </table>
+    <p><em>Skor Self-Awareness: ___/15</em></p>
+
+    <h4>Self-Regulation (Kawalan Diri)</h4>
+    <table>
+      <tr><th>No.</th><th>Pernyataan</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+      <tr><td>4</td><td>Saya boleh mengawal reaksi emosi saya dalam situasi tekanan.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>5</td><td>Saya berfikir sebelum bertindak, terutamanya bila marah atau kecewa.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>6</td><td>Saya boleh menyesuaikan diri dengan perubahan tanpa menjadi terlalu stres.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+    </table>
+    <p><em>Skor Self-Regulation: ___/15</em></p>
+
+    <h4>Empathy (Empati)</h4>
+    <table>
+      <tr><th>No.</th><th>Pernyataan</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+      <tr><td>7</td><td>Saya boleh memahami perasaan orang lain walaupun mereka tidak meluahkannya.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>8</td><td>Saya mendengar dengan niat untuk faham, bukan untuk membalas.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>9</td><td>Saya prihatin terhadap perspektif orang yang berbeza latar belakang daripada saya.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+    </table>
+    <p><em>Skor Empathy: ___/15</em></p>
+
+    <h4>Social Skills (Kemahiran Sosial)</h4>
+    <table>
+      <tr><th>No.</th><th>Pernyataan</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+      <tr><td>10</td><td>Saya boleh mempengaruhi orang lain tanpa menggunakan autoriti atau paksaan.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>11</td><td>Saya pandai mengurus konflik dan mencari penyelesaian yang menang-menang.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>12</td><td>Saya mudah membina hubungan dan rangkaian dengan pelbagai jenis orang.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+    </table>
+    <p><em>Skor Social Skills: ___/15</em></p>
+
+    <h4>Self-Motivation (Motivasi Diri)</h4>
+    <table>
+      <tr><th>No.</th><th>Pernyataan</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+      <tr><td>13</td><td>Saya tetap bermotivasi walau tanpa pengiktirafan atau ganjaran luaran.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>14</td><td>Saya optimis tentang masa depan walaupun sedang menghadapi cabaran.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>15</td><td>Saya mengambil inisiatif untuk memperbaiki diri tanpa disuruh.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+    </table>
+    <p><em>Skor Self-Motivation: ___/15</em></p>
+
+    <h4>Cara Menilai</h4>
+    <table>
+      <tr><th>Jumlah Skor</th><th>Tahap EQ</th></tr>
+      <tr><td>65-75</td><td>Cemerlang &mdash; Kau mempunyai kecerdasan emosi yang tinggi. Teruskan amalan refleksi.</td></tr>
+      <tr><td>50-64</td><td>Baik &mdash; EQ kau di atas purata. Ada beberapa ruang untuk penambahbaikan.</td></tr>
+      <tr><td>35-49</td><td>Sederhana &mdash; Perlu lebih perhatian pada EQ. Fokus pada satu komponen yang paling rendah.</td></tr>
+      <tr><td>15-34</td><td>Perlu Usaha &mdash; Jangan risau. EQ boleh dipelajari. Mulakan dengan self-awareness.</td></tr>
+    </table>
+
+    <p><strong>Catatan:</strong> Skor ini bukan penentu nilai diri kau. Ia adalah garis permulaan. Ambil semula assessment ini setiap 3 bulan untuk melihat perkembangan.</p>
+
+    <p><strong>Tiga perkara yang saya akan buat untuk tingkatkan EQ saya:</strong></p>
+    <ol>
+      <li>_______________________________________________</li>
+      <li>_______________________________________________</li>
+      <li>_______________________________________________</li>
+    </ol>
+
+    <hr>
+
+    <h3>Lampiran B: Grit Scale &mdash; Uji Ketahanan Diri</h3>
+    <p><em>Adaptasi daripada Angela Duckworth's Grit Scale. Terjemahan dan penyesuaian untuk konteks Malaysia.</em></p>
+    <p>Skala: 1 (Tak macam saya langsung) &mdash; 2 (Tak macam saya) &mdash; 3 (Macam saya sikit) &mdash; 4 (Macam saya) &mdash; 5 (Sangat macam saya)</p>
+
+    <table>
+      <tr><th>No.</th><th>Pernyataan</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+      <tr><td>1</td><td>Idea dan projek baru kadang-kadang alihkan perhatian saya daripada yang sebelumnya.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>2</td><td>Saya tak mudah putus asa. Saya akan habiskan apa yang saya mula.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>3</td><td>Saya sering tetapkan matlamat tapi kemudian ubah fokus kepada yang lain.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>4</td><td>Saya seorang yang rajin dan tekun.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>5</td><td>Saya sering fokus pada satu matlamat untuk tempoh yang lama sebelum beralih ke yang lain.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>6</td><td>Saya selesaikan apa yang saya mula walaupun ia mengambil masa berbulan-bulan.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>7</td><td>Minat saya berubah-ubah mengikut musim.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>8</td><td>Saya bukan seorang yang mudah menyerah kalah.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>9</td><td>Saya pernah terobsesi dengan satu idea atau projek untuk tempoh yang singkat, kemudian hilang minat.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>10</td><td>Saya telah mengatasi cabaran besar untuk mencapai matlamat yang penting bagi saya.</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+    </table>
+
+    <h4>Cara Mengira Skor</h4>
+    <p><strong>Langkah 1:</strong> Untuk soalan <strong>1, 3, 7, 9</strong> &mdash; terbalikkan skor (1&rarr;5, 2&rarr;4, 3&rarr;3, 4&rarr;2, 5&rarr;1).</p>
+    <p><strong>Langkah 2:</strong> Jumlahkan semua skor dan bahagi dengan 10.</p>
+    <p><strong>Skor Grit saya:</strong> ___/5.0</p>
+
+    <h4>Maksud Skor</h4>
+    <table>
+      <tr><th>Skor</th><th>Tahap Grit</th></tr>
+      <tr><td>4.5 &mdash; 5.0</td><td>Grit tinggi luar biasa. Kau antara yang paling tekun dan berdaya tahan.</td></tr>
+      <tr><td>4.0 &mdash; 4.4</td><td>Grit kukuh. Ketahanan kau melebihi kebanyakan orang.</td></tr>
+      <tr><td>3.5 &mdash; 3.9</td><td>Grit sederhana. Ada ruang untuk tingkatkan ketahanan jangka panjang.</td></tr>
+      <tr><td>3.0 &mdash; 3.4</td><td>Grit perlukan perhatian. Pertimbangkan untuk fokus pada satu matlamat utama.</td></tr>
+      <tr><td>Di bawah 3.0</td><td>Grit rendah. Mulakan dengan satu projek kecil dan komit untuk menghabiskannya.</td></tr>
+    </table>
+
+    <p><strong>Nota Penting:</strong> Grit bukan sifat tetap. Ianya boleh dibina. Menurut Duckworth, salah satu cara terbaik untuk tingkatkan grit adalah dengan mengamalkan "hard thing rule" &mdash; pilih satu perkara sukar dan komit padanya untuk tempoh minima satu tahun.</p>
+
+    <hr>
+
+    <h3>Lampiran C: Leadership Style Audit &mdash; Multiplier vs Diminisher</h3>
+    <p><em>Berdasarkan kerangka Liz Wiseman dalam Multipliers. Jawab dengan jujur tentang tingkah laku sebenar kau, bukan yang kau harapkan.</em></p>
+    <p>Jawab <strong>YA</strong> atau <strong>TIDAK</strong> untuk setiap pernyataan.</p>
+
+    <table>
+      <tr><th>No.</th><th>Pernyataan</th><th>YA</th><th>TIDAK</th></tr>
+      <tr><td>1</td><td>Saya cenderung untuk memberi arahan yang spesifik kerana saya rasa ianya lebih efisien.</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>2</td><td>Saya lebih suka orang datang dengan cadangan daripada masalah.</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>3</td><td>Saya rasa saya perlu menjadi orang paling bijak dalam bilik.</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>4</td><td>Saya selalu mencari peluang untuk mencabar orang dan regangkan kemampuan mereka.</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>5</td><td>Saya cenderung untuk membuat keputusan cepat dan bergerak ke depan.</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>6</td><td>Saya sabar menunggu orang sampai ke kesimpulan sendiri, walaupun saya dah tahu jawapannya.</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>7</td><td>Saya rasa orang akan ambil kesempatan kalau saya terlalu lembut.</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>8</td><td>Bila ada masalah, saya biasanya tanya soalan daripada bagi jawapan.</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>9</td><td>Saya hanya memberi orang kebebasan selepas mereka buktikan diri.</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td>10</td><td>Saya percaya potensi orang selalunya lebih tinggi daripada yang mereka nampak pada diri sendiri.</td><td>&#9744;</td><td>&#9744;</td></tr>
+    </table>
+
+    <h4>Cara Menilai</h4>
+    <p><strong>Kira YA untuk soalan ini: 2, 4, 6, 8, 10</strong> &mdash; ini adalah <strong>Multiplier tendencies</strong>.</p>
+    <p><strong>Kira YA untuk soalan ini: 1, 3, 5, 7, 9</strong> &mdash; ini adalah <strong>Diminisher tendencies</strong>.</p>
+
+    <table>
+      <tr><th>Keputusan</th><th>Tafsiran</th></tr>
+      <tr><td>Lebih banyak Multiplier (4-5 YA)</td><td>Kau secara semula jadi seorang Multiplier. Orang sekeliling rasa lebih bijak dan lebih mampu bila bersama kau.</td></tr>
+      <tr><td>Campuran (2-3 setiap satu)</td><td>Kau mempunyai kedua-dua kecenderungan. Perhatikan situasi mana kau cenderung jadi Diminisher.</td></tr>
+      <tr><td>Lebih banyak Diminisher (4-5 YA)</td><td>Kau mungkin secara tak sedar mengurangkan kecerdasan dan potensi orang sekeliling. Jangan risau &mdash; ini boleh diubah.</td></tr>
+    </table>
+
+    <h4>Pelan Tindakan</h4>
+    <p><strong>Jika kau lebih Multiplier:</strong> Bagaimana kau boleh lebih sengaja dalam melipatgandakan orang lain? Pilih satu disiplin Multiplier untuk diperdalamkan.</p>
+    <p><strong>Jika kau lebih Diminisher:</strong> Pilih satu situasi minggu ini di mana kau boleh 'tahan diri' dan bagi orang lain ruang untuk berfikir dan menyumbang.</p>
+    <p><strong>Satu perubahan yang akan saya buat dalam gaya kepimpinan saya:</strong></p>
+    <p>_______________________________________________</p>
+
+    <hr>
+
+    <h3>Lampiran D: Personal Leadership Manifesto Template</h3>
+    <p><em>Framework lengkap untuk menulis manifesto kepimpinan peribadi kau. Rujuk Bab 12 untuk panduan lanjut.</em></p>
+
+    <h4>Bahagian 1: Inti Kepimpinan</h4>
+    <p><strong>Kenyataan Pembuka:</strong></p>
+    <p>"Saya, ______________________, sebagai seorang pemimpin, berjanji untuk:"</p>
+    <p><strong>Prinsip Utama Saya (pilih 3-5 prinsip yang paling penting bagi kau):</strong></p>
+    <ol>
+      <li>_______________________________________________</li>
+      <li>_______________________________________________</li>
+      <li>_______________________________________________</li>
+      <li>_______________________________________________</li>
+      <li>_______________________________________________</li>
+    </ol>
+
+    <h4>Bahagian 2: Lead Self &mdash; Pimpin Diri</h4>
+    <p><strong>Apa yang aku akan lindungi setiap hari:</strong> _______________________________________________</p>
+    <p><strong>Cara aku akan bangkit bila jatuh:</strong> _______________________________________________</p>
+    <p><strong>Satu soalan yang akan aku tanya pada diri setiap hari:</strong> _______________________________________________</p>
+    <p><strong>Batasan yang akan aku jaga:</strong> _______________________________________________</p>
+
+    <h4>Bahagian 3: Lead Others &mdash; Pimpin Orang Lain</h4>
+    <p><strong>Jenis pemimpin yang aku nak jadi untuk orang lain:</strong> _______________________________________________</p>
+    <p><strong>Cara aku akan beri feedback:</strong> _______________________________________________</p>
+    <p><strong>Cara aku akan melipatgandakan potensi orang sekeliling:</strong> _______________________________________________</p>
+    <p><strong>Apa yang aku percaya tentang orang yang aku pimpin:</strong> _______________________________________________</p>
+
+    <h4>Bahagian 4: Lead Systems &mdash; Pimpin Legasi</h4>
+    <p><strong>Just Cause aku &mdash; misi yang lebih besar dari diri aku:</strong> _______________________________________________</p>
+    <p><strong>Apa yang aku nak dikenang:</strong> _______________________________________________</p>
+    <p><strong>Budaya yang aku nak bina:</strong> _______________________________________________</p>
+    <p><strong>Permainan apa yang aku main dan kenapa aku akan terus bermain:</strong> _______________________________________________</p>
+
+    <h4>Bahagian 5: Ikrar</h4>
+    <p>"Saya, ______________________, dengan ini mengikrarkan manifesto ini. Saya akan hidup dengannya, bukan sebagai dinding hiasan, tapi sebagai kompas harian. Saya akan gagal, dan saya akan bangkit semula. Saya akan tersasar, dan saya akan kembali ke landasan. Saya komited untuk menjadi pemimpin yang saya boleh banggakan."</p>
+    <p><strong>Tandatangan:</strong> ____________________ &nbsp;&nbsp; <strong>Tarikh:</strong> _______________</p>
+    <p><strong>Saksi:</strong> _______________________</p>
+
+    <hr>
+
+    <h3>Lampiran E: 1-Year Transformation Tracker</h3>
+    <p><em>Tracker bulanan untuk The 1-Year Transformation Plan (310 hari). Cetak satu salinan untuk setiap bulan.</em></p>
+
+    <h4>Bulan: _______________ Tahun: _______________</h4>
+    <p><strong>Fasa Semasa (bulatkan):</strong> Fasa 1 (Hari 1-30) / Fasa 2 (Hari 31-130) / Fasa 3 (Hari 131-310)</p>
+
+    <h4>Matlamat Bulan Ini</h4>
+    <table>
+      <tr><th>Matlamat Utama</th><th>Tindakan Spesifik</th><th>Target Selesai</th><th>Selesai?</th></tr>
+      <tr><td>1.</td><td></td><td></td><td>&#9744; YA &#9744; TIDAK</td></tr>
+      <tr><td>2.</td><td></td><td></td><td>&#9744; YA &#9744; TIDAK</td></tr>
+      <tr><td>3.</td><td></td><td></td><td>&#9744; YA &#9744; TIDAK</td></tr>
+    </table>
+
+    <h4>Check-In Mingguan</h4>
+    <table>
+      <tr><th>Minggu</th><th>Tarikh</th><th>Apa yang Berjalan Baik?</th><th>Apa Cabarannya?</th><th>Fokus Minggu Depan</th><th>Mood (1-5)</th></tr>
+      <tr><td>1</td><td>___/___</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td>___/___</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td>___/___</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td>___/___</td><td></td><td></td><td></td><td></td></tr>
+    </table>
+
+    <h4>Habit Tracker Bulanan</h4>
+    <table>
+      <tr><th>Tabiat</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th></tr>
+      <tr><td></td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td></td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+      <tr><td></td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td><td>&#9744;</td></tr>
+    </table>
+
+    <h4>Refleksi Akhir Bulan</h4>
+    <p><strong>Pencapaian terbesar bulan ini:</strong> _______________________________________________</p>
+    <p><strong>Pelajaran yang saya bawa ke bulan depan:</strong> _______________________________________________</p>
+    <p><strong>Skor diri untuk bulan ini (1-10):</strong> ___/10</p>
+
+    <h4>Perjalanan &mdash; Gambar Besar</h4>
+    <table>
+      <tr><th>Fasa</th><th>Bulan</th><th>Hari</th><th>Status</th></tr>
+      <tr><td>Fasa 1: Asas (V1)</td><td>Bulan 1</td><td>1-30</td><td>&#9744;</td></tr>
+      <tr><td>Fasa 2: Perlindungan (V2)</td><td>Bulan 2</td><td>31-60</td><td>&#9744;</td></tr>
+      <tr><td></td><td>Bulan 3</td><td>61-90</td><td>&#9744;</td></tr>
+      <tr><td></td><td>Bulan 4</td><td>91-130</td><td>&#9744;</td></tr>
+      <tr><td>Fasa 3: Kepimpinan (V3)</td><td>Bulan 5</td><td>131-160</td><td>&#9744;</td></tr>
+      <tr><td></td><td>Bulan 6</td><td>161-190</td><td>&#9744;</td></tr>
+      <tr><td></td><td>Bulan 7</td><td>191-220</td><td>&#9744;</td></tr>
+      <tr><td></td><td>Bulan 8</td><td>221-250</td><td>&#9744;</td></tr>
+      <tr><td></td><td>Bulan 9</td><td>251-280</td><td>&#9744;</td></tr>
+      <tr><td></td><td>Bulan 10</td><td>281-310</td><td>&#9744;</td></tr>
+    </table>
+
+    <p><strong>Tarikh Mula:</strong> _____/_____/_____ &nbsp;&nbsp; <strong>Tarikh Tamat (anggaran):</strong> _____/_____/_____</p>
+
+    <hr>
+
+    <h3>Lampiran F: Rujukan Lengkap Trilogi</h3>
+    <p><em>Semua buku rujukan utama dari V1, V2, dan V3, disusun mengikut tema.</em></p>
+
+    <h4>Pengurusan Masa &amp; Fokus (V1)</h4>
+    <table>
+      <tr><th>Buku</th><th>Penulis</th><th>Fokus Utama</th></tr>
+      <tr><td>The 7 Habits of Highly Effective People</td><td>Stephen R. Covey</td><td>Prinsip asas keberkesanan diri</td></tr>
+      <tr><td>First Things First</td><td>Stephen R. Covey</td><td>Kuadran masa dan keutamaan</td></tr>
+      <tr><td>Essentialism</td><td>Greg McKeown</td><td>Disciplined pursuit of less</td></tr>
+      <tr><td>The One Thing</td><td>Gary Keller &amp; Jay Papasan</td><td>Kuasa fokus tunggal</td></tr>
+      <tr><td>Deep Work</td><td>Cal Newport</td><td>Fokus dalam dunia gangguan</td></tr>
+      <tr><td>Atomic Habits</td><td>James Clear</td><td>Perubahan kecil, hasil besar</td></tr>
+      <tr><td>The Power of Habit</td><td>Charles Duhigg</td><td>Sains pembentukan tabiat</td></tr>
+      <tr><td>The 7 Habits (Sharpen the Saw)</td><td>Stephen R. Covey</td><td>Pembaharuan diri empat dimensi</td></tr>
+      <tr><td>Man's Search for Meaning</td><td>Viktor Frankl</td><td>Mencari makna dalam penderitaan</td></tr>
+    </table>
+
+    <h4>Kematangan &amp; Ketahanan Diri (V2)</h4>
+    <table>
+      <tr><th>Buku</th><th>Penulis</th><th>Fokus Utama</th></tr>
+      <tr><td>Boundaries</td><td>Henry Cloud &amp; John Townsend</td><td>Sempadan sihat dalam perhubungan</td></tr>
+      <tr><td>The Paradox of Choice</td><td>Barry Schwartz</td><td>Bila banyak pilihan melemahkan</td></tr>
+      <tr><td>The Great Mental Models Vol. 1-3</td><td>Shane Parrish &amp; Rhiannon Beaubien</td><td>Cara berfikir yang mengubah keputusan</td></tr>
+      <tr><td>Flow</td><td>Mihaly Csikszentmihalyi</td><td>Pengalaman optimum dan prestasi puncak</td></tr>
+      <tr><td>The Power of Full Engagement</td><td>Jim Loehr &amp; Tony Schwartz</td><td>Pengurusan tenaga, bukan masa</td></tr>
+      <tr><td>Digital Minimalism</td><td>Cal Newport</td><td>Hidup dengan kurang teknologi</td></tr>
+      <tr><td>The Effective Executive</td><td>Peter Drucker</td><td>Produktiviti dan delegasi</td></tr>
+      <tr><td>Start With Why</td><td>Simon Sinek</td><td>Kuasa tujuan dalam tindakan</td></tr>
+      <tr><td>Crucial Conversations</td><td>Kerry Patterson et al.</td><td>Dialog situasi tekanan tinggi</td></tr>
+      <tr><td>Antifragile</td><td>Nassim Nicholas Taleb</td><td>Jadi lebih kuat dari kekacauan</td></tr>
+      <tr><td>The Legacy Journey</td><td>Dave Ramsey</td><td>Membina warisan bermakna</td></tr>
+      <tr><td>The 7 Habits (Begin with the End in Mind)</td><td>Stephen R. Covey</td><td>Pemikiran legasi dan matlamat hidup</td></tr>
+    </table>
+
+    <h4>Kepimpinan &amp; Pengaruh (V3)</h4>
+    <table>
+      <tr><th>Buku</th><th>Penulis</th><th>Fokus Utama</th></tr>
+      <tr><td>Emotional Intelligence</td><td>Daniel Goleman</td><td>Kecerdasan emosi dalam kepimpinan</td></tr>
+      <tr><td>Permission to Feel</td><td>Marc Brackett</td><td>Mengurus emosi secara sedar</td></tr>
+      <tr><td>Grit</td><td>Angela Duckworth</td><td>Passion dan perseverance</td></tr>
+      <tr><td>Drive</td><td>Daniel H. Pink</td><td>Motivasi intrinsik</td></tr>
+      <tr><td>The Coaching Habit</td><td>Michael Bungay Stanier</td><td>Kepimpinan melalui soalan</td></tr>
+      <tr><td>Radical Candor</td><td>Kim Scott</td><td>Feedback berkesan</td></tr>
+      <tr><td>Multipliers</td><td>Liz Wiseman</td><td>Gandakan kecerdasan team</td></tr>
+      <tr><td>Give and Take</td><td>Adam Grant</td><td>Dinamika memberi dan mengambil</td></tr>
+      <tr><td>The Culture Code</td><td>Daniel Coyle</td><td>Bina budaya team hebat</td></tr>
+      <tr><td>Good to Great</td><td>Jim Collins</td><td>Dari syarikat biasa ke luar biasa</td></tr>
+      <tr><td>The Infinite Game</td><td>Simon Sinek</td><td>Main untuk terus bermain</td></tr>
+      <tr><td>The War of Art</td><td>Steven Pressfield</td><td>Melawan Resistance dalaman</td></tr>
+      <tr><td>Turning Pro</td><td>Steven Pressfield</td><td>Dari amatur ke profesional</td></tr>
+    </table>
+
+    <h4>Sumber Digital &amp; Tambahan</h4>
+    <table>
+      <tr><th>Platform/Sumber</th><th>Apa yang Boleh Didapati</th></tr>
+      <tr><td>WMB DIGITAL (Blog/Sosial Media)</td><td>Artikel, perkongsian harian, konten lanjutan</td></tr>
+      <tr><td>TED Talks &mdash; Simon Sinek, Bren&eacute; Brown</td><td>Video pendek tentang kepimpinan dan keberanian</td></tr>
+      <tr><td>Farnam Street (fs.blog)</td><td>Mental models dan pemikiran tajam</td></tr>
+      <tr><td>The Marginalian (brainpickings.org)</td><td>Refleksi falsafah dan kreativiti</td></tr>
+      <tr><td>High Performance Podcast (Jake Humphrey &amp; Damian Hughes)</td><td>Cerita dan sains prestasi tinggi</td></tr>
+    </table>
+
+    <hr>
+
+    <blockquote>
+      <p>"Bacalah, kerana dengan membaca kau tidak akan sesat. Dengan memahami, kau akan terpandu. Dengan mengamal, kau akan memimpin."</p>
+      <p>&mdash; WMB DIGITAL</p>
+    </blockquote>
+
+    <p style="text-align: center; font-weight: bold; font-size: 1.2rem; margin: 2rem 0;">&mdash; TAMAT LAMPIRAN &mdash;</p>
+
+    <p class="continue-reading">&mdash; Bersambung ke Penutup &mdash;</p>
+
+  </div>
+</article>
+<!-- ════════════════════════════════════════ FOOTER ════════════════════════════════════════ -->
+<footer class="book-footer">
+
+  <h3>Trilogi Yang Mana Keutamaan?</h3>
+
+  <div class="footer-trilogi">
+    <a href="../index.html">
+      <div class="ft-num">Buku 1</div>
+      <div class="ft-title">Yang Mana Keutamaan?</div>
+      <div class="ft-sub">Kenal Pasti &amp; Pilih</div>
+    </a>
+    <a href="../v2/index.html">
+      <div class="ft-num">Buku 2</div>
+      <div class="ft-title">Melangkah Lebih Jauh</div>
+      <div class="ft-sub">Lindungi &amp; Kembangkan</div>
+    </a>
+    <a href="index.html" style="border-color: var(--accent);">
+      <div class="ft-num" style="color: var(--accent);">Buku 3</div>
+      <div class="ft-title">Memimpin &amp; Mempengaruhi</div>
+      <div class="ft-sub">Pimpin &amp; Ganda &mdash; <em>(Buku Ini)</em></div>
+    </a>
+  </div>
+
+  <p style="margin-top:2rem;"><strong>Yang Mana Keutamaan? &mdash; Memimpin &amp; Mempengaruhi</strong></p>
+  <p>WMB DIGITAL &bull; Malaysia</p>
+  <p style="margin-top:0.5rem; opacity:0.6; font-size:0.75rem;">Berdasarkan prinsip Emotional Intelligence, Grit, Drive, The Coaching Habit, Radical Candor, Multipliers, Give and Take, The Culture Code, Good to Great, The Infinite Game, dan The War of Art</p>
+  <p style="margin-top:0.5rem; opacity:0.4; font-size:0.7rem;">&copy; 2026 WMB DIGITAL. Hak cipta terpelihara.</p>
+
+</footer>
+
+</body>
+</html>
