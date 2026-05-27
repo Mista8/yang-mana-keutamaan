@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="ms-MY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yang Mana Keutamaan? — Melangkah Lebih Jauh | WMB DIGITAL</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #faf8f5; --text: #2c1810; --text-light: #7a6a5a; --accent: #c49564; --accent-dark: #8b6914;
+    --crimson: #e94560; --chapter-bg: #1a1a2e; --chapter-bg2: #2d2d44; --gold: #d4a574;
+    --border: #e8e0d5; --quote-bg: #f5f0ea;
+    --sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --display: 'Playfair Display', Georgia, serif;
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: var(--serif); color: var(--text); background: var(--bg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+  .cover { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 40%, #16213e 100%); overflow: hidden; padding: 2rem; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(201,149,100,0.08) 0%, transparent 60%), radial-gradient(ellipse at 70% 20%, rgba(233,69,96,0.06) 0%, transparent 50%); }
+  .cover-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(212,165,116,0.08); }
+  .cover-deco.d1 { width: 500px; height: 500px; top: -100px; right: -100px; }
+  .cover-deco.d2 { width: 400px; height: 400px; bottom: -80px; left: -80px; }
+  .cover-deco.d3 { width: 200px; height: 200px; top: 20%; left: 10%; border-color: rgba(233,69,96,0.06); }
+  .cover-content { position: relative; z-index: 1; text-align: center; max-width: 700px; }
+  .cover-subbrand { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; opacity: 0.7; }
+  .cover-title { font-family: var(--display); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; color: #f5e6ca; line-height: 1.15; margin-bottom: 0.75rem; }
+  .cover-title em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .cover-subtitle { font-family: var(--serif); font-size: clamp(0.95rem, 1.8vw, 1.25rem); color: rgba(245,230,202,0.7); font-style: italic; margin-bottom: 2.5rem; line-height: 1.6; }
+  .cover-line { width: 80px; height: 2px; background: var(--accent); margin: 0 auto 2rem; opacity: 0.5; }
+  .cover-author { font-family: var(--sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(245,230,202,0.5); }
+  .cover-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: var(--sans); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,230,202,0.3); animation: fadeUp 2s ease-in-out infinite; }
+  .cover-v2-badge { display: inline-block; font-family: var(--sans); font-size: 0.65rem; letter-spacing: 3px; padding: 0.3rem 1rem; border: 1px solid var(--accent); color: var(--accent); margin-bottom: 1.5rem; opacity: 0.7; }
+  @keyframes fadeUp { 0%,100% { opacity: 0.3; transform: translateX(-50%) translateY(0); } 50% { opacity: 0.8; transform: translateX(-50%) translateY(-6px); } }
+
+  .toc { padding: 5rem 2rem; max-width: 720px; margin: 0 auto; }
+  .toc h2 { font-family: var(--display); font-size: 1.75rem; color: var(--text); text-align: center; margin-bottom: 3rem; }
+  .toc hr { border: none; height: 1px; background: var(--border); margin-bottom: 2.5rem; }
+  .toc-act { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-dark); margin: 2rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .toc-item { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.4rem 0; text-decoration: none; color: var(--text); transition: color 0.2s; }
+  .toc-item:hover { color: var(--accent-dark); }
+  .toc-num { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; color: var(--accent); min-width: 2rem; text-align: right; }
+  .toc-title { font-size: 1rem; flex: 1; }
+  .toc-sub { font-size: 0.8rem; color: var(--text-light); font-style: italic; }
+  .toc-app { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+
+  .act-divider { padding: 6rem 2rem; text-align: center; background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); position: relative; overflow: hidden; }
+  .act-divider::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(212,165,116,0.06) 0%, transparent 70%); }
+  .act-divider-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+  .act-label { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); opacity: 0.6; }
+  .act-number { font-family: var(--display); font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; color: rgba(245,230,202,0.08); margin: 0.5rem 0; line-height: 1; }
+  .act-title { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.25rem); color: #f5e6ca; font-weight: 700; margin-bottom: 0.75rem; }
+  .act-desc { font-family: var(--serif); font-size: 0.95rem; color: rgba(245,230,202,0.6); font-style: italic; line-height: 1.6; }
+
+  .chapter-page { position: relative; }
+  .chapter-hero { position: relative; width: 100%; height: 60vh; min-height: 400px; max-height: 600px; overflow: hidden; background: var(--chapter-bg); }
+  .chapter-hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+  .chapter-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,46,0.85) 0%, rgba(26,26,46,0.3) 50%, rgba(26,26,46,0.1) 100%); }
+  .chapter-hero-text { position: absolute; bottom: 0; left: 0; right: 0; padding: 3rem 2rem; max-width: 800px; margin: 0 auto; }
+  .chapter-hero-text .chap-num { font-family: var(--display); font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; color: rgba(212,165,116,0.15); line-height: 1; margin-bottom: 0.25rem; }
+  .chapter-hero-text h1 { font-family: var(--display); font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; color: #f5e6ca; line-height: 1.2; margin-bottom: 0.4rem; }
+  .chapter-hero-text .chap-sub { font-family: var(--serif); font-size: clamp(0.9rem, 1.5vw, 1.15rem); color: rgba(245,230,202,0.65); font-style: italic; }
+
+  .chapter-body { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  .chapter-body p { margin-bottom: 1.25rem; font-size: 1.05rem; line-height: 1.85; }
+  .chapter-body h2 { font-family: var(--display); font-size: 1.65rem; font-weight: 700; color: var(--text); margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); }
+  .chapter-body h3 { font-family: var(--display); font-size: 1.25rem; font-weight: 600; color: var(--text); margin: 2rem 0 0.75rem; }
+  .chapter-body h4 { font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--accent-dark); margin: 1.5rem 0 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+  .chapter-body blockquote { margin: 1.5rem 0; padding: 1.25rem 1.5rem; background: var(--quote-bg); border-left: 4px solid var(--accent); font-style: italic; font-size: 1rem; color: #3d2e1f; border-radius: 0 4px 4px 0; }
+  .chapter-body blockquote p { margin-bottom: 0; font-size: 1rem; }
+  .chapter-body hr { border: none; height: 1px; background: linear-gradient(to right, transparent, var(--accent), transparent); margin: 2.5rem auto; width: 60%; opacity: 0.4; }
+  .chapter-body ul, .chapter-body ol { margin: 1rem 0 1.25rem 1.5rem; font-size: 1.05rem; line-height: 1.85; }
+  .chapter-body li { margin-bottom: 0.4rem; }
+  .chapter-body strong { font-weight: 600; color: var(--text); }
+  .chapter-body em { font-style: italic; }
+  .chapter-body .refleksi { margin: 2rem 0; padding: 1.5rem 2rem; background: linear-gradient(135deg, #f5f0ea, #faf8f5); border-radius: 8px; border: 1px solid var(--border); }
+  .chapter-body .refleksi h3 { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 1rem; border: none; }
+  .chapter-body .refleksi ol { margin-bottom: 0; }
+  .chapter-body .refleksi li { margin-bottom: 0.75rem; }
+  .chapter-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-family: var(--sans); font-size: 0.9rem; }
+  .chapter-body th { background: var(--chapter-bg); color: #f5e6ca; padding: 0.6rem 0.8rem; text-align: left; font-weight: 500; }
+  .chapter-body td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+  .chapter-body tr:nth-child(even) td { background: #f5f0ea; }
+  .chapter-body pre { background: var(--chapter-bg); color: #f5e6ca; padding: 1rem 1.25rem; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.6; margin: 1.25rem 0; }
+  .chapter-body code { font-family: 'Courier New', monospace; font-size: 0.9em; background: var(--quote-bg); padding: 0.15rem 0.4rem; border-radius: 3px; }
+  .chapter-body pre code { background: none; padding: 0; }
+  .chapter-body .epigraph { text-align: center; font-family: var(--display); font-style: italic; font-size: 1.15rem; color: var(--text-light); margin: 2rem 0 1.5rem; padding: 1.5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .chapter-body .epigraph p { margin-bottom: 0; }
+  .chapter-body .continue-reading { text-align: center; margin: 2.5rem 0 1rem; padding: 1rem; font-family: var(--display); font-style: italic; color: var(--text-light); font-size: 0.95rem; border-top: 1px solid var(--border); }
+
+  .appendix-body { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  .appendix-body h2 { font-family: var(--display); font-size: 1.5rem; font-weight: 700; color: var(--text); margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); }
+  .appendix-body h3 { font-family: var(--display); font-size: 1.15rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.75rem; }
+  .appendix-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-family: var(--sans); font-size: 0.85rem; }
+  .appendix-body th { background: var(--chapter-bg); color: #f5e6ca; padding: 0.5rem 0.7rem; text-align: left; font-weight: 500; }
+  .appendix-body td { padding: 0.4rem 0.7rem; border-bottom: 1px solid var(--border); }
+  .appendix-body tr:nth-child(even) td { background: #f5f0ea; }
+  .appendix-body blockquote { margin: 1rem 0; padding: 1rem 1.5rem; background: var(--quote-bg); border-left: 4px solid var(--accent); font-style: italic; border-radius: 0 4px 4px 0; }
+
+  .book-footer { padding: 4rem 2rem; text-align: center; background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: rgba(245,230,202,0.5); font-family: var(--sans); font-size: 0.8rem; letter-spacing: 1px; }
+  .book-footer strong { color: var(--accent); font-weight: 500; }
+
+  @media print { .chapter-hero { height: 40vh; min-height: 300px; } .cover { min-height: 100vh; } body { font-size: 12pt; } .chapter-body { max-width: 100%; } .cover-deco, .cover-scroll { display: none; } }
+
+  @media (max-width: 1024px) { .chapter-hero { height: 50vh; min-height: 350px; max-height: 500px; } }
+
+  @media (max-width: 768px) {
+    html { font-size: 15px; }
+    .cover { min-height: 100vh; padding: 1.5rem; }
+    .cover-title { font-size: clamp(2rem, 8vw, 3.5rem); }
+    .cover-deco.d1 { width: 300px; height: 300px; top: -50px; right: -50px; }
+    .cover-deco.d2 { width: 250px; height: 250px; bottom: -40px; left: -40px; }
+    .cover-deco.d3 { width: 120px; height: 120px; }
+    .toc { padding: 3rem 1.5rem; }
+    .toc h2 { font-size: 1.5rem; margin-bottom: 2rem; }
+    .toc-sub { display: none; }
+    .act-divider { padding: 3rem 1.5rem; }
+    .chapter-hero { height: 40vh; min-height: 280px; max-height: 400px; }
+    .chapter-hero-text { padding: 1.5rem; }
+    .chapter-hero-text h1 { font-size: clamp(1.25rem, 5vw, 2rem); }
+    .chapter-body { padding: 2rem 1.25rem 3rem; max-width: 100%; }
+    .chapter-body p { font-size: 0.95rem; line-height: 1.8; }
+    .chapter-body h2 { font-size: 1.35rem; }
+    .chapter-body h3 { font-size: 1.1rem; }
+    .chapter-body table { font-size: 0.75rem; display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+    .appendix-body { padding: 2rem 1.25rem 3rem; max-width: 100%; }
+    .book-footer { padding: 2.5rem 1.25rem; font-size: 0.7rem; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .cover { min-height: 90vh; padding: 1rem; }
+    .cover-title { font-size: clamp(1.75rem, 9vw, 2.5rem); }
+    .cover-subtitle { font-size: 0.8rem; }
+    .cover-deco.d3 { display: none; }
+    .toc { padding: 2rem 1rem; }
+    .toc h2 { font-size: 1.35rem; }
+    .act-divider { padding: 2.5rem 1rem; }
+    .chapter-hero { height: 35vh; min-height: 240px; max-height: 320px; }
+    .chapter-hero-text { padding: 1rem; }
+    .chapter-hero-text h1 { font-size: clamp(1.1rem, 5.5vw, 1.5rem); }
+    .chapter-body { padding: 1.5rem 1rem 2.5rem; }
+    .chapter-body p { font-size: 0.9rem; line-height: 1.75; }
+    .chapter-body h2 { font-size: 1.2rem; }
+    .chapter-body blockquote { padding: 0.85rem 1rem; font-size: 0.85rem; border-left-width: 3px; }
+  }
+</style>
+</head>
+<body>
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-deco d1"></div><div class="cover-deco d2"></div><div class="cover-deco d3"></div>
+  <div class="cover-content">
+    <p class="cover-v2-badge">SAMBUNGAN / V2</p>
+    <p class="cover-subbrand">WMB Digital</p>
+    <h1 class="cover-title">Yang Mana<br><em>Keutamaan?</em></h1>
+    <p class="cover-subtitle"><strong>Melangkah Lebih Jauh</strong><br>Dari Keutamaan ke Kejelasan, Dari Fokus ke Aliran, Dari Diri ke Impak</p>
+    <div class="cover-line"></div>
+    <p class="cover-author">WMB DIGITAL</p>
+  </div>
+  <p class="cover-scroll">Baca Buku</p>
+</section>
+
+<!-- TABLE OF CONTENTS -->
+<nav class="toc">
+  <h2>Isi Kandungan</h2><hr>
+  <p class="toc-act">Act 1 — Dari Keutamaan ke Kejelasan</p>
+  <a class="toc-item" href="#bab1"><span class="toc-num">1</span><span class="toc-title">Seni Berkata Tidak</span><span class="toc-sub">— Melangkaui Boundary Setting</span></a>
+  <a class="toc-item" href="#bab2"><span class="toc-num">2</span><span class="toc-title">Decision Fatigue</span><span class="toc-sub">— Kenapa Keputusan Kecil Memakan Tenaga Besar</span></a>
+  <a class="toc-item" href="#bab3"><span class="toc-num">3</span><span class="toc-title">Mental Models</span><span class="toc-sub">— Cara Berfikir Yang Mengubah Segalanya</span></a>
+  <p class="toc-act">Act 2 — Dari Fokus ke Aliran</p>
+  <a class="toc-item" href="#bab4"><span class="toc-num">4</span><span class="toc-title">Flow State</span><span class="toc-sub">— Melangkaui Deep Work</span></a>
+  <a class="toc-item" href="#bab5"><span class="toc-num">5</span><span class="toc-title">Energy Management</span><span class="toc-sub">— Bukan Masa Yang Terhad, Tenaga Yang Terhad</span></a>
+  <a class="toc-item" href="#bab6"><span class="toc-num">6</span><span class="toc-title">Digital Minimalism</span><span class="toc-sub">— Declutter Kehidupan Digital</span></a>
+  <a class="toc-item" href="#bab7"><span class="toc-num">7</span><span class="toc-title">Seni Delegasi</span><span class="toc-sub">— Lepaskan Kerja Tanpa Lepaskan Kualiti</span></a>
+  <p class="toc-act">Act 3 — Dari Diri ke Impak</p>
+  <a class="toc-item" href="#bab8"><span class="toc-num">8</span><span class="toc-title">Start With Why</span><span class="toc-sub">— Tujuan Sebagai Pemangkin Tindakan</span></a>
+  <a class="toc-item" href="#bab9"><span class="toc-num">9</span><span class="toc-title">Crucial Conversations</span><span class="toc-sub">— Bercakap Pasal Benda Sukar</span></a>
+  <a class="toc-item" href="#bab10"><span class="toc-num">10</span><span class="toc-title">Antifragile</span><span class="toc-sub">— Jadi Lebih Kuat Dari Setiap Cabaran</span></a>
+  <a class="toc-item" href="#bab11"><span class="toc-num">11</span><span class="toc-title">Legacy Thinking</span><span class="toc-sub">— Apa Yang Kau Nak Tinggalkan?</span></a>
+  <a class="toc-item" href="#bab12"><span class="toc-num">12</span><span class="toc-title">Pelan 100 Hari</span><span class="toc-sub">— Dari V1 ke V2, Dari Ilmu ke Tindakan</span></a>
+  <div class="toc-app">
+    <a class="toc-item" href="#lampiran"><span class="toc-num">&#x2022;</span><span class="toc-title">Lampiran &amp; Lembaran Kerja</span></a>
+  </div>
+</nav>
+
+<!-- ACT 1 DIVIDER -->
+<section class="act-divider"><div class="act-divider-inner">
+  <p class="act-label">Act 1</p><p class="act-number">ACT 1</p>
+  <h2 class="act-title">Dari Keutamaan ke Kejelasan</h2>
+  <p class="act-desc">Melangkaui asas keutamaan — belajar seni berkata tidak, mengurus keputusan, dan berfikir dengan mental model untuk kejelasan hidup yang lebih tajam</p>
+</div></section>
+
+<!-- BAB 1: SENI BERKATA TIDAK -->
+<section class="chapter-page" id="bab1">
+<div class="chapter-hero">
+  <img src="images/bab01-boundary-setting.png" alt="Bab 1: Seni Berkata Tidak">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 1</p>
+    <h1>Seni Berkata Tidak</h1>
+    <p class="chap-sub">Melangkaui Boundary Setting</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<hr>
+
+<div class="epigraph">
+<p><strong>"Maaf, saya tak boleh." — Tiga patah perkataan yang paling sukar diucapkan, tapi paling membebaskan.</strong></p>
+</div>
+
+<hr>
+
+<p>Jam dah pukul 6.45 petang. awak baru nak masuk kereta, nak balik rumah, dah rancang nak masak dinner dan habiskan baki episode drama Netflix. Tiba-tiba telefon berbunyi. Group WhatsApp pejabat.</p>
+<p>"Cikgu, boleh tolong settlekan laporan ni? Bos nak esok pagi."</p>
+<p>Awak pandang skrin. Bukan tugas awak. Tapi orang yang minta tu kawan sepejabat. Baik. Dah lama kenal. Dan dia tahu awak pandai buat laporan.</p>
+<p>Dalam kepala, suara bergaduh:</p>
+<p>"Kata tak boleh la. Ni dah nak balik." Tapi suara lagi satu menengking: "Ehh, kesian la dia. Barang kali dia sesak. Lagipun, sekali-sekali tolong tak salah."</p>
+<p>Akhirnya, awak menaip: "Ok saya settlekan."</p>
+<p>Awak balik pukul 9 malam. Lauk dinner beli dekat gerak tepi jalan. Drama Netflix tak jadi tengok. Anak-anak dah tidur. Dan awak tidur dengan perasaan kosong: "Kenapa aku selalu sangat macam ni?"</p>
+<p>Selamat datang ke dunia <em>people-pleaser</em>.</p>
+
+<hr>
+
+<h2>Evolusi dari "Ya" Automatik ke "Tidak" Sedar</h2>
+<p>Dalam V1 buku ini, kita dah bincang tentang asas <em>boundary setting</em> — macam mana nak tetapkan had. Tapi V2 ni lebih dalam. Kita bukan sekadar nak belajar "cara kata tak boleh." Kita nak faham <em>psikologi di sebalik</em> setiap kali kita kata "ya" padahal hati berkata "tidak."</p>
+<p>Greg McKeown, dalam <em>Essentialism</em>, menyebut satu perkara yang menusuk kalbu:</p>
+<blockquote><p>"If you don't prioritize your life, someone else will."</p></blockquote>
+<p>Kalau awak tak tentukan keutamaan hidup awak, orang lain akan tentukan untuk awak. Setiap kali awak kata "ya" pada permintaan orang lain tanpa berfikir, awak sebenarnya sedang menyerahkan remote control hidup awak kepada mereka.</p>
+<p>Dalam konteks Malaysia, budaya kita sangat <em>collectivist</em>. Kita dibesarkan dengan nilai "muafakat," "tolong-menolong," "jaga hati orang." Zaman budak-budak, mak bapak ajar: "Kalau orang minta tolong, jangan kedekut." Zaman sekolah, guru ajar: "Kita kena bekerjasama." Zaman kerja, bos ajar: "Teamwork makes the dream work."</p>
+<p>Semua nilai ni baik. Tapi masalahnya, kita tak pernah diajar <strong>bila dan macam mana nak tolak</strong>. Kita tak pernah diajar bahawa <em>menjaga diri sendiri bukan mementingkan diri</em>. Kita tak pernah sedar bahawa setiap kali kita tolong orang sampai kita sendiri terkorban, sebenarnya kita tak tolong sesiapa pun — kita cuma cipta <em>resentment</em> dalam diam.</p>
+
+<hr>
+
+<h2>Kos Tersembunyi Setiap "Ya"</h2>
+<p>McKeown mengajar kita satu prinsip penting: setiap "ya" ada kos. Bukan kos material, tapi <strong>kos peluang</strong> — <em>opportunity cost</em>.</p>
+<p>Bila awak kata "ya" untuk:</p>
+<ul>
+<li>Hadir mesyuarat yang tak penting = awak kata "tidak" pada masa untuk siapkan kerja sebenar.</li>
+<li>Tolong kawan buat laporan dia = awak kata "tidak" pada masa dengan keluarga.</li>
+<li>Terima side project baru = awak kata "tidak" pada rehat dan recuperation.</li>
+<li>Jawab telefon setiap kali bunyi = awak kata "tidak" pada fokus dan deep work.</li>
+</ul>
+<p>Tapi kos paling besar? <strong>Identity cost</strong>.</p>
+<p>Setiap kali awak kata "ya" padahal hati kata "tidak", awak hantar mesej pada diri sendiri: "Apa yang aku nak tak penting." Lama-kelamaan, awak hilang sentuhan dengan suara dalaman awak sendiri. Awak jadi orang yang sentiasa mengikut, sentiasa akur, sentiasa <em>yes</em> — walaupun dalam diam hati meronta.</p>
+<p>Ada satu kajian oleh psikologi bernama <strong>Adam Grant</strong> tentang perbezaan antara <em>givers</em> dan <em>takers</em> dalam organisasi. Grant dapati bahawa <em>givers</em> — orang yang suka tolong — sebenarnya adalah prestasi paling rendah DAN paling tinggi dalam organisasi. Pelik kan?</p>
+<p>Rupanya, ada dua jenis <em>giver</em>:</p>
+<ol>
+<li><strong>Selfless Giver</strong> — tolong semua orang, tak jaga diri, akhirnya burnout, prestasi merudum.</li>
+<li><strong>Strategic Giver</strong> — tolong orang secara strategik, jaga sempadan sendiri, akhirnya berjaya dan bermanfaat untuk ramai orang.</li>
+</ol>
+<p>Yang membezakan mereka? <strong>Keupayaan untuk berkata tidak.</strong></p>
+
+<hr>
+
+<h2>"It's a Yes and a No" — Dua Sisi Satu Syiling</h2>
+<p>McKeown menulis: "If it isn't a clear yes, then it's a clear no."</p>
+<p>Setiap keputusan ialah dua keputusan serentak:</p>
+<ul>
+<li>Awak kata YA pada sesuatu.</li>
+<li>Awak kata TIDAK pada segala yang lain.</li>
+</ul>
+<p>Inilah yang dipanggil <em>trade-off</em>. Bila awak pilih satu, awak tinggalkan seratus yang lain. Dan inilah yang kita lari dari — kita nak semuanya. Kita nak tolong kawan, nak siapkan kerja sendiri, nak luangkan masa dengan keluarga, nak jaga kesihatan, nak ada hobi. Semua sekali gus.</p>
+<p>Tapi hidup tak begitu. <strong>Hidup adalah siri trade-off.</strong></p>
+<p>Seorang pegawai kerajaan di Putrajaya, namakan dia Kamal. Setiap petang, Kamal akan duduk di meja dia, selesaikan kerja. Tapi setiap petang juga, akan ada orang datang: "Bang, tolong sign sikit." "Bang, tolong tengok ni." "Bang, bos panggil."</p>
+<p>Kamal rasa dia kena layan semua sebab "itu pekerjaan saya." Tapi dia tak sedar: dengan melayan semua gangguan, dia sebenarnya <em>sedang melakukan pekerjaan dia dengan teruk</em>. Kerja sebenar dia — menganalisis dasar, menulis kertas cadangan — tertangguh. Kualiti merosot. Dan dia balik rumah pukul 8 malam setiap hari, penat mengadap.</p>
+<p>Bila dia mula belajar berkata tidak — "Maaf, saya ada deadline. Boleh kita bincang esok?" — dia rasa bersalah pada mulanya. Tapi selepas seminggu, sesuatu yang menarik berlaku. Orang mula hargai masanya. Mereka datang dengan perkara yang betul-betul penting. Dan kerja Kamal — kerja sebenar — mula siap tepat pada masanya.</p>
+<p><strong>Bila awak hargai masa awak, orang lain pun akan hargai.</strong></p>
+
+<hr>
+
+<h2>The "Yes" Audit: Siapa Yang Paling Banyak Dapat "Ya" Dari Awak?</h2>
+<p>Mari kita buat satu latihan mudah. Tutup mata awak sekejap dan fikir:</p>
+<p><strong>5 orang yang paling banyak dapat "ya" dari awak dalam minggu ini.</strong></p>
+<p>Siapa?</p>
+<ol>
+<li>Bos?</li>
+<li>Pasangan?</li>
+<li>Anak?</li>
+<li>Kawan sepejabat?</li>
+<li>Mak? Ayah?</li>
+<li>Group WhatsApp?</li>
+</ol>
+<p>Sekarang tanya: <strong>Antara mereka, siapa yang paling penting dalam hidup awak?</strong></p>
+<p>Kalau jawapan awak tak sama dengan senarai pertama, awak ada masalah. Ramai antara kita memberi paling banyak "ya" kepada orang yang paling kurang penting dalam hidup kita — dan paling sedikit "ya" kepada orang yang paling bermakna. Sebab apa? Sebab suara yang paling kuat dan paling mendesak selalunya bukan dari orang yang paling penting. Tapi dari yang paling <em>demanding</em>.</p>
+<p>Boss minta sekarang. Client WhatsApp pukul 10 malam. Group chat tak henti berbunyi. Semua ni <em>urgent</em> — tapi belum tentu <em>important</em>.</p>
+
+<hr>
+
+<h2>Framework: Cara Tolak Dengan Hormat (The Graceful No)</h2>
+<p>McKeown dan beberapa pakar lain menawarkan beberapa cara untuk berkata tidak dengan hormat tanpa merosakkan hubungan. Ini ialah framework yang boleh guna dalam konteks Malaysia:</p>
+
+<h3>1. The Pause — Ambil Masa Sebelum Jawab</h3>
+<p>Jangan jawab "ya" atau "tidak" dengan segera. Ambil masa.</p>
+<blockquote><p>"Bagi saya check schedule dulu. Saya reply balik nanti."</p></blockquote>
+<p>Ini bagi awak masa untuk berfikir — betul ke nak buat ni? Atau rasa terdesak je sebab orang telefon tiba-tiba?</p>
+<p>Psikologi Daniel Kahneman (kita akan bincang lebih dalam Bab 2) panggil ini <em>System 2 thinking</em> — berfikir secara perlahan dan rasional, bukan reaktif.</p>
+
+<h3>2. The "Yes... BUT" — Tawarkan Alternatif</h3>
+<p>Kalau nak tolak, tapi tak nak terputus hubungan:</p>
+<blockquote><p>"Saya tak boleh siapkan hari ni, tapi mungkin saya boleh tengokkan esok pagi."</p></blockquote>
+<p>Atau</p>
+<blockquote><p>"Saya rasa Amin lebih sesuai untuk ni. Cuba tanya dia."</p></blockquote>
+
+<h3>3. The "I Don't" — Bukan "I Can't"</h3>
+<p>Satu kajian oleh psikologi dari Boston College mendapati bahawa orang yang guna frasa <strong>"I don't"</strong> lebih berjaya tolak godaan dari orang yang guna <strong>"I can't"</strong>.</p>
+<p>Kenapa? Sebab "I can't" bunyinya macam kekangan luar — kita tak mampu, terpaksa. Tapi "I don't" bunyinya macam identiti dan pilihan — <strong>ini bukan saya, ini bukan prinsip saya</strong>.</p>
+<p>Cuba bandingkan:</p>
+<ul>
+<li>"Saya tak boleh datang, saya sibuk." vs "Saya tak datang meeting malam, sebab waktu tu saya luangkan untuk keluarga."</li>
+<li>"Saya tak boleh buat, banyak kerja." vs "Saya tak ambil projek baru sekarang sebab saya nak fokus pada kualiti projek sedia ada."</li>
+</ul>
+<p>Yang kedua lebih <em>powerful</em>. Bukan sebab tak mampu, tapi sebab <strong>awak buat pilihan sedar</strong>.</p>
+
+<h3>4. The Broken Record — Ulang Pendirian</h3>
+<p>Orang akan cuba pujuk. Bersedialah.</p>
+<blockquote><p>"Betul la, tolong la..."<br>
+"Macam yang saya cakap tadi, saya dah fokus penuh pada projek lain."<br>
+"Sekali ni je..."<br>
+"Saya faham. Tapi saya tak boleh ubah pendirian saya untuk kali ni."</p></blockquote>
+<p>Jangan marah. Jangan defensif. Ulang dengan tenang.</p>
+
+<h3>5. The "I Appreciate But" — Hargai Tawaran, Tolak Permintaan</h3>
+<blockquote><p>"Terima kasih ingatkan saya. Saya hargai sangat peluang ni. Tapi saya kena tolak."</p></blockquote>
+<p>Ini penting dalam budaya Malaysia — <em>jaga hati</em>. Bila orang rasa dihargai, mereka lebih mudah terima penolakan.</p>
+
+<hr>
+
+<h2>The Weekly "Yes" Audit</h2>
+<p>Untuk betul-betul kuasai seni berkata tidak, awak kena buat satu amalan mingguan: <strong>audit semua "ya" awak</strong>.</p>
+<p>Setiap hari Jumaat, luangkan 10 minit. Buka buku nota atau Notes dalam telefon. Tulis:</p>
+<p><strong>Senarai A: Semua "Ya" Minggu Ini</strong></p>
+<ul>
+<li>Apa yang awak setuju buat?</li>
+<li>Siapa yang minta?</li>
+<li>Adakah ia benar-benar perlu?</li>
+</ul>
+<p><strong>Senarai B: Semua "Ya" Yang Tak Patut Jadi "Ya"</strong></p>
+<ul>
+<li>Yang mana satu awak menyesal?</li>
+<li>Kenapa awak kata ya? (Takut? Bersalah? Terdesak?)</li>
+</ul>
+<p><strong>Senarai C: Yang Mana Nak Tolak Minggu Depan</strong></p>
+<ul>
+<li>Tulis nama situasi atau orang.</li>
+<li>Rancang macam mana nak tolak.</li>
+</ul>
+<p>Dr. Vanessa Bohns, seorang profesor psikologi sosial di Cornell University, menjalankan kajian yang mendapati bahawa manusia <strong>sangat sukar berkata tidak</strong> — lebih sukar dari kita sangka. Dalam eksperimennya, peserta diminta membuat permintaan yang agak pelik kepada orang asing (macam "boleh tolong pinjamkan telefon?"). Hasilnya: <strong>50% orang setuju</strong>, walaupun permintaan itu ganjil.</p>
+<p>Kenapa? Sebab kita <strong>overestimate</strong> reaksi negatif orang bila kita tolak. Kita fikir orang akan marah, kecil hati, atau judge kita. Tapi kajian Bohns tunjuk: orang sebenarnya lebih faham dari kita sangka. Mereka takkan marah sangat pun.</p>
+<p>Kebanyakan ketakutan kita untuk berkata "tidak" adalah <strong>dalam kepala kita sendiri</strong>.</p>
+
+<hr>
+
+<h2>Anda Bukan Bertanggungjawab Atas Perasaan Orang Lain</h2>
+<p>Saya nak ulang ayat ni, sebab ia sangat penting:</p>
+<p><strong>Awak bukan bertanggungjawab atas perasaan orang lain bila awak jaga sempadan awak.</strong></p>
+<p>Kalau orang kecil hati sebab awak tolak permintaan dia, itu perasaan dia, bukan masalah awak. Awak tak boleh kawal perasaan orang. Awak hanya boleh kawal apa yang awak buat.</p>
+<p>Seorang usahawan di Johor Bahru, panggil saja Anita, ada satu peraturan: dia tak pernah jawab panggilan telefon atau WhatsApp daripada client lepas pukul 7 malam. Pada mulanya, client complain. "Cik Anita susah dihubungi." Anita cuma jawab dengan senyuman: "Saya percaya pada work-life balance. Dan kalau ada emergency, encik boleh hantar email. Saya akan jawab pagi esok."</p>
+<p>Selepas 3 bulan, client bukan setakat terima, tapi ramai yang <em>respect</em> dia lebih. Sebab apa? Sebab Anita tunjuk yang dia <em>tetap pada prinsip</em>. Dan orang respect orang yang ada prinsip, bukan yang sentiasa mengikut.</p>
+
+<hr>
+
+<h2>Membezakan Antara Komitmen Sebenar dan Guilt Trip</h2>
+<p>Satu lagi kemahiran penting dalam buku V2 ni: <strong>bezakan antara komitmen sebenar dan guilt trip</strong>.</p>
+<p>Ada permintaan yang memang <em>genuine</em> — contohnya, mak ayah kita dah tua, perlukan bantuan. Atau anak kecil demam, kena jaga. Atau kerja yang memang tanggungjawab kita. Itu komitmen sebenar.</p>
+<p>Tapi ada permintaan yang datang dengan <em>guilt trip</em> — benda yang sengaja atau tak sengaja buat kita rasa bersalah kalau tolak.</p>
+<p>Contoh:</p>
+<ul>
+<li>"Takpe la, saya buat sendiri je..."</li>
+<li>"Ingatkan kawan baik... rupanya susah sikit nak minta tolong."</li>
+<li>"Diorang semua dah setuju, tinggal awak je tak masuk."</li>
+</ul>
+<p>Ini adalah <strong>emotional manipulation</strong> — sedar atau tak sedar. Dan cara terbaik nak lawan guilt trip? <strong>Jangan ambil umpan.</strong></p>
+<p>Jawab dengan tenang: "Saya faham. Tapi saya tetap dengan keputusan saya."</p>
+
+<hr>
+
+<h2>Refleksi: Kos Yang Paling Mahal</h2>
+<p>Akhir kata untuk bab ini, mari kita fikirkan satu soalan yang paling penting:</p>
+<p><strong>Apa yang paling mahal yang awak bayar kerana selalu kata "ya"?</strong></p>
+<p>Mungkin jawapan awak:</p>
+<ul>
+<li>Masa dengan anak yang tak dapat dipulihkan.</li>
+<li>Kesihatan yang merosot.</li>
+<li>Passion yang terbengkalai.</li>
+<li>Impian yang ditangguh tahun demi tahun.</li>
+</ul>
+<p>Itulah kosnya. Dan ia jauh lebih mahal dari apa yang awak dapat dengan tolong orang.</p>
+<p>McKeown ingatkan: "You cannot underestimate the power of a disciplined no." Jangan pandang remeh kuasa satu perkataan "tidak" yang diucapkan dengan sedar, penuh hormat, dan tegas.</p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Dalam minggu ini, berapa banyak kali awak kata "ya" padahal dalam hati nak kata "tidak"? Tulis semua.</li>
+<li>Siapa satu orang yang paling sukar untuk awak tolak? Kenapa? Apa yang awak takutkan akan berlaku?</li>
+<li>Kalau awak kena tolak 3 permintaan minggu depan — yang mana satu akan awak tolak, dan macam mana cara awak nak tolak?</li>
+<li>Fikir satu situasi di masa lepas di mana awak kata "ya" dan kemudian menyesal. Apa kos yang awak bayar? Adakah ia berbaloi?</li>
+<li>Apakah satu prinsip atau <em>personal policy</em> yang boleh awak buat mulai sekarang untuk memudahkan awak berkata tidak — contohnya: "Saya tak jawab WhatsApp kerja lepas pukul 8 malam" atau "Saya tak ambil projek baru kalau jadual saya dah 80% penuh"?</li>
+</ol>
+
+<hr>
+
+<div class="epigraph">
+<p><em>"The difference between successful people and very successful people is that very successful people say 'no' to almost everything."</em> — Warren Buffett</p>
+</div>
+
+<p class="continue-reading">Bersambung ke Bab 2: Decision Fatigue — Kenapa Keputusan Kecil Memakan Tenaga Besar</p>
+
+</div>
+</section>
+
+<!-- BAB 2: DECISION FATIGUE -->
+<section class="chapter-page" id="bab2">
+<div class="chapter-hero">
+  <img src="images/bab02-decision-fatigue.png" alt="Bab 2: Decision Fatigue">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 2</p>
+    <h1>Decision Fatigue</h1>
+    <p class="chap-sub">Kenapa Keputusan Kecil Memakan Tenaga Besar</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<hr>
+
+<div class="epigraph">
+<p><strong>"Takkan nak fikir apa nak pakai pun boleh buat kita penat?" — Jawapannya: Ya. Dan sains buktikan.</strong></p>
+</div>
+
+<hr>
+
+<p>Pagi hari Isnin. Jam 6.45 pagi. Awak berdiri di depan almari baju, mata masih separuh mengantuk. Dalam kepala, satu siri soalan bertalu-talu:</p>
+<p>"Apa nak pakai hari ni? Baju biru ke baju putih? Yang biru ni dah pakai hari Khamis lepas, dah basuh ke belum? Hari ni ada meeting dengan bos besar — kena nampak profesional. Tapi malas sangat nak iron baju. Ah, pakai je baju hitam yang melepak kat kerusi tu..."</p>
+<p>Lima belas minit berlalu. Awak masih berdiri. Sekarang jam 7 pagi.</p>
+<p>"Ok, sarapan. Nak makan apa? Roti canai? Nasi lemak? Tapi nasi lemak makcik tu kadang-kadang berminyak sangat. Roti canai plak dah selalu sangat. Cereal? Malas nak susun sudu. Aaaah, apapun jadi la."</p>
+<p>Lepas sarapan, jam 7.30 pagi. Awak masuk kereta. Lampu isyarat merah. Dalam masa 10 saat, otak buat keputusan: "Kalau LDP jam, aku exit Subang. Tapi kalau masuk Subang, kena piara tauke. Ataupun aku ikut Waze je..."</p>
+<p>Awak tak sedar, dalam masa 30 minit sejak bangun tidur, otak awak dah buat <strong>lebih 20 keputusan</strong>. Ada yang remeh (baju apa?), ada yang sederhana (makan apa?), ada yang strategik (jalan mana?). Semua guna tenaga mental yang sama.</p>
+<p>Dan bila sampai waktu tengah hari, awak dah letih — bukan sebab buat kerja berat, tapi sebab otak dah penuh dengan keputusan.</p>
+<p>Inilah yang dipanggil <strong>Decision Fatigue</strong>.</p>
+
+<hr>
+
+<h2>Sains Decision Fatigue: Bateri Mental Yang Boleh Habis</h2>
+<p><strong>Roy Baumeister</strong>, seorang psikologi sosial dari Florida State University, adalah antara saintis pertama yang mengkaji fenomena ini dengan serius. Dalam eksperimen terkenalnya pada tahun 1998, Baumeister membahagikan peserta kepada dua kumpulan.</p>
+<p>Kumpulan A diletakkan dalam bilik yang berbau <strong>cookies bakar</strong> yang sedap. Mereka diberi pilihan: makan cookies atau makan lobak merah. Kumpulan B — kumpulan kawalan — diberi pilihan yang sama.</p>
+<p>Kemudian, kedua-dua kumpulan diminta menyelesaikan <strong>teka-teki geometri yang sukar</strong> — sebenarnya teka-teki itu sengaja direka untuk mustahil diselesaikan.</p>
+<p>Hasilnya? Kumpulan A (yang terpaksa <em>menahan godaan</em> cookies dan pilih lobak merah) <strong>menyerah 11 minit lebih cepat</strong> dari kumpulan B. Mereka dah guna tenaga mental untuk melawan godaan, maka bila sampai teka-teki, bateri dah tinggal separuh.</p>
+<p>Baumeister panggil fenomena ni <strong>Ego Depletion</strong> — habisnya sumber mental untuk kawalan diri.</p>
+<p>Sejak eksperimen tu, banyak lagi kajian mengesahkan dapatan yang sama:</p>
+<ul>
+<li>Peserta yang kena buat banyak keputusan kecil (macam pilih warna bolpoin atau jenis lilin aroma) prestasi mereka dalam tugasan seterusnya lebih rendah.</li>
+<li>Hakim di mahkamah lebih cenderung beri keputusan <em>parole</em> (bebas bersyarat) pada awal pagi — di mana mental masih segar. Semakin lewat waktu, semakin kecil kemungkinan mereka beri parole. Bukan sebab kes lebih berat, tapi sebab <strong>decision fatigue</strong> dah memuncak.</li>
+<li>Orang yang pergi grocery shopping dalam keadaan lapar — dan penat — lebih mudah beli barang tak perlu. Decision fatigue + physical fatigue = disaster.</li>
+</ul>
+<p>Dalam konteks Malaysia, fikirkan:</p>
+<ul>
+<li>Pegawai kerajaan yang kena buat puluhan keputusan kecil setiap hari — tanda sini, paraf sini, ok kan sini — bila sampai petang, keputusan besar mungkin tak dapat perhatian yang sepatutnya.</li>
+<li>Ibu bapa yang seharian buat keputusan untuk anak — "baju ni tak padan", "jangan main panas", "makan sayur" — bila malam tiba, tenaga untuk membuat keputusan penting tentang kewangan keluarga dah habis.</li>
+<li>Pekerja yang dari pagi dah sibuk balas email, decide meeting mana nak hadir, prioritizing tasks — bila pukul 3 petang sampai, tenaga untuk deep work dah lesap.</li>
+</ul>
+
+<hr>
+
+<h2>System 1 vs System 2: Dua Otak Dalam Satu Kepala</h2>
+<p>Daniel Kahneman, dalam buku legendarisnya <em>Thinking, Fast and Slow</em>, menerangkan kenapa decision fatigue berlaku dengan memperkenalkan dua sistem dalam otak kita:</p>
+<h3>Sistem 1 — Cepat, Automatik, Intuitif</h3>
+<ul>
+<li>Berfungsi tanpa usaha.</li>
+<li>Macam memandu kereta di jalan yang biasa — otak auto pilot.</li>
+<li>Guna sikit tenaga mental.</li>
+</ul>
+<h3>Sistem 2 — Perlahan, Analitikal, Rasional</h3>
+<ul>
+<li>Memerlukan fokus dan usaha sedar.</li>
+<li>Macam kira cukai pendapatan atau belajar main alat muzik baru.</li>
+<li>Guna banyak tenaga mental.</li>
+</ul>
+<p>Masalahnya, kita fikir kita guna System 2 sepanjang hari. Tapi realitinya, kita guna System 1 untuk <strong>95%</strong> keputusan harian kita.</p>
+<p>Bila kita bangun pagi dan fikir "baju apa nak pakai", kita guna System 2. Tapi System 2 ni macam bateri telefon — terhad. Bila dah habis dipakai untuk 20 keputusan pagi, tenaga untuk buat keputusan besar petang nanti tinggal sikit.</p>
+<p>Kita kata: "Saya kerja 10 jam hari ni." Tapi hakikatnya, 8 jam daripada tu adalah System 1 — balas email tanpa fikir, scroll, buat kerja rutin. Hanya 2 jam betul-betul System 2 — fikir strategi, buat keputusan besar, selesaikan masalah rumit.</p>
+<p>Inilah kenapa Mark Zuckerberg, Steve Jobs, dan ramai CEO besar pakai <strong>baju yang sama setiap hari</strong>. Bukan sebab mereka takde style. Tapi sebab mereka nak jimatkan decision energy untuk perkara yang lebih penting.</p>
+
+<hr>
+
+<h2>Keputusan Yang Tidak Dibuat Juga Adalah Keputusan</h2>
+<p>Ini satu poin yang ramai tak sedar: <strong>keputusan untuk tidak membuat keputusan juga adalah keputusan — dan ia guna tenaga yang sama.</strong></p>
+<p>Bila awak tangguh nak sign kontrak tu — "Esokla fikir" — fikiran awak masih ligat memprosesnya di bawah sedar. Bila awak tangguh nak buat decision tentang tawaran kerja baru — "Nanti-nantila" — otak masih guna energi untuk holding pattern tu.</p>
+<p>Ini macam buka banyak tab dalam Chrome. Setiap tab guna RAM. Bila tutup, RAM lega. Bila bukak je, RAM termakan. Sama dengan keputusan. <strong>Setiap keputusan yang tertangguh tetap guna tenaga mental.</strong></p>
+
+<hr>
+
+<h2>Decision Budget Harian: Macam Mana Nak Urus</h2>
+<p>Macam mana nak handle decision fatigue? Inilah beberapa strategi praktikal yang boleh guna:</p>
+<h3>1. Buat Keputusan Besar Di Waktu Puncak</h3>
+<p>Setiap orang ada <em>peak hours</em> masing-masing. Ada yang pagi-pagi lagi dah segar. Ada yang produktif lepas Isyak. Cari waktu puncak awak dan letak keputusan paling penting di situ.</p>
+<p>Contoh: Kalau awak seorang akauntan, jangan buat pengiraan rumit lepas lunch. Buat waktu 9-11 pagi. Lepas lunch, guna untuk kerja rutin yang guna System 1 — balas email, isi borang, organize fail.</p>
+<h3>2. Automasikan Keputusan Kecil</h3>
+<p>Zuckerberg dan Jobs pakai baju sama setiap hari? Tiru konsepnya:</p>
+<ul>
+<li><strong>Pakaian:</strong> Simpan 5 set baju kerja yang serupa. Tak payah fikir pagi-pagi.</li>
+<li><strong>Makanan:</strong> Tetapkan menu mingguan. Isnin nasi lemak, Selasa roti canai, Rabu bihun goreng. Tak payah fikir "nak makan apa."</li>
+<li><strong>Senaman:</strong> Sama masa, sama tempat, sama jenis. Tak payah decide "nak jogging ke gym ke yoga ke."</li>
+<li><strong>Kewangan:</strong> Auto-debit bil, auto-transfer tabungan. Tak payah ingat-ingat.</li>
+</ul>
+<h3>3. Simplify Pilihan — Kurang Itu Lebih</h3>
+<p>Barry Schwartz, dalam bukunya <em>The Paradox of Choice</em>, menjelaskan: <strong>semakin banyak pilihan, semakin tinggi decision fatigue, dan semakin rendah kepuasan.</strong></p>
+<p>Dalam kajian klasiknya, Schwartz letak booth jem di sebuah pasaraya. Satu hari, booth ada 24 jenis jem. Hari lain, booth ada 6 jenis jem. Yang mana lebih laku?</p>
+<p>Booth dengan <strong>24 jenis</strong> lebih ramai pengunjung — orang berhenti, tengok, cuba rasa. Tapi booth dengan <strong>6 jenis</strong> — orang <strong>lebih banyak beli</strong>. 30% pengunjung booth kecil membeli, berbanding hanya 3% untuk booth besar.</p>
+<p>Terlalu banyak pilihan = lumpuh. Bila otak tak boleh nak decide, ia pilih <strong>tidak buat apa-apa</strong>. Atau buat pilihan impulsif yang tak rasional.</p>
+<p>Aplikasi:</p>
+<ul>
+<li>Netflix? Jangan scroll lama-lama. Pilih dulu kategori, then pilih dalam 3-5 pilihan.</li>
+<li>Beli handphone baru? Jangan tengok semua 50 model. Cari 3 yang paling sesuai dengan bajet dan keperluan.</li>
+<li>Cari tempat makan? Guna <em>process of elimination</em>: bukan Chinese, bukan Western, jadi Melayu. Mana satu?</li>
+</ul>
+<h3>4. Hadkan Keputusan Sehari</h3>
+<p>Tetapkan <em>decision budget</em>. Berapa banyak keputusan besar yang awak nak buat sehari? Mungkin 3. Lepas tu, rehatkan otak.</p>
+<p>Satu teknik: <strong>"Eat the frog first"</strong> — buat keputusan paling sukar dan paling penting awal pagi. Mark Twain pernah cakap: "If you eat a live frog first thing in the morning, nothing worse will happen to you for the rest of the day."</p>
+<h3>5. Cipta "Default Mode" Untuk Situasi Berulang</h3>
+<p>Dalam programming, ada konsep <em>default parameter</em> — nilai yang automatik diguna kalau kita tak specify. Sama dengan hidup.</p>
+<p>Cipta default untuk situasi berulang:</p>
+<ul>
+<li><strong>Default plan malam:</strong> Lepas Maghrib, 30 minit baca buku dengan anak, tanpa telefon.</li>
+<li><strong>Default jawapan untuk permintaan mengejut:</strong> "Bagi saya semak dulu, saya reply esok."</li>
+<li><strong>Default response untuk godaan:</strong> Bila craving nak beli benda tak perlu, tahan 24 jam. Esok kalau masih nak, baru beli.</li>
+</ul>
+
+<hr>
+
+<h2>Decision Fatigue Dalam Hubungan dan Rumah Tangga</h2>
+<p>Decision fatigue bukan setakat di tempat kerja. Di rumah, ia sama dashyat.</p>
+<p>Pernah tak dengar istilah <strong>"mental load"</strong> — beban mental yang kebanyakannya ditanggung oleh wanita dalam rumah tangga?</p>
+<p>Isteri yang kena ingat:</p>
+<ul>
+<li>Stok beras dah habis.</li>
+<li>Anak kena pergi medical check-up Isnin ni.</li>
+<li>Baju Raya kena tempah sebelum puasa.</li>
+<li>Bil api dah sampai, kena bayar Jumaat ni.</li>
+<li>Jadual cucuk vaksin anak.</li>
+<li>Apa nak masak untuk kenduri sabtu ni.</li>
+</ul>
+<p>Semua ni keputusan. Dan ia bertimbun. Dalam psikologi, ini dipanggil <em>decision overload</em>.</p>
+<p>Dalam satu kajian oleh University of Texas, penyelidik mendapati bahawa <strong>golongan berpendapatan rendah</strong> lebih mudah terkena decision fatigue. Bukan sebab mereka kurang bijak, tapi sebab setiap keputusan kewangan — "Bayar bil air ke beli beras dulu?" — adalah keputusan <em>high-stakes</em> yang menguras tenaga mental.</p>
+
+<hr>
+
+<h2>Rehat Itu Bukan Kemewahan, Tapi Strategi</h2>
+<p>Satu teknik yang saya suka: <strong>Teknik Pomodoro versi Decision Fatigue.</strong> Bukan 25 minit kerja, 5 minit rehat. Tapi:</p>
+<ul>
+<li>Buat keputusan penting untuk 90 minit (blok fokus).</li>
+<li>Lepas tu rehat 20 minit — jalan-jalan, dengar muzik, main dengan kucing.</li>
+<li>Then baru buat keputusan seterusnya.</li>
+</ul>
+
+<hr>
+
+<h2>Refleksi: Kurangkan Keputusan, Tingkatkan Kualiti Hidup</h2>
+<p>Decision fatigue ni bukan satu konsep yang jauh — ia berlaku dalam hidup kita setiap hari. Setiap kali kita rasa "malas nak fikir" dan ambil jalan mudah — order Grabfood, scroll TikTok sejam, postpone decision besar — itu mungkin decision fatigue yang bercakap.</p>
+<p>Tapi berita baiknya: kita boleh <em>design</em> hidup kita supaya kurang keputusan yang tak perlu. Bukan kurang <em>autonomi</em>, tapi kurang <em>cognitive load</em>. Bebaskan tenaga mental untuk perkara yang betul-betul penting.</p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Pada waktu apa dalam sehari awak rasa paling segar dan paling tajam fikiran? Adakah awak letak keputusan paling penting pada waktu tu?</li>
+<li>Senaraikan 5 keputusan kecil yang awak buat setiap hari — baju apa nak pakai, nak breakfast apa, nak pergi kerja jalan mana — dan tanya: "Yang mana satu boleh saya automasikan?"</li>
+<li>Fikir satu keputusan besar yang awak tangguh-tangguhkan. Berapa banyak tenaga mental yang termakan oleh penangguhan tu? Apa satu langkah kecil untuk mula buat keputusan tu?</li>
+<li>Dalam hubungan atau rumah tangga awak, adakah beban keputusan seimbang? Kalau tak, apa satu area yang boleh dikongsi?</li>
+<li>Cuba esok pagi, sebelum buat apa-apa keputusan, tulis satu <em>default plan</em> untuk hari tu — dan ikut. Apa yang berlaku? Adakah rasa kurang penat?</li>
+</ol>
+
+<hr>
+
+<div class="epigraph">
+<p><em>"Guard your time and energy as your most valuable assets. Every decision you make costs you something. The question is only 'Is this decision worth the cost?'"</em> — Greg McKeown, Essentialism</p>
+</div>
+
+<p class="continue-reading">Bersambung ke Bab 3: Mental Models — Cara Berfikir Yang Mengubah Segalanya</p>
+
+</div>
+</section>
+
+<!-- BAB 3: MENTAL MODELS -->
+<section class="chapter-page" id="bab3">
+<div class="chapter-hero">
+  <img src="images/bab03-mental-models.png" alt="Bab 3: Mental Models">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 3</p>
+    <h1>Mental Models</h1>
+    <p class="chap-sub">Cara Berfikir Yang Mengubah Segalanya</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<hr>
+
+<div class="epigraph">
+<p><strong>"Kita tak nampak dunia macam mana ia adalah. Kita nampak dunia macam mana kita adalah." — Pemikiran kita adalah cermin, bukan tingkap.</strong></p>
+</div>
+
+<hr>
+
+<h2>Apa Itu Mental Models?</h2>
+<p><strong>Charlie Munger</strong>, pelabur legenda dan rakan kongsi Warren Buffett, adalah antara yang mempopularkan istilah "mental models." Menurut Munger, mental models adalah <strong>kerangka berfikir</strong> yang membantu kita memahami bagaimana dunia berfungsi. Setiap model adalah satu cara untuk melihat masalah daripada sudut yang berbeza.</p>
+<p>Pendek kata: <strong>mental model adalah alat berfikir.</strong> Macam tukang kayu yang ada pelbagai alat — tukul, gergaji, pita ukur — setiap alat ada fungsi tersendiri. Begitu juga dengan mental model. Makin banyak model yang kita kuasai, makin baik kita dalam menyelesaikan masalah.</p>
+<blockquote><p>"A mental model is a compression of how something works. You can't keep everything in your head, so we wrap experiences into models." — Shane Parrish</p></blockquote>
+<p>Mental model adalah <strong>ringkasan bagaimana sesuatu berfungsi</strong>. Otak kita tak boleh simpan segala-galanya, jadi kita bungkus pengalaman menjadi model-model kecil yang boleh diguna semula.</p>
+<p>Dalam bab ini, kita akan bincang <strong>5 model mental</strong> yang paling relevan untuk membuat keputusan dan menentukan keutamaan dalam hidup:</p>
+<ol>
+<li>First Principles Thinking</li>
+<li>Inversion</li>
+<li>Second-Order Thinking</li>
+<li>Occam's Razor</li>
+<li>Circle of Competence</li>
+</ol>
+
+<hr>
+
+<h2>1. First Principles Thinking — Bongkar Sampai Ke Akar</h2>
+<p><strong>Apa itu?</strong> <em>First principles thinking</em> adalah proses memecahkan masalah kompleks kepada elemen asas yang paling asas — <em>the first principles</em> — dan kemudian membina semula penyelesaian dari situ.</p>
+
+<h2>2. Inversion — Fikirkan Kebalikan</h2>
+<p><strong>Apa itu?</strong> Inversion adalah teknik berfikir dari arah bertentangan. Daripada tanya "Macam mana nak berjaya?", tanya "Apa yang boleh buat aku gagal?" Kemudian, elakkan semua itu.</p>
+
+<h2>3. Second-Order Thinking — Fikir Tentang Akibat Akibat</h2>
+<p><strong>Apa itu?</strong> Second-order thinking adalah berfikir tentang <strong>kesan daripada kesan</strong>. Kalau kebanyakan orang berhenti di <em>first-order consequences</em>, second-order thinking pergi selangkah lagi — dan satu langkah lagi.</p>
+<blockquote><p>"Most problems are the result of solutions applied to previous problems." — Shane Parrish</p></blockquote>
+
+<h2>4. Occam's Razbor — Yang Paling Mudah Selalunya Paling Tepat</h2>
+<p><strong>Apa itu?</strong> Occam's Razor menyatakan: <em>Entities should not be multiplied without necessity.</em> Dalam Bahasa Melayu: <strong>Jangan tambah andaian tanpa sebab.</strong> Atau lebih praktikal: <strong>Penjelasan paling ringkas yang boleh terangkan semua fakta selalunya adalah yang betul.</strong></p>
+
+<h2>5. Circle of Competence — Tahu Apa Yang Awak Tahu</h2>
+<p><strong>Apa itu?</strong> Circle of Competence adalah konsep dari Warren Buffett dan Charlie Munger. Ia bermaksud: <strong>setiap orang ada bidang kepakaran masing-masing — "circle" di mana kita tahu lebih dari orang biasa.</strong></p>
+<blockquote><p>"Knowing what you don't know is more useful than being brilliant." — Charlie Munger</p></blockquote>
+
+<hr>
+
+<h2>Satukan Semua: Satu Framework Keputusan</h2>
+<p>Okay, kita dah ada 5 model mental. Macam mana nak guna semua dalam satu keputusan?</p>
+<p>Katakan awak sedang fikir: <strong>"Patut tak saya berhenti kerja dan jadi content creator sepenuh masa?"</strong></p>
+<p><strong>First Principles:</strong> Berhenti kerja = hilang pendapatan tetap. Jadi content creator = pendapatan tak menentu, tapi potensi tinggi. Elemen asas: pendapatan, masa, minat, risiko.</p>
+<p><strong>Inversion:</strong> Apa yang boleh buat saya gagal sebagai content creator? Tak konsisten buat content. Tak faham monetisasi. Content tak selesaikan masalah orang. Tak ada simpanan kewangan.</p>
+<p><strong>Second-Order Thinking:</strong> First-order: Best, kerja ikut suka, takde bos. Second-order: Hilang struktur harian. Pendapatan tak menentu. Stress cari client.</p>
+<p><strong>Occam's Razor:</strong> Awak dah buktikan belum yang content awak boleh hasilkan pendapatan tetap? Kalau belum, jangan berhenti kerja.</p>
+<p><strong>Circle of Competence:</strong> Adakah pembuatan content dalam circle of competence awak? Kalau baru, start side dulu.</p>
+
+<hr>
+
+<h2>Membina Latticework Sendiri</h2>
+<p>Kita tak boleh kuasai semua 100+ mental models dalam seminggu. Tapi kita boleh mula dengan 5 ni. Bila dah biasa, tambah lagi.</p>
+<p>Contoh:</p>
+<ul>
+<li><strong>Biologi</strong> — Natural selection — dalam bisnes: syarikat yang tak adapt akan pupus.</li>
+<li><strong>Fizik</strong> — Inertia — dalam hidup: benda yang bergerak akan terus bergerak.</li>
+<li><strong>Psikologi</strong> — Confirmation bias — bila buat keputusan, kita cari bukti yang sokong pilihan kita.</li>
+</ul>
+
+<hr>
+
+<h2>Refleksi</h2>
+<p>Makin banyak model yang kita kuasai, makin baik kita dalam membuat keputusan yang sukar, menentukan keutamaan dengan yakin, memahami situasi dengan lebih jelas, dan mengelak kesilapan bodoh. Tapi ingat: <strong>mental model hanyalah alat.</strong> Mulakan dengan satu model. Guna untuk satu keputusan minggu ni.</p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Fikir satu keputusan sukar yang awak hadapi sekarang. Guna <strong>First Principles</strong>: apa elemen asas yang awak <em>pasti</em> benar?</li>
+<li>Guna <strong>Inversion</strong> untuk soalan yang sama: apa yang akan <em>pasti</em> buat awak gagal?</li>
+<li>Ingat satu keputusan lampau dengan <em>first-order thinking</em> — apa <em>second-order effects</em> yang terlepas pandang?</li>
+<li>Dalam bidang apa awak rasa paling yakin — <em>circle of competence</em> awak?</li>
+<li>Antara 5 model ni, yang mana satu paling <em>click</em> dengan cara awak berfikir?</li>
+</ol>
+
+<hr>
+
+<div class="epigraph">
+<p><em>"The first principle is that you must not fool yourself — and you are the easiest person to fool."</em> — Richard Feynman</p>
+</div>
+
+<p class="continue-reading">Bersambung ke Bab 4: Flow State — Melangkaui Deep Work</p>
+
+</div>
+</section>
+
+<!-- ACT 2 DIVIDER -->
+<section class="act-divider"><div class="act-divider-inner">
+  <p class="act-label">Act 2</p><p class="act-number">ACT 2</p>
+  <h2 class="act-title">Dari Fokus ke Aliran</h2>
+  <p class="act-desc">Melangkaui deep work — capai flow state, urus tenaga, declutter digital, dan belajar delegasi untuk produktiviti mampan</p>
+</div></section>
+
+<!-- BAB 4: FLOW STATE -->
+<section class="chapter-page" id="bab4">
+<div class="chapter-hero">
+  <img src="images/bab04-flow-state.png" alt="Bab 4: Flow State">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 4</p>
+    <h1>Flow State</h1>
+    <p class="chap-sub">Melangkaui Deep Work</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<h2>Cerita Pembuka: Malam Itu di Shah Alam</h2>
+<p>Ghazali merenung skrin komputernya. Jam menunjukkan pukul 2:47 pagi. Dia dah mula kerja sejak pukul 9 pagi tadi — rehat sejam untuk solat dan makan — tapi kerja-kerja untuk presentation proposal besar esok masih belum siap. Peliknya, dari pukul 9 pagi hingga 6 petang, dia hanya berjaya siapkan satu slide. Tapi sejak pukul 12 tengah malam tadi, entah bagaimana, dia dah siapkan 25 slide.</p>
+<p>Pernah tak anda rasa macam ni?</p>
+<p>Inilah yang Csikszentmihalyi panggil <strong>Flow State</strong>.</p>
+
+<hr>
+
+<h2>Apa Itu Flow? Bukan Sekadar Fokus</h2>
+<p>Mihaly Csikszentmihalyi, seorang psikolog dari Hungary, menemui satu fenomena menarik semasa mengkaji artis, atlet, dan saintis. Beliau perhatikan bahawa orang-orang ini sering mengalami satu keadaan di mana mereka tenggelam sepenuhnya dalam apa yang mereka lakukan. Masa terasa berhenti. Tindakan dan kesedaran bergabung.</p>
+<p>Ramai orang silap faham flow dengan "fokus." Fokus itu sekadar sebahagian kecil dari flow. Tapi dalam flow? Kita benar-benar <strong>hilang</strong> dalam kerja. Bunyi luar tak sampai. Lapar pun tak terasa. Ego kita senyap.</p>
+
+<hr>
+
+<h2>Lapan Komponen Flow State</h2>
+<ol>
+<li><strong>Matlamat yang Jelas (Clear Goals)</strong> — Anda tahu dengan tepat apa yang perlu dicapai.</li>
+<li><strong>Maklum Balas Segera (Immediate Feedback)</strong> — Anda tahu sama ada anda sedang maju atau tidak.</li>
+<li><strong>Cabaran vs Kemahiran Seimbang (Challenge-Skill Balance)</strong> — Flow berlaku bila cabaran tugas anda sepadan dengan kemahiran anda.</li>
+<li><strong>Tumpuan Mendalam pada Masa Sekarang (Deep Concentration)</strong> — Tumpuan 100% pada apa yang dibuat sekarang.</li>
+<li><strong>Rasa Kawalan (Sense of Control)</strong> — Anda rasa boleh mengawal situasi.</li>
+<li><strong>Kehilangan Kesedaran Diri (Loss of Self-Consciousness)</strong> — Suara dalam hati yang judgmental senyap.</li>
+<li><strong>Masa Berubah (Transformation of Time)</strong> — Dua jam terasa macam 20 minit.</li>
+<li><strong>Aktiviti sebagai Ganjaran Sendiri (Autotelic Experience)</strong> — Aktiviti itu sendiri menjadi ganjaran.</li>
+</ol>
+
+<hr>
+
+<h2>Trigger Flow Setiap Hari — Framework MALAYSIA</h2>
+<p><strong>M</strong> — Matlamat Mikro<br>
+<strong>A</strong> — Alatan Minimal<br>
+<strong>L</strong> — Lawan Multitasking<br>
+<strong>A</strong> — Anchor Ritual<br>
+<strong>Y</strong> — Yakin dengan Kemahiran<br>
+<strong>S</strong> — Satu pada Satu Masa<br>
+<strong>I</strong> — Imbuhan Dopamine<br>
+<strong>A</strong> — Audit Setiap Minggu</p>
+
+<hr>
+
+<h2>Flow dalam Konteks Malaysia</h2>
+<p>Malaysia ada cabaran unik untuk flow. Panas dan lembap boleh buat kita lesu. Bunyi bising — dari motorsikal lalu lalang, azan dari surau sebelah — semua ni mengganggu tumpuan. Seorang penulis bebas di Ipoh — Amin — menggunakan jam 5 pagi hingga 8 pagi untuk menulis. Idea dia mudah: cari <strong>waktu emas</strong> anda.</p>
+<p>Flow mengajar kita satu perkara penting: <strong>produktiviti bukan tentang berapa lama kita bekerja, tapi seberapa dalam kita bekerja</strong>.</p>
+
+<hr>
+
+<h2>Kesimpulan dan Refleksi</h2>
+<p>Bayangkan jika setiap hari kita boleh luangkan 2-3 jam dalam flow state. Kerja yang rasa berat menjadi ringan. Mulakan dengan satu perubahan kecil esok pagi.</p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Bilakah kali terakhir anda mengalami flow? Apa yang anda buat?</li>
+<li>Daripada lapan komponen flow, yang mana satu paling kerap hilang dalam rutin harian anda?</li>
+<li>Fikirkan satu tugas minggu ini yang terlalu susah dan satu yang terlalu mudah. Bagaimana nak selaraskan?</li>
+<li>Apakah "waktu emas" anda?</li>
+<li>Gangguan digital mana yang paling kerap memecahkan flow anda?</li>
+</ol>
+
+<hr>
+
+<blockquote><p>"The best moments in our lives are not the passive, receptive, relaxing times... The best moments usually occur if a person's body or mind is stretched to its limits in a voluntary effort to accomplish something difficult and worthwhile." — Mihaly Csikszentmihalyi, <em>Flow: The Psychology of Optimal Experience</em></p></blockquote>
+
+<p class="continue-reading">Bersambung ke Bab 5: Energy Management</p>
+
+</div>
+</section>
+
+<!-- BAB 5: ENERGY MANAGEMENT -->
+<section class="chapter-page" id="bab5">
+<div class="chapter-hero">
+  <img src="images/bab05-energy-management.png" alt="Bab 5: Energy Management">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 5</p>
+    <h1>Energy Management</h1>
+    <p class="chap-sub">Bukan Masa Yang Terhad, Tenaga Yang Terhad</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<h2>Cerita Pembuka: Larian Pagi Azman di Taman Tasik Titiwangsa</h2>
+<p>Azman — seorang eksekutif perbankan di Kuala Lumpur — dulu percaya bahawa kunci produktiviti adalah masa. Tapi hasilnya? Dia burnout dalam masa 6 bulan. Kita sangka masalah kita adalah "tak cukup masa." Tapi sebenarnya, masalah kita adalah <strong>tak cukup tenaga</strong>.</p>
+
+<hr>
+
+<h2>Kenapa Time Management Tak Cukup</h2>
+<p>Realitinya: satu jam bekerja pada pukul 10 pagi bila anda segar bugar, nilainya jauh berbeza dengan satu jam bekerja pada pukul 3 petang bila anda mengantuk. Jim Loehr dan Tony Schwartz dalam buku mereka <em>The Power of Full Engagement</em> (2003) membuat satu hujah: <strong>"Bukan masa yang terhad. Tenaga yang terhad."</strong></p>
+
+<hr>
+
+<h2>Empat Dimensi Tenaga</h2>
+<h3>1. Tenaga Fizikal — Asas Segalanya</h3>
+<p>Ini yang paling basic, tapi paling ramai orang remehkan. Tenaga fizikal datang dari tidur yang cukup, pemakanan yang betul, dan senaman.</p>
+
+<h3>2. Tenaga Emosi — Bahan Api Hubungan</h3>
+<p>Pernah tak anda bangun pagi dengan mood yang baik, tapi lepas dapat whatsapp marah dari bos, terus hari anda hancur? Cara memulihkan tenaga emosi: masa dengan orang positif, aktiviti yang memberi kegembiraan, dan memaafkan.</p>
+
+<h3>3. Tenaga Mental — Kuasa Fokus</h3>
+<p>Setiap hari, kita ada satu kuantiti tetap tenaga mental. Cara jimat: automasi keputusan kecil, buat keputusan penting di waktu puncak, kurangkan multitasking.</p>
+
+<h3>4. Tenaga Spiritual — Mengapa Kita Bangun Pagi</h3>
+<p>Ini dimensi yang paling jarang dibincangkan, tapi paling penting. Tenaga spiritual bukanlah tentang agama semata-mata. Ia adalah <strong>tujuan hidup</strong> — kenapa kita bangun pagi.</p>
+
+<hr>
+
+<h2>Ritual Pemulihan — Seni Oscillate</h2>
+<p>Satu lagi konsep penting dari Loehr dan Schwartz ialah <strong>oscillate</strong> — gerak antara penggunaan tenaga dan pemulihan tenaga. Guna prinsip ultradian rhythm: 90-120 minit kerja, 15-20 minit rehat.</p>
+
+<hr>
+
+<h2>Framework TENAGA — Amalan Harian</h2>
+<p><strong>T</strong> — Tidur Berkualiti (7-8 jam)<br>
+<strong>E</strong> — Eat Smart (protein, lemak sihat)<br>
+<strong>N</strong> — Niat dan Nilai (tanya "kenapa")<br>
+<strong>A</strong> — Aktif Setiap Hari (20 minit senaman)<br>
+<strong>G</strong> — Guna Ultradian Rhythm (blok 90 minit)<br>
+<strong>A</strong> — Audit Tenaga (catat setiap hari)</p>
+
+<hr>
+
+<h2>Kesimpulan dan Refleksi</h2>
+<p><strong>Anda takkan siapkan lebih banyak kerja dengan bekerja lebih jam. Anda akan siapkan lebih banyak kerja dengan mempunyai lebih tenaga.</strong></p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Dalam empat dimensi tenaga, yang mana satu paling lemah dalam hidup anda sekarang?</li>
+<li>Bila tenaga anda paling tinggi? Bila paling rendah?</li>
+<li>Apakah "ritual pemulihan" yang anda ada sekarang?</li>
+<li>Adakah persekitaran kerja anda menyokong oscillate?</li>
+<li>Apakah tujuan yang memberi tenaga spiritual kepada anda?</li>
+</ol>
+
+<hr>
+
+<blockquote><p>"Energy, not time, is the fundamental currency of high performance." — Jim Loehr & Tony Schwartz, <em>The Power of Full Engagement</em></p></blockquote>
+
+<p class="continue-reading">Bersambung ke Bab 6: Digital Minimalism</p>
+
+</div>
+</section>
+
+<!-- BAB 6: DIGITAL MINIMALISM -->
+<section class="chapter-page" id="bab6">
+<div class="chapter-hero">
+  <img src="images/bab06-digital-minimalism.png" alt="Bab 6: Digital Minimalism">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 6</p>
+    <h1>Digital Minimalism</h1>
+    <p class="chap-sub">Declutter Kehidupan Digital</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<h2>Cerita Pembuka: Skrin yang Tak Pernah Padam</h2>
+<p>Kita hidup dalam era di mana perhatian kita telah menjadi komoditi. Syarikat teknologi terbesar di dunia berlumba-lumba untuk merebut perhatian kita. Dan model perniagaan mereka mudah: lebih lama kita di skrin, lebih banyak duit mereka dapat.</p>
+
+<hr>
+
+<h2>Kenapa Teknologi Mengganggu</h2>
+<p>Cal Newport, dalam bukunya <em>Digital Minimalism</em> (2019), membuat satu pemerhatian yang tajam: teknologi digital bukan sekadar "alat neutral" yang kita guna. Ia direka khas untuk membuat kita ketagih — melalui <strong>dopamine-driven feedback loop</strong>.</p>
+
+<hr>
+
+<h2>Digital Declutter 30 Hari</h2>
+<h3>Fasa 1: Ambil Cuti (30 Hari)</h3>
+<p>Selama 30 hari, berhenti menggunakan teknologi yang "optional" — media sosial, aplikasi hiburan, browsing tanpa tujuan.</p>
+
+<h3>Fasa 2: Cari Aktiviti Bermakna</h3>
+<p>Isi masa kosong dengan aktiviti berkualiti tinggi: baca buku fizikal, aktiviti luar, hobi bermakna, hubungan bersemuka.</p>
+
+<h3>Fasa 3: Kembali dengan Peraturan</h3>
+<p>Perkenalkan semula teknologi dengan niat yang jelas, masa yang terhad, dan cara yang spesifik.</p>
+
+<hr>
+
+<h2>Dopamine Fasting — Realiti vs Mitos</h2>
+<p>Dopamine fasting adalah tentang <strong>mengurangkan rangsangan dopamine murah</strong> — dari aktiviti pasif seperti scrolling — supaya otak kita sensitif semula kepada dopamine dari aktiviti bermakna.</p>
+
+<hr>
+
+<h2>Framework TEKNOLOGI</h2>
+<p><strong>T</strong> — Tanya "Kenapa?" setiap kali<br>
+<strong>E</strong> — Eliminate Notifications<br>
+<strong>K</strong> — Kategorikan Gunaan<br>
+<strong>N</strong> — No Phone First Hour<br>
+<strong>O</strong> — Off Day Setiap Minggu<br>
+<strong>L</strong> — Lokasi untuk Gajet<br>
+<strong>O</strong> — Optimalkan untuk Fokus<br>
+<strong>G</strong> — Guna Versi Desktop<br>
+<strong>I</strong> — Istiqamah pada Peraturan</p>
+
+<hr>
+
+<h2>Kesimpulan dan Refleksi</h2>
+<p>Sebelum kita boleh fokus pada keutamaan kita, kita perlu bersihkan dahulu gangguan digital yang mengambil ruang mental kita. Mulakan dengan satu langkah: pilih satu aplikasi yang paling banyak membuang masa anda. Padamkannya untuk 30 hari.</p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Jika anda hanya boleh guna tiga aplikasi di telefon selama 30 hari, yang mana satu akan anda pilih?</li>
+<li>Berapa jam masa yang anda habiskan dengan telefon dalam 24 jam lepas?</li>
+<li>Apakah satu aktiviti bermakna yang anda dah lama nak buat tetapi "tak ada masa"?</li>
+<li>Apa perasaan anda bila telefon kehabisan bateri?</li>
+<li>Cuba bayangkan hidup tanpa satu platform media sosial untuk 30 hari.</li>
+</ol>
+
+<hr>
+
+<blockquote><p>"The key to thriving in a culture of digital noise is not to swear off technology entirely, but to be more intentional about how we use it — to embrace a philosophy of digital minimalism." — Cal Newport, <em>Digital Minimalism</em></p></blockquote>
+
+<p class="continue-reading">Bersambung ke Bab 7: Seni Delegasi</p>
+
+</div>
+</section>
+
+<!-- BAB 7: SENI DELEGASI -->
+<section class="chapter-page" id="bab7">
+<div class="chapter-hero">
+  <img src="images/bab07-seni-delegasi.png" alt="Bab 7: Seni Delegasi">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 7</p>
+    <h1>Seni Delegasi</h1>
+    <p class="chap-sub">Cara Lepaskan Kerja Tanpa Lepaskan Kualiti</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<h2>Cerita Pembuka: Malam Minggu di Meja Makan</h2>
+<p>"Lagipun, lagi senang abang buat sendiri daripada nak ajar orang," Izzat selalu berkata. Ini panggilan <strong>Superhero Syndrome</strong> — sindrom nak buat semua seorang diri.</p>
+
+<hr>
+
+<h2>Kenapa Susah Nak Lepaskan Kerja</h2>
+<ol>
+<li><strong>"Nanti lambat lagi kalau ajar orang."</strong> — Betul dalam jangka pendek, tapi untung dalam jangka panjang.</li>
+<li><strong>"Tak ada orang boleh buat macam saya."</strong> — Tanda ego dan perfectionism.</li>
+<li><strong>"Nanti orang ingat saya tak mampu."</strong> — Tugas pemimpin bukan buat kerja, tapi pastikan kerja selesai.</li>
+<li><strong>"Staff saya dah beban sangat."</strong> — Kadang kita underestimate kemampuan orang lain.</li>
+<li><strong>Rasa bersalah.</strong> — Delegasi adalah tanggungjawab kita sebagai pemimpin.</li>
+</ol>
+
+<hr>
+
+<h2>Buy Back Your Time — Prinsip Asas</h2>
+<p>Dan Martell memperkenalkan satu konsep: <strong>setiap jam anda mempunyai nilai kewangan.</strong> Kalau ada tugas yang boleh dilakukan oleh orang lain dengan bayaran yang lebih rendah dari nilai masa anda per jam, maka anda patut bayar orang lain untuk buat tugas tu.</p>
+
+<hr>
+
+<h2>Apa Yang Patut Didelegasi — Pendekatan 4B</h2>
+<ol>
+<li><strong>Tugas Yang Anda Paling Benci</strong> — menghabiskan tenaga mental anda.</li>
+<li><strong>Tugas Yang Anda Buat Lebih Baik — Tapi Tak Perlu Anda Buat</strong> — tugas strategik yang hanya anda boleh buat akan terbengkalai.</li>
+<li><strong>Tugas Berulang Yang Boleh Dijadikan Sistem</strong> — laporan mingguan, pos media sosial, invoice.</li>
+<li><strong>Tugas Yang Orang Lain Boleh Buat 80% Kualiti Yang Sama</strong> — 80% cukup baik.</li>
+</ol>
+
+<hr>
+
+<h2>Cara Delegate — SOP dan Sistem</h2>
+<p><strong>Langkah 1:</strong> Dokumentasi sebelum delegasi. Tulis langkah demi langkah.</p>
+<p><strong>Langkah 2:</strong> Latihan dan pengawasan — saya buat awak tengok, kita buat sama-sama, awak buat saya tengok, awak buat sendiri.</p>
+<p><strong>Langkah 3:</strong> Komunikasi jelas — Apa, Kenapa, Bila, Bagaimana, Siapa.</p>
+<p><strong>Langkah 4:</strong> Checkpoints, bukan micromanage.</p>
+<p><strong>Langkah 5:</strong> Terima ketidaksempurnaan — latihan adalah pelaburan.</p>
+
+<hr>
+
+<h2>Dari Doer ke Leader — Transformasi Peranan</h2>
+
+<table>
+<tr><th>Doer</th><th>Leader</th></tr>
+<tr><td>Bangga siapkan sendiri</td><td>Bangga lihat orang lain siapkan</td></tr>
+<tr><td>Buktikan melalui kerja tangan</td><td>Buktikan melalui sistem dan pasukan</td></tr>
+<tr><td>Kata "saya dah siap"</td><td>Kata "pasukan saya dah siap"</td></tr>
+<tr><td>Fokus pada tugas</td><td>Fokus pada hala tuju</td></tr>
+<tr><td>Kerja lebih jam</td><td>Kerja lebih bijak</td></tr>
+</table>
+
+<hr>
+
+<h2>Kesimpulan dan Refleksi</h2>
+<p>Delegasi bukanlah tentang "suruh orang buat kerja kita." Ia tentang membina sistem yang membolehkan kita mencapai potensi maksimum. Mulakan esok dengan satu tugas: pilih satu tugas kecil, tulis SOP ringkas, dan serahkan kepada orang yang sesuai.</p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Apakah satu tugas dalam kerja anda yang paling membazir masa dan tenaga?</li>
+<li>Jika anda dibayar ikut jam, berapa nilai satu jam masa fokus anda?</li>
+<li>Apakah ketakutan terbesar anda tentang delegasi?</li>
+<li>Siapa dalam pasukan anda yang menunjukkan potensi tetapi tidak pernah anda beri tanggungjawab penuh?</li>
+<li>Bayangkan hidup anda setahun dari sekarang jika anda berjaya mendelegasi 50% kerja yang membebankan anda.</li>
+</ol>
+
+<hr>
+
+<blockquote><p>"The most important thing you can do to increase your impact is to stop doing things that others can do — so you can focus on what only you can do." — Dan Martell, <em>Buy Back Your Time</em></p></blockquote>
+
+<p class="continue-reading">Bersambung ke Bab 8: Start With Why</p>
+
+</div>
+</section>
+
+<!-- ACT 3 DIVIDER -->
+<section class="act-divider"><div class="act-divider-inner">
+  <p class="act-label">Act 3</p><p class="act-number">ACT 3</p>
+  <h2 class="act-title">Dari Diri ke Impak</h2>
+  <p class="act-desc">Temui tujuan hidup, kuasai perbualan sukar, jadilah antifragile, fikirkan legasi, dan laksanakan pelan 100 hari untuk mengubah ilmu menjadi tindakan nyata</p>
+</div></section>
+
+<!-- BAB 8: START WITH WHY -->
+<section class="chapter-page" id="bab8">
+<div class="chapter-hero">
+  <img src="images/bab08-start-with-why.png" alt="Bab 8: Start With Why">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 8</p>
+    <h1>Start With Why</h1>
+    <p class="chap-sub">Tujuan Sebagai Pemangkin Tindakan</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<h2>Cerita Pembuka: Kopi yang Tak Sampai</h2>
+<p>Berapa ramai antara kita yang bangun pagi, pergi kerja, siapkan tugas — tapi lupa <em>kenapa</em> kita buat semua tu?</p>
+
+<hr>
+
+<h2>Konsep Utama: Lingkaran Emas (The Golden Circle)</h2>
+<p>Simon Sinek dalam bukunya <em>Start With Why</em> (2009) memperkenalkan <strong>The Golden Circle</strong>:</p>
+<ol>
+<li><strong>WHAT (Apa)</strong> — Lapisan paling luar. Perkara yang kita buat.</li>
+<li><strong>HOW (Bagaimana)</strong> — Lapisan tengah. Cara kita buat sesuatu.</li>
+<li><strong>WHY (Kenapa)</strong> — Lapisan paling dalam. Tujuan, sebab, kepercayaan.</li>
+</ol>
+<p>Sinek kata: "People don't buy WHAT you do, they buy WHY you do it."</p>
+
+<hr>
+
+<h2>Kenapa WHY Penting Dalam Hidup Kita?</h2>
+<h3>1. WHY Memberi Tenaga</h3>
+<p>Bila kau ada tujuan yang jelas, kau tak perlukan disiplin gila-gila. Tujuan tu sendiri jadi bahan api.</p>
+
+<h3>2. WHY Membantu Kita BUAT KEPUTUSAN</h3>
+<p>Bila kau jelas dengan WHY kau, keputusan jadi lebih mudah. Kau cuma tanya: <strong>"Adakah pilihan ni selari dengan tujuan aku?"</strong></p>
+
+<h3>3. WHY Menarik Orang Yang Tepat</h3>
+<p>Bila kau jujur dengan apa yang kau percaya, orang yang sehaluan akan datang dekat. Inilah <strong>efek magnet</strong>.</p>
+
+<hr>
+
+<h2>Bagaimana Nak Cari WHY Peribadi?</h2>
+<h3>Langkah 1: Cari Kisah Paling Bermakna</h3>
+<p>Fikir balik hidup kau. Bila dalam hidup aku, aku rasa paling hidup?</p>
+
+<h3>Langkah 2: Cari Corak Berulang</h3>
+<p>Tulis 10 pengalaman paling bermakna dan cari tema yang muncul.</p>
+
+<h3>Langkah 3: Tulis WHY Statement</h3>
+<p>Formula: <strong>"Saya nak GUNA [kebolehan aku] untuk MEMBERI [impak tertentu] supaya [hasil akhir]."</strong></p>
+
+<h3>Langkah 4: Align With Your Daily Actions</h3>
+<p>Sinek kata: "WHAT you do is the proof of WHY you exist."</p>
+
+<hr>
+
+<h2>Kesimpulan dan Refleksi</h2>
+<p>Tanpa WHY, kau akan hidup ikut arus dan sampai hujung nyawa menyesal. Dengan WHY, kau akan tahu mana nak fokus dan ada tenaga walau dalam cabaran.</p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Dalam 30 hari lepas, apakah momen yang buat kau rasa paling bermakna?</li>
+<li>Jika kau ada RM10 juta esok dan tak perlu kerja, apa yang kau masih akan buat?</li>
+<li>Senaraikan 3 tindakan harian kau yang TIDAK selari dengan WHY kau.</li>
+<li>Fikir seorang yang kau kagumi — bukan sebab kejayaan material, tapi sebab tujuan hidup dia.</li>
+<li>Bayangkan kau umur 80 tahun menulis surat pada diri kau yang sekarang. Apa yang kau nak cakap?</li>
+</ol>
+
+<hr>
+
+<blockquote><p>"There are only two ways to influence human behavior: you can manipulate it, or you can inspire it." — Simon Sinek, <em>Start With Why</em></p></blockquote>
+
+<p class="continue-reading">Bersambung ke Bab 9: Crucial Conversations</p>
+
+</div>
+</section>
+
+<!-- BAB 9: CRUCIAL CONVERSATIONS -->
+<section class="chapter-page" id="bab9">
+<div class="chapter-hero">
+  <img src="images/bab09-crucial-conversations.png" alt="Bab 9: Crucial Conversations">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 9</p>
+    <h1>Crucial Conversations</h1>
+    <p class="chap-sub">Bercakap Pasal Benda Sukar</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<h2>Cerita Pembuka: Malam Di Dapur</h2>
+<p>Kita ada <strong>sesuatu yang sangat penting nak cakap</strong> dengan orang yang sangat penting dalam hidup kita. Tapi entah kenapa, kata-kata kita sampai macam pisau, atau langsung tak sampai. Inilah yang dipanggil <strong>Crucial Conversation.</strong></p>
+
+<hr>
+
+<h2>Apa Itu Crucial Conversation?</h2>
+<p>Tiga ciri: <strong>Stakes are high</strong> (pertaruhan tinggi), <strong>Opinions vary</strong> (pendapat berbeza), <strong>Emotions run strong</strong> (emosi memuncak).</p>
+<p>Bila crucial conversation tak dikendalikan, kita pilih: <strong>Diam dan telan (Silence)</strong> atau <strong>Meletup (Violence)</strong>. Dua-dua tak menyelesaikan masalah.</p>
+
+<hr>
+
+<h2>Pool of Shared Meaning — Kolam Maksud Yang Dikongsi</h2>
+<p><strong>Objektif utama crucial conversation:</strong> Bina kolam yang sebesar mungkin. Galakkan semua orang sumbang air masing-masing.</p>
+
+<hr>
+
+<h2>Safety First</h2>
+<h3>1. Mutual Purpose — "Kita Sama-Sama Nak Apa?"</h3>
+<h3>2. Mutual Respect — "Kau Hargai Orang Tu"</h3>
+<h3>3. Apologize — Bila Perlu, Minta Maaf</h3>
+
+<hr>
+
+<h2>Framework STATE</h2>
+<p><strong>S</strong> — Share Your Facts (fakta, bukan cerita)<br>
+<strong>T</strong> — Tell Your Story (interpretasi kau terhadap fakta)<br>
+<strong>A</strong> — Ask for Their Path (jemput mereka kongsi)<br>
+<strong>T</strong> — Talk Tentatively (guna bahasa berlapik)<br>
+<strong>E</strong> — Encourage Testing (beri ruang untuk perbezaan pendapat)</p>
+
+<hr>
+
+<h2>Kenapa Ramai Gagal?</h2>
+<h3>1. Fundamental Attribution Error</h3>
+<p>Kita selalu salahkan perangai orang, tapi maafkan keadaan sendiri.</p>
+
+<h3>2. Sucker's Choice</h3>
+<p>Pilihan palsu antara "cakap dan gaduh" atau "diam dan telan." Cari pilihan ketiga.</p>
+
+<h3>3. Emotional Hijack</h3>
+<p>Bila emosi tinggi, otak depan tutup. Penyelesaian: Master your stories.</p>
+
+<hr>
+
+<h2>Kesimpulan dan Refleksi</h2>
+<p><strong>Perbualan yang sukar hari ini boleh menyelamatkan hubungan yang pahit esok hari.</strong></p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Dalam hubungan kau sekarang, adakah ada crucial conversation yang kau elakkan?</li>
+<li>Fikir satu masa kau gagal handle crucial conversation. Guna STATE secara retrospektif.</li>
+<li>Siapa dalam hidup kau yang paling susah nak bercakap?</li>
+<li>Pernah tak kau diam sebab takut, tapi akhirnya masalah lebih besar?</li>
+<li>"Kita bukan bergaduh, kita cuma ada perbualan yang tertangguh." Setuju atau tidak?</li>
+</ol>
+
+<hr>
+
+<blockquote><p>"The Pool of Shared Meaning is the birthplace of synergy. The more you share, the better the decisions." — Patterson, Grenny, McMillan, Switzler, <em>Crucial Conversations</em></p></blockquote>
+
+<p class="continue-reading">Bersambung ke Bab 10: Antifragile</p>
+
+</div>
+</section>
+
+<!-- BAB 10: ANTIFRAGILE -->
+<section class="chapter-page" id="bab10">
+<div class="chapter-hero">
+  <img src="images/bab10-antifragile.png" alt="Bab 10: Antifragile">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 10</p>
+    <h1>Antifragile</h1>
+    <p class="chap-sub">Jadi Lebih Kuat Dari Setiap Cabaran</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<h2>Cerita Pembuka: Pokok Kelapa Tua</h2>
+<p>Hidup pun macam tu. Ada orang — bila kena masalah, mereka hancur. <strong>Fragile</strong>. Ada orang — bila kena masalah, mereka tahan. <strong>Robust</strong>. Tapi ada satu golongan orang yang keluar lebih kuat dari setiap cabaran. <strong>Antifragile</strong>.</p>
+
+<hr>
+
+<h2>Fragile vs Robust vs Antifragile</h2>
+<p><strong>Fragile</strong> — mudah patah bila kena tekanan.<br>
+<strong>Robust</strong> — tahan tekanan, tak berubah.<br>
+<strong>Antifragile</strong> — semakin kuat bila kena tekanan.</p>
+<p>Taleb kata: "Wind extinguishes a candle and energizes a fire." Kau nak jadi lilin atau api?</p>
+
+<hr>
+
+<h2>Barbell Strategy</h2>
+<p>Bayangkan barbell. Dua hujung berat, tengah kosong.</p>
+<p><strong>Satu hujung:</strong> Sangat selamat, stabil, konservatif.<br>
+<strong>Hujung satu lagi:</strong> Sangat berisiko, eksperimental, agresif.<br>
+<strong>Tengah:</strong> Elakkan. Kosong.</p>
+
+<h3>Aplikasi dalam Kerjaya</h3>
+<p><strong>Hujung selamat:</strong> Kerja tetap dengan gaji bulanan.<br>
+<strong>Hujung berisiko:</strong> Side hustle, bisnes kecil-kecilan.</p>
+
+<h3>Aplikasi dalam Pelaburan</h3>
+<p><strong>Hujung selamat:</strong> 80-90% dalam ASB, Tabung Haji, emas.<br>
+<strong>Hujung berisiko:</strong> 10-20% dalam saham, pelaburan startup.</p>
+
+<hr>
+
+<h2>Bagaimana Nak Bina Mentaliti Antifragile?</h2>
+<h3>1. Cari Tekanan Yang Membina (Hormesis)</h3>
+<p>Dos kecil tekanan menguatkan sistem — macam vaksin.</p>
+
+<h3>2. Simpan Optionality</h3>
+<p>Jangan letak semua telur dalam satu bakul. Jangan jadi "saya ni engineer je." Jadi "saya engineer, content creator, pelabur, ayah, dan penulis."</p>
+
+<h3>3. Latih Via Negativa</h3>
+<p>Keuntungan dari apa yang kita buang, bukan apa yang kita tambah. Kurang media sosial, kurang berhutang, kurang kawan toksik.</p>
+
+<hr>
+
+<h2>Kesimpulan dan Refleksi</h2>
+<p>Pilihan ketiga — jadi antifragile — adalah yang paling susah, tapi paling berbaloi. Mulakan hari ni: satu tekanan yang kau lari — hadap. Satu optionality — guna. Satu benda toksik — buang.</p>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Apakah satu cabaran yang sedang kau hadapi yang boleh buat kau lebih kuat?</li>
+<li>Apakah satu "barbell" yang kau boleh mula praktik dalam kerjaya minggu ni?</li>
+<li>Senaraikan 3 benda toksik yang patut kau kurangkan (Via Negativa).</li>
+<li>Bila kali terakhir kau gagal, dan apa yang kau belajar?</li>
+<li>Siapa dalam hidup kau yang kau anggap "antifragile"?</li>
+</ol>
+
+<hr>
+
+<blockquote><p>"Antifragility is beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." — Nassim Nicholas Taleb, <em>Antifragile</em></p></blockquote>
+
+<p class="continue-reading">Bersambung ke Bab 11: Legacy Thinking</p>
+
+</div>
+</section>
+
+<!-- BAB 11: LEGACY THINKING -->
+<section class="chapter-page" id="bab11">
+<div class="chapter-hero">
+  <img src="images/bab11-legacy-thinking.png" alt="Bab 11: Legacy Thinking">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 11</p>
+    <h1>Legacy Thinking</h1>
+    <p class="chap-sub">Apa Yang Kau Nak Tinggalkan?</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<h2>Cerita Pembuka: Tiga Keranda</h2>
+<p>"Tok Wan bukan kaya. Rumah atap. Kereta pun takde. Tapi dia ada satu kerja: setiap pagi, lebih 40 tahun, dia bancuh air kopi di surau. Nama dia Tok Wan. Tapi orang panggil dia Wak Kopi."</p>
+
+<hr>
+
+<h2>Resume Virtues vs Eulogy Virtues</h2>
+<p>David Brooks dalam <em>The Road to Character</em> memperkenalkan perbezaan penting:</p>
+<p><strong>Resume Virtues</strong> — Nilai dalam CV: ijazah, pencapaian, jawatan, gaji.<br>
+<strong>Eulogy Virtues</strong> — Nilai yang disebut masa meninggal: baik hati, pemurah, penyayang.</p>
+<p><strong>Masalah Malaysia moden:</strong> Kita lebih fokus pada resume virtues. Tapi bila sampai hujung nyawa, semua tu tak dibawa mati.</p>
+
+<hr>
+
+<h2>Kenapa Legasi Penting?</h2>
+<h3>1. Legasi Memberi Arah Dalam Kekeliruan</h3>
+<p>Bila kau tahu apa yang kau nak tinggalkan, kau tahu apa nak pilih.</p>
+
+<h3>2. Legasi Membantu Kita Fokus</h3>
+<p>Dengan legasi sebagai utara, kau boleh tanya: "Adakah benda ni akan membina legasi aku?"</p>
+
+<h3>3. Legasi Membantu Kita Sabar</h3>
+<p>Legasi bukan bina dalam sehari. Ia dibina dalam tahun dan dekad. Tok Wan — 40 tahun bangun pagi bancuh kopi.</p>
+
+<hr>
+
+<h2>Macam Mana Nak Mula Bina Legasi?</h2>
+<h3>Langkah 1: Tulis Obituari Kau Sendiri</h3>
+<p>Apa yang mereka akan sebut? Siapa yang akan datang? Apa sumbangan kau pada dunia?</p>
+
+<h3>Langkah 2: Kenal Pasti 3-5 Nilai Teras</h3>
+<p>Keluarga? Agama? Kebebasan? Keadilan? Pendidikan?</p>
+
+<h3>Langkah 3: Bina Sistem, Bukan Sasaran</h3>
+<p>Sasaran: "Nak jadi orang baik." Sistem: "Setiap malam, tulis satu kebaikan yang aku buat hari ni."</p>
+
+<h3>Langkah 4: Buat "Legacy Project" Setiap Tahun</h3>
+<p>Satu projek untuk orang lain tanpa mengharap balasan.</p>
+
+<hr>
+
+<h2>Cabaran Membina Legasi</h2>
+<p><strong>Instant Gratification</strong> — Kita nak hasil cepat. Legasi lambat. Celebrate small wins.<br>
+<strong>Tekanan Ekonomi</strong> — Legasi tak semestinya besar. Tok Wan cuma bancuh kopi.</p>
+
+<hr>
+
+<h2>Kesimpulan dan Refleksi</h2>
+<p>Apa yang paling utama? Bukan rumah besar. Bukan kereta laju. Bukan pangkat tinggi. Tapi <strong>siapa kau, dan apa yang kau tinggalkan dalam hati orang lain.</strong></p>
+
+<hr>
+
+<blockquote><p>"The best way to find yourself is to lose yourself in the service of others." — Mahatma Gandhi</p></blockquote>
+
+<hr>
+
+<h2>Soalan Reflektif</h2>
+<ol>
+<li>Jika kau meninggal esok, apa 3 perkara yang orang akan sebut pasal kau?</li>
+<li>Tulis obituari kau — 5 ayat. Bandingkan dengan apa yang kau buat sekarang.</li>
+<li>Siapa dalam hidup kau yang kau nak jadi "Tok Wan" untuk orang lain?</li>
+<li>Apa satu perkara yang kau boleh mula hari ni yang akan memberi kesan besar 10 tahun dari sekarang?</li>
+<li>Jika kau ada anak, apakah satu nilai yang paling penting nak kau ajar pada mereka?</li>
+</ol>
+
+<hr>
+
+<blockquote><p>"In the end, it's not the years in your life that count. It's the life in your years." — Abraham Lincoln</p></blockquote>
+
+<p class="continue-reading">Bersambung ke Bab 12: Pelan 100 Hari</p>
+
+</div>
+</section>
+
+<!-- BAB 12: PELAN 100 HARI -->
+<section class="chapter-page" id="bab12">
+<div class="chapter-hero">
+  <img src="images/bab12-pelan-100-hari.png" alt="Bab 12: Pelan 100 Hari">
+  <div class="chapter-hero-overlay"></div>
+  <div class="chapter-hero-text">
+    <p class="chap-num">Bab 12</p>
+    <h1>Pelan 100 Hari</h1>
+    <p class="chap-sub">Dari V1 ke V2, Dari Ilmu ke Tindakan</p>
+  </div>
+</div>
+<div class="chapter-body">
+
+<blockquote><p>"Begin with the end in mind." — Stephen R. Covey</p></blockquote>
+
+<p>Awak dah sampai. Bab terakhir. Dua buku. Dua puluh empat bab. Berbelas jam membaca. Berpuluh idea, konsep, dan rangka kerja.</p>
+<p>Tahniah. Tapi sekarang tiba saat yang paling penting. <strong>Ilmu tanpa tindakan hanyalah hiasan minda.</strong></p>
+
+<hr>
+
+<h2>100-Day Action Plan: Dari Pembaca ke Pengamal</h2>
+<h3>Falsafah Pelan Ini</h3>
+<ol>
+<li><strong>Progress > Perfection.</strong> Yang penting, awak bergerak.</li>
+<li><strong>Konsisten > Intensiti.</strong> Buat sikit tapi setiap hari.</li>
+<li><strong>Satu langkah pada satu masa.</strong> Jangan tengok 100 hari. Tengok hari ini.</li>
+<li><strong>Gagal itu feedback.</strong> Kalau terlepas sehari, esok sambung.</li>
+</ol>
+
+<h3>Minggu 1-2: Audit dan Sedar Diri (Hari 1-14)</h3>
+<p>Hari 1-7: Decision Audit, Energy Audit, Digital Declutter langkah 1-2, refleksi.<br>
+Hari 8-14: Kenal pasti WHY, Mental Model Check, pilih 3 topik paling relevan, bina sistem tracking.</p>
+
+<h3>Minggu 3-4: Deep Implementation (Hari 15-28)</h3>
+<p>Deep Work block, amalkan mental model, satu sesi flow, praktik "kata tidak", energy recovery ritual, satu perbualan ditangguh, delegasi satu tugas.</p>
+
+<h3>Minggu 5-8: Build Systems (Hari 29-56)</h3>
+<p>Rutin pagi, sistem fokus, sistem tenaga, sistem hubungan dan komunikasi.</p>
+
+<h3>Minggu 9-12: Expand Impact (Hari 57-84)</h3>
+<p>Ajar dan kongsi, projek impak, deepen the WHY, bina legasi kecil.</p>
+
+<h3>Minggu 13-14: Reflect and Recalibrate (Hari 85-100)</h3>
+<p>Menilai, meraikan, dan merancang semula. Survey dari orang rapat, pelan 100 hari seterusnya.</p>
+
+<hr>
+
+<h2>Sistem Tracking dan Accountability</h2>
+<h3>1. Jurnal Harian (5 Minit)</h3>
+<p>Satu perkara yang saya buat hari ni. Satu perkara yang saya belajar. Skor kepuasan 1-10.</p>
+
+<h3>2. Weekly Review (Setiap Ahad, 15 Minit)</h3>
+<p>Kemenangan minggu ni, halangan, satu fokus untuk minggu depan.</p>
+
+<h3>3. Accountability Partner</h3>
+<p>Cari sorang yang tahu apa yang awak cuba capai dan check-in setiap minggu.</p>
+
+<h3>4. The Streak Method</h3>
+<p>Guna kalendar atau aplikasi tracker. Setiap hari awak buat tindakan, tandakan X.</p>
+
+<hr>
+
+<h2>Apa Selepas V2?</h2>
+<p>Buku V2 tamat di sini. Tapi perjalanan awak tak tamat. Perjalanan sebenar <em>baru bermula</em>.</p>
+<p>Buku hanyalah katalis. Tapi api hanya akan terus menyala kalau awak tambah bahan bakar — dan bahan bakar itu adalah <strong>tindakan harian, pembelajaran berterusan, dan komitmen pada proses.</strong></p>
+
+<hr>
+
+<h2>Penutup</h2>
+<p><em>Yang Mana Keutamaan?</em></p>
+<p>Itu bukan tajuk buku semata-mata. Itu adalah soalan yang perlu awak tanya setiap hari. Setiap kali ada permintaan masuk. Setiap kali ada gangguan datang. Setiap kali ada pilihan perlu dibuat.</p>
+<p><strong>Yang mana keutamaan?</strong></p>
+<p>Buku V1 ajar awak asas. Buku V2 bawa awak lebih dalam. Tapi buku tak boleh hidup untuk awak. Ilmu tak boleh bertindak untuk awak. Pelan tak boleh lari untuk awak. <strong>Hanya awak yang boleh.</strong></p>
+<p>Perjalanan 100 hari bermula sekarang. Bukan esok. Bukan Isnin depan. Bukan tahun depan. Sekarang.</p>
+<p>Saya doakan yang terbaik untuk perjalanan awak. Jumpa di V3, mungkin.</p>
+<p>— WMB DIGITAL</p>
+
+</div>
+</section>
+
+<!-- LAMPIRAN -->
+<section class="chapter-page" id="lampiran">
+<div class="chapter-body" style="max-width:760px;margin:0 auto;padding:3rem 2rem 5rem;">
+<h2 style="font-family:var(--display);font-size:1.75rem;font-weight:700;margin-bottom:1rem;text-align:center;">Lampiran &amp; Lembaran Kerja</h2>
+
+<hr>
+
+<p>Lampiran ini mengandungi template dan lembaran kerja yang disebut dalam buku. Fotokopi, cetak, atau salin ke dalam jurnal awak. Guna sekerap yang perlu — template ni bukan untuk simpan, tapi untuk <em>guna</em>.</p>
+
+<hr>
+
+<h2>Lampiran A: Template Decision Audit</h2>
+<p><em>Rujuk Bab 2 V2 — Decision Fatigue</em></p>
+<p>Guna template ini selama SATU HARI penuh untuk rekod setiap keputusan yang awak buat.</p>
+<p><strong>Tarikh:</strong> _______________</p>
+
+<table>
+<tr><th>Masa</th><th>Keputusan</th><th>Kategori</th><th>Sedar/Autopilot</th><th>Tenaga (1-10)</th><th>Boleh di-automasi?</th></tr>
+<tr><td>7:00 pagi</td><td>Bangun atau tekan snooze</td><td>Rutin</td><td>Autopilot</td><td>4</td><td>Ya — letak alarm jauh</td></tr>
+<tr><td colspan="6">... (sambung di helaian berasingan) ...</td></tr>
+</table>
+
+<p><strong>Analisis Selepas 24 Jam:</strong></p>
+<ol>
+<li>Berapa jumlah keputusan yang saya buat hari ni? _______</li>
+<li>Berapa peratus yang sedar? ______% Autopilot? ______%</li>
+<li>Tiga keputusan yang paling memakan tenaga mental: ________</li>
+<li>Tiga keputusan yang boleh saya automasikan: ________</li>
+</ol>
+
+<hr>
+
+<h2>Lampiran B: Template Personal WHY Statement</h2>
+<p><em>Rujuk Bab 8 V2 — Start With Why dan Bab 11 V1 — Prinsip dan Purpose</em></p>
+
+<h3>Langkah 1: Cari Asas</h3>
+<ol>
+<li><strong>Apa yang paling penting dalam hidup saya?</strong> (Senaraikan 5 nilai teras)</li>
+<li><strong>Apa yang buat saya rasa hidup ini bermakna?</strong></li>
+<li><strong>Kalau saya ada setahun lagi nak hidup, apa yang akan saya buat?</strong></li>
+<li><strong>Apa yang saya nak orang ingat pasal saya?</strong> (Eulogy virtues)</li>
+<li><strong>Siapa yang paling saya kagumi? Kenapa?</strong></li>
+</ol>
+
+<h3>Langkah 2: Cari Corak</h3>
+<p>Tulis 3 tema utama yang muncul: ________</p>
+
+<h3>Langkah 3: Tulis Draf WHY Statement</h3>
+<p>Format: <em>Saya wujud untuk [tindakan], supaya [impak].</em></p>
+
+<h3>Langkah 4: Uji WHY Statement</h3>
+<table>
+<tr><th>Ujian</th><th>Soalan</th><th>Lulus/Gagal</th></tr>
+<tr><td>Ujian Tulen</td><td>Adakah ini benar untuk saya?</td><td></td></tr>
+<tr><td>Ujian Tindakan</td><td>Adakah tindakan harian saya selari?</td><td></td></tr>
+<tr><td>Ujian Masa</td><td>Adakah masih relevan dalam 10 tahun?</td><td></td></tr>
+<tr><td>Ujian Emosi</td><td>Adakah ia buat saya rasa sesuatu?</td><td></td></tr>
+</table>
+
+<hr>
+
+<h2>Lampiran C: Template 100-Day Action Tracker</h2>
+<p><em>Rujuk Bab 12 — Pelan 100 Hari</em></p>
+
+<p><strong>Nama:</strong> ______________________________</p>
+<p><strong>Tarikh Mula:</strong> _______________ <strong>Tarikh Tamat:</strong> _______________</p>
+<p><strong>3 Topik Pilihan (dari 24 bab V1+V2):</strong></p>
+<ol>
+<li>_________________________________</li>
+<li>_________________________________</li>
+<li>_________________________________</li>
+</ol>
+<p><strong>WHY saya untuk 100 hari ini:</strong> _________________________________</p>
+<p><strong>Accountability Partner:</strong> ______________________________</p>
+
+<hr>
+
+<h2>Lampiran D: Template Digital Declutter Checklist</h2>
+<p><em>Rujuk Bab 6 V2 — Digital Minimalism</em></p>
+
+<h3>Telefon:</h3>
+<ul>
+<li>Kira jumlah aplikasi: _______ Padam yang tak guna > 1 bulan</li>
+<li>Matikan SEMUA notifikasi kecuali panggilan penting</li>
+<li>Alihkan aplikasi media sosial dari skrin utama</li>
+<li>Tukar skrin ke grayscale</li>
+<li>Padam aplikasi infinite scroll: TikTok, Reels, Shorts</li>
+</ul>
+
+<h3>Peraturan Baru:</h3>
+<ul>
+<li>Digital Sunset: setiap malam pada pukul _______ telefon diletakkan di luar bilik tidur</li>
+<li>30 minit pertama selepas bangun: TIADA skrin</li>
+<li>Waktu makan: TIADA telefon</li>
+<li>Hadkan media sosial kepada _______ minit sehari</li>
+</ul>
+
+<hr>
+
+<h2>Lampiran E: Template Crucial Conversation Planner</h2>
+<p><em>Rujuk Bab 9 V2 — Crucial Conversations</em></p>
+
+<h3>Sebelum Perbualan</h3>
+<ol>
+<li>Apa isu yang perlu dibincangkan?</li>
+<li>Apa kepentingan bersama?</li>
+<li>Apa cerita yang saya ceritakan pada diri sendiri?</li>
+<li>Apa yang saya mahu? (Hasil ideal)</li>
+<li>Bagaimana saya akan pilih safety? (STATE dan CONTRAST)</li>
+</ol>
+
+<table>
+<tr><th>Langkah STATE</th><th>Apa Nak Buat</th></tr>
+<tr><td><strong>S</strong>hare your facts</td><td>Fakta, bukan cerita</td></tr>
+<tr><td><strong>T</strong>ell your story</td><td>Cerita saya — dengan rendah hati</td></tr>
+<tr><td><strong>A</strong>sk for their path</td><td>Jemput mereka kongsi</td></tr>
+<tr><td><strong>T</strong>alk tentatively</td><td>Cakap dengan rendah hati</td></tr>
+<tr><td><strong>E</strong>ncourage testing</td><td>Galakkan perbezaan pendapat</td></tr>
+</table>
+
+<hr>
+
+<h2>Lampiran F: Senarai Rujukan dan Bacaan Lanjutan</h2>
+
+<h3>Buku-buku yang Dirujuk dalam V1</h3>
+<table>
+<tr><th>#</th><th>Tajuk</th><th>Penulis</th></tr>
+<tr><td>1</td><td><em>Essentialism</em></td><td>Greg McKeown</td></tr>
+<tr><td>2</td><td><em>Deep Work</em></td><td>Cal Newport</td></tr>
+<tr><td>3</td><td><em>The ONE Thing</em></td><td>Gary Keller</td></tr>
+<tr><td>4</td><td><em>The 7 Habits of Highly Effective People</em></td><td>Stephen R. Covey</td></tr>
+<tr><td>5</td><td><em>Principle-Centered Leadership</em></td><td>Stephen R. Covey</td></tr>
+<tr><td>6</td><td><em>The Power of Habit</em></td><td>Charles Duhigg</td></tr>
+<tr><td>7</td><td><em>Atomic Habits</em></td><td>James Clear</td></tr>
+<tr><td>8</td><td><em>Man's Search for Meaning</em></td><td>Viktor Frankl</td></tr>
+<tr><td>9</td><td><em>The 4-Hour Workweek</em></td><td>Timothy Ferriss</td></tr>
+<tr><td>10</td><td><em>First Things First</em></td><td>Stephen R. Covey</td></tr>
+</table>
+
+<h3>Buku-buku yang Dirujuk dalam V2</h3>
+<table>
+<tr><th>#</th><th>Tajuk</th><th>Penulis</th></tr>
+<tr><td>11</td><td><em>Thinking, Fast and Slow</em></td><td>Daniel Kahneman</td></tr>
+<tr><td>12</td><td><em>The Great Mental Models</em> (Vol 1-4)</td><td>Shane Parrish</td></tr>
+<tr><td>13</td><td><em>Flow: The Psychology of Optimal Experience</em></td><td>Mihaly Csikszentmihalyi</td></tr>
+<tr><td>14</td><td><em>The Power of Full Engagement</em></td><td>Jim Loehr & Tony Schwartz</td></tr>
+<tr><td>15</td><td><em>Digital Minimalism</em></td><td>Cal Newport</td></tr>
+<tr><td>16</td><td><em>Dopamine Detox</em></td><td>Thibaut Meurisse</td></tr>
+<tr><td>17</td><td><em>Buy Back Your Time</em></td><td>Dan Martell</td></tr>
+<tr><td>18</td><td><em>Start With Why</em></td><td>Simon Sinek</td></tr>
+<tr><td>19</td><td><em>Crucial Conversations</em></td><td>Patterson, Grenny, McMillan, Switzler</td></tr>
+<tr><td>20</td><td><em>Antifragile</em></td><td>Nassim Nicholas Taleb</td></tr>
+<tr><td>21</td><td><em>The Road to Character</em></td><td>David Brooks</td></tr>
+<tr><td>22</td><td><em>The 8th Habit</em></td><td>Stephen R. Covey</td></tr>
+</table>
+
+<h3>Bacaan Lanjutan (Bonus)</h3>
+<table>
+<tr><th>#</th><th>Tajuk</th><th>Penulis</th></tr>
+<tr><td>23</td><td><em>Meditations</em></td><td>Marcus Aurelius</td></tr>
+<tr><td>24</td><td><em>Daring Greatly</em></td><td>Brené Brown</td></tr>
+<tr><td>25</td><td><em>The War of Art</em></td><td>Steven Pressfield</td></tr>
+<tr><td>26</td><td><em>So Good They Can't Ignore You</em></td><td>Cal Newport</td></tr>
+<tr><td>27</td><td><em>The E-Myth Revisited</em></td><td>Michael Gerber</td></tr>
+<tr><td>28</td><td><em>The Art of War</em></td><td>Sun Tzu</td></tr>
+<tr><td>29</td><td><em>Never Split the Difference</em></td><td>Chris Voss</td></tr>
+<tr><td>30</td><td><em>The Art of Thinking Clearly</em></td><td>Rolf Dobelli</td></tr>
+<tr><td>31</td><td><em>The Obstacle Is the Way</em></td><td>Ryan Holiday</td></tr>
+<tr><td>32</td><td><em>Ikigai</em></td><td>Garcia & Miralles</td></tr>
+<tr><td>33</td><td><em>Sapiens</em></td><td>Yuval Noah Harari</td></tr>
+</table>
+
+<h3>Video dan Sumber Online</h3>
+<ul>
+<li>TED Talk Simon Sinek — "How Great Leaders Inspire Action"</li>
+<li>Kuliah Mihaly Csikszentmihalyi — "Flow, the Secret to Happiness" (TED)</li>
+<li>Farnam Street Blog — fs.blog — mental models</li>
+<li>Cal Newport Blog — calnewport.com — deep work dan digital minimalism</li>
+<li>Nir Eyar — nirandfar.com — teknologi dan psikologi</li>
+</ul>
+
+<hr>
+
+<h2>Lampiran G: Halaman Komitmen Peribadi — Start, Stop, Continue</h2>
+
+<p><strong>Nama:</strong> ______________________________</p>
+<p><strong>Tarikh:</strong> _______________</p>
+
+<h3>START — Apa Yang Saya AKAN Mula Buat</h3>
+<table>
+<tr><th>Perkara</th><th>Kenapa Penting</th><th>Bila Saya Akan Mula</th></tr>
+<tr><td>1. ________</td><td>________</td><td>________</td></tr>
+<tr><td>2. ________</td><td>________</td><td>________</td></tr>
+<tr><td>3. ________</td><td>________</td><td>________</td></tr>
+</table>
+
+<h3>STOP — Apa Yang Saya AKAN Berhenti Buat</h3>
+<table>
+<tr><th>Perkara</th><th>Kenapa Saya Nak Stop</th><th>Apa Yang Akan Saya Gantikan</th></tr>
+<tr><td>1. ________</td><td>________</td><td>________</td></tr>
+<tr><td>2. ________</td><td>________</td><td>________</td></tr>
+<tr><td>3. ________</td><td>________</td><td>________</td></tr>
+</table>
+
+<h3>CONTINUE — Apa Yang Saya Akan Teruskan Buat</h3>
+<table>
+<tr><th>Perkara</th><th>Kenapa Saya Nak Teruskan</th><th>Macam Mana Nak Pastikan Konsisten</th></tr>
+<tr><td>1. ________</td><td>________</td><td>________</td></tr>
+<tr><td>2. ________</td><td>________</td><td>________</td></tr>
+<tr><td>3. ________</td><td>________</td><td>________</td></tr>
+</table>
+
+<h3>Ikrar Saya</h3>
+<p>Saya, ______________________________, dengan ini berikrar untuk:</p>
+<p>✅ <strong>MULAKAN</strong> perkara-perkara di atas — tanpa tunggu masa sesuai<br>
+✅ <strong>HENTIKAN</strong> perkara-perkara yang tak lagi berkhidmat untuk hidup saya<br>
+✅ <strong>TERUSKAN</strong> amalan baik yang sudah saya bina</p>
+<p>Saya faham bahawa perubahan tidak berlaku dalam sehari. Saya faham akan ada hari saya gagal. Saya faham bahawa progress lebih penting dari perfection.</p>
+<p><strong>Tandatangan:</strong> ______________________________</p>
+<p><strong>Tarikh:</strong> _______________</p>
+<p><strong>Saksi (Accountability Partner):</strong> ______________________________</p>
+
+<hr>
+
+<blockquote><p>"The best time to plant a tree was 20 years ago. The second best time is now." — Peribahasa Cina</p></blockquote>
+
+<p style="text-align:center;font-style:italic;color:var(--text-light);">— WMB DIGITAL</p>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="book-footer">
+  <p><strong>Yang Mana Keutamaan? — Melangkah Lebih Jauh (V2)</strong></p>
+  <p style="margin-top:0.5rem;">WMB DIGITAL &copy; 2025-2026</p>
+  <p style="margin-top:0.5rem;font-size:0.75rem;">Dari Keutamaan ke Kejelasan &middot; Dari Fokus ke Aliran &middot; Dari Diri ke Impak</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="ms-MY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yang Mana Keutamaan? — WMB DIGITAL</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #faf8f5;
+    --text: #2c1810;
+    --text-light: #7a6a5a;
+    --accent: #c49564;
+    --accent-dark: #8b6914;
+    --crimson: #e94560;
+    --chapter-bg: #1a1a2e;
+    --chapter-bg2: #2d2d44;
+    --gold: #d4a574;
+    --border: #e8e0d5;
+    --quote-bg: #f5f0ea;
+    --sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --display: 'Playfair Display', Georgia, serif;
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--serif);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Cover ── */
+  .cover {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 40%, #16213e 100%);
+    overflow: hidden;
+    padding: 2rem;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(201, 149, 100, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 20%, rgba(233, 69, 96, 0.06) 0%, transparent 50%);
+  }
+  .cover-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(212, 165, 116, 0.08); }
+  .cover-deco.d1 { width: 500px; height: 500px; top: -100px; right: -100px; }
+  .cover-deco.d2 { width: 400px; height: 400px; bottom: -80px; left: -80px; }
+  .cover-deco.d3 { width: 200px; height: 200px; top: 20%; left: 10%; border-color: rgba(233, 69, 96, 0.06); }
+
+  .cover-content { position: relative; z-index: 1; text-align: center; max-width: 700px; }
+  .cover-subbrand { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; opacity: 0.7; }
+  .cover-title { font-family: var(--display); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; color: #f5e6ca; line-height: 1.15; margin-bottom: 0.75rem; }
+  .cover-title em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .cover-subtitle { font-family: var(--serif); font-size: clamp(0.95rem, 1.8vw, 1.25rem); color: rgba(245, 230, 202, 0.7); font-style: italic; margin-bottom: 2.5rem; line-height: 1.6; }
+  .cover-line { width: 80px; height: 2px; background: var(--accent); margin: 0 auto 2rem; opacity: 0.5; }
+  .cover-author { font-family: var(--sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(245, 230, 202, 0.5); }
+  .cover-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: var(--sans); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(245, 230, 202, 0.3); animation: fadeUp 2s ease-in-out infinite; }
+
+  @keyframes fadeUp { 0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); } 50% { opacity: 0.8; transform: translateX(-50%) translateY(-6px); } }
+
+  /* ── TOC ── */
+  .toc { padding: 5rem 2rem; max-width: 720px; margin: 0 auto; }
+  .toc h2 { font-family: var(--display); font-size: 1.75rem; color: var(--text); text-align: center; margin-bottom: 3rem; letter-spacing: -0.5px; }
+  .toc hr { border: none; height: 1px; background: var(--border); margin-bottom: 2.5rem; }
+  .toc-act { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-dark); margin: 2rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .toc-item { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.4rem 0; text-decoration: none; color: var(--text); transition: color 0.2s; }
+  .toc-item:hover { color: var(--accent-dark); }
+  .toc-num { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; color: var(--accent); min-width: 2rem; text-align: right; }
+  .toc-title { font-size: 1rem; flex: 1; }
+  .toc-sub { font-size: 0.8rem; color: var(--text-light); font-style: italic; }
+  .toc-app { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .toc-app .toc-item { font-size: 0.9rem; }
+
+  /* ── Act Divider ── */
+  .act-divider {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .act-divider::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(212, 165, 116, 0.06) 0%, transparent 70%);
+  }
+  .act-divider-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+  .act-label { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); opacity: 0.6; }
+  .act-number { font-family: var(--display); font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; color: rgba(245, 230, 202, 0.08); margin: 0.5rem 0; line-height: 1; }
+  .act-title { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.25rem); color: #f5e6ca; font-weight: 700; margin-bottom: 0.75rem; }
+  .act-desc { font-family: var(--serif); font-size: 0.95rem; color: rgba(245, 230, 202, 0.6); font-style: italic; line-height: 1.6; }
+
+  /* ── Chapter Page ── */
+  .chapter-page { position: relative; }
+
+  .chapter-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+  }
+  .chapter-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+  }
+  .chapter-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 26, 46, 0.85) 0%, rgba(26, 26, 46, 0.3) 50%, rgba(26, 26, 46, 0.1) 100%);
+  }
+  .chapter-hero-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .chapter-hero-text .chap-num {
+    font-family: var(--display);
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    color: rgba(212, 165, 116, 0.15);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .chapter-hero-text h1 {
+    font-family: var(--display);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: #f5e6ca;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+  }
+  .chapter-hero-text .chap-sub {
+    font-family: var(--serif);
+    font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+    color: rgba(245, 230, 202, 0.65);
+    font-style: italic;
+  }
+
+  /* ── Chapter Body ── */
+  .chapter-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .chapter-body p {
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .chapter-body h2 {
+    font-family: var(--display);
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    letter-spacing: -0.3px;
+  }
+
+  .chapter-body h3 {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 2rem 0 0.75rem;
+  }
+
+  .chapter-body h4 {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .chapter-body blockquote {
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--accent);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: #3d2e1f;
+    border-radius: 0 4px 4px 0;
+  }
+  .chapter-body blockquote p { margin-bottom: 0; font-size: 1rem; }
+
+  .chapter-body hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+    margin: 2.5rem auto;
+    width: 60%;
+    opacity: 0.4;
+  }
+
+  .chapter-body ul, .chapter-body ol {
+    margin: 1rem 0 1.25rem 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+  .chapter-body li { margin-bottom: 0.4rem; }
+
+  .chapter-body strong { font-weight: 600; color: var(--text); }
+  .chapter-body em { font-style: italic; }
+
+  .chapter-body .refleksi {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #f5f0ea, #faf8f5);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .chapter-body .refleksi h3 {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 1rem;
+    border: none;
+  }
+  .chapter-body .refleksi ol { margin-bottom: 0; }
+  .chapter-body .refleksi li { margin-bottom: 0.75rem; }
+
+  .chapter-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+  }
+  .chapter-body th {
+    background: var(--chapter-bg);
+    color: #f5e6ca;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    font-weight: 500;
+  }
+  .chapter-body td {
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .chapter-body tr:nth-child(even) td { background: #f5f0ea; }
+
+  .chapter-body pre {
+    background: var(--chapter-bg);
+    color: #f5e6ca;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 1.25rem 0;
+  }
+  .chapter-body code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    background: var(--quote-bg);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+  }
+  .chapter-body pre code { background: none; padding: 0; }
+
+  .chapter-body .epigraph {
+    text-align: center;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-light);
+    margin: 2rem 0 1.5rem;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .chapter-body .epigraph p { margin-bottom: 0; }
+
+  .chapter-body .continue-reading {
+    text-align: center;
+    margin: 2.5rem 0 1rem;
+    padding: 1rem;
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Appendix ── */
+  .appendix-body { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  .appendix-body h2 {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+  }
+  .appendix-body h3 {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 1.5rem 0 0.75rem;
+  }
+  .appendix-body p { margin-bottom: 1rem; line-height: 1.8; }
+  .appendix-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-family: var(--sans); font-size: 0.85rem; }
+  .appendix-body th { background: var(--chapter-bg); color: #f5e6ca; padding: 0.5rem 0.7rem; text-align: left; font-weight: 500; }
+  .appendix-body td { padding: 0.4rem 0.7rem; border-bottom: 1px solid var(--border); }
+  .appendix-body tr:nth-child(even) td { background: #f5f0ea; }
+  .appendix-body blockquote {
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--accent);
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+  }
+  .appendix-body hr { border: none; height: 1px; background: linear-gradient(to right, transparent, var(--accent), transparent); margin: 2rem auto; width: 50%; opacity: 0.3; }
+  .appendix-body ul, .appendix-body ol { margin: 0.75rem 0 1rem 1.5rem; line-height: 1.8; }
+
+  /* ── Footer ── */
+  .book-footer {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+    color: rgba(245, 230, 202, 0.5);
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+  .book-footer strong { color: var(--accent); font-weight: 500; }
+
+  /* ── Print ── */
+  @media print {
+    .chapter-hero { height: 40vh; min-height: 300px; }
+    .cover { min-height: 100vh; }
+    body { font-size: 12pt; }
+    .chapter-body { max-width: 100%; }
+    .cover-deco, .cover-scroll { display: none; }
+    .chapter-hero img { opacity: 0.4; }
+  }
+
+  /* ── Tablet (≤1024px) ── */
+  @media (max-width: 1024px) {
+    .chapter-hero { height: 50vh; min-height: 350px; max-height: 500px; }
+    .chapter-hero-text { padding: 2.5rem 2rem; }
+    .chapter-hero-text h1 { font-size: clamp(1.5rem, 5vw, 2.25rem); }
+  }
+
+  /* ── Mobile Landscape (≤768px) ── */
+  @media (max-width: 768px) {
+    html { font-size: 15px; }
+    .cover { min-height: 100vh; padding: 1.5rem; }
+    .cover-title { font-size: clamp(2rem, 8vw, 3.5rem); }
+    .cover-subtitle { font-size: clamp(0.8rem, 2.5vw, 1rem); }
+    .cover-deco.d1 { width: 300px; height: 300px; top: -50px; right: -50px; }
+    .cover-deco.d2 { width: 250px; height: 250px; bottom: -40px; left: -40px; }
+    .cover-deco.d3 { width: 120px; height: 120px; top: 15%; left: 5%; }
+
+    .toc { padding: 3rem 1.5rem; }
+    .toc h2 { font-size: 1.5rem; margin-bottom: 2rem; }
+    .toc-item { gap: 0.5rem; padding: 0.5rem 0; }
+    .toc-title { font-size: 0.95rem; }
+    .toc-sub { display: none; }
+    .toc-num { min-width: 1.5rem; font-size: 0.7rem; }
+    .toc-act { font-size: 0.65rem; letter-spacing: 2px; margin: 1.5rem 0 0.5rem; }
+
+    .act-divider { padding: 3rem 1.5rem; }
+
+    .chapter-hero { height: 40vh; min-height: 280px; max-height: 400px; }
+    .chapter-hero-text { padding: 1.5rem; }
+    .chapter-hero-text .chap-num { font-size: clamp(2rem, 10vw, 3.5rem); }
+    .chapter-hero-text h1 { font-size: clamp(1.25rem, 5vw, 2rem); }
+    .chapter-hero-text .chap-sub { font-size: clamp(0.75rem, 2vw, 0.95rem); }
+
+    .chapter-body { padding: 2rem 1.25rem 3rem; max-width: 100%; }
+    .chapter-body p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+    .chapter-body h2 { font-size: 1.35rem; margin: 2rem 0 0.75rem; }
+    .chapter-body h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+    .chapter-body h4 { font-size: 0.85rem; }
+    .chapter-body ul, .chapter-body ol { font-size: 0.95rem; margin-left: 1.25rem; }
+    .chapter-body blockquote { padding: 1rem; margin: 1.25rem 0; font-size: 0.9rem; }
+    .chapter-body .refleksi { padding: 1.25rem; margin: 1.5rem 0; }
+    .chapter-body .refleksi li { margin-bottom: 0.5rem; }
+    .chapter-body .epigraph { font-size: 1rem; padding: 1rem; }
+    .chapter-body .continue-reading { margin: 2rem 0 0.5rem; font-size: 0.85rem; }
+    .chapter-body hr { margin: 2rem auto; width: 70%; }
+
+    .chapter-body table { font-size: 0.75rem; display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+    .chapter-body th, .chapter-body td { padding: 0.4rem 0.5rem; }
+    .chapter-body pre { font-size: 0.7rem; padding: 0.75rem; }
+
+    .appendix-body { padding: 2rem 1.25rem 3rem; max-width: 100%; }
+    .appendix-body h2 { font-size: 1.25rem; }
+    .appendix-body h3 { font-size: 1rem; }
+    .appendix-body p { font-size: 0.95rem; }
+    .appendix-body table { font-size: 0.7rem; display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+    .appendix-body th, .appendix-body td { padding: 0.35rem 0.5rem; }
+
+    .book-footer { padding: 2.5rem 1.25rem; font-size: 0.7rem; }
+  }
+
+  /* ── Mobile Portrait (≤480px) ── */
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .cover { min-height: 90vh; padding: 1rem; }
+    .cover-subbrand { font-size: 0.6rem; letter-spacing: 3px; margin-bottom: 1.5rem; }
+    .cover-title { font-size: clamp(1.75rem, 9vw, 2.5rem); }
+    .cover-subtitle { font-size: 0.8rem; margin-bottom: 1.5rem; }
+    .cover-line { width: 50px; margin-bottom: 1.25rem; }
+    .cover-author { font-size: 0.7rem; letter-spacing: 2px; }
+    .cover-deco.d1 { width: 200px; height: 200px; top: -30px; right: -30px; }
+    .cover-deco.d2 { width: 150px; height: 150px; bottom: -20px; left: -20px; }
+    .cover-deco.d3 { display: none; }
+
+    .toc { padding: 2rem 1rem; }
+    .toc h2 { font-size: 1.35rem; margin-bottom: 1.5rem; }
+    .toc-item { padding: 0.6rem 0; }
+    .toc-title { font-size: 0.85rem; }
+    .toc-num { font-size: 0.65rem; }
+
+    .act-divider { padding: 2.5rem 1rem; }
+    .act-number { font-size: clamp(2rem, 10vw, 3.5rem); }
+    .act-title { font-size: clamp(1.15rem, 5vw, 1.75rem); }
+    .act-desc { font-size: 0.8rem; }
+
+    .chapter-hero { height: 35vh; min-height: 240px; max-height: 320px; }
+    .chapter-hero-text { padding: 1rem 1rem; }
+    .chapter-hero-text .chap-num { font-size: clamp(1.5rem, 10vw, 2.5rem); }
+    .chapter-hero-text h1 { font-size: clamp(1.1rem, 5.5vw, 1.5rem); }
+    .chapter-hero-text .chap-sub { font-size: 0.7rem; }
+
+    .chapter-body { padding: 1.5rem 1rem 2.5rem; }
+    .chapter-body p { font-size: 0.9rem; line-height: 1.75; }
+    .chapter-body h2 { font-size: 1.2rem; margin: 1.75rem 0 0.5rem; padding-bottom: 0.35rem; }
+    .chapter-body h3 { font-size: 1rem; }
+    .chapter-body h4 { font-size: 0.8rem; letter-spacing: 0.5px; }
+    .chapter-body ul, .chapter-body ol { font-size: 0.9rem; margin-left: 1rem; }
+    .chapter-body blockquote { padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.85rem; border-left-width: 3px; }
+    .chapter-body .refleksi { padding: 1rem 1rem; border-radius: 6px; }
+    .chapter-body .epigraph { font-size: 0.9rem; padding: 0.85rem; }
+
+    .appendix-body { padding: 1.5rem 1rem 2.5rem; }
+    .appendix-body h2 { font-size: 1.15rem; }
+    .appendix-body table { font-size: 0.65rem; }
+
+    .book-footer { padding: 2rem 1rem; font-size: 0.65rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════ COVER ════════════════════════════════════════ -->
+<section class="cover" id="atas">
+  <div class="cover-deco d1"></div>
+  <div class="cover-deco d2"></div>
+  <div class="cover-deco d3"></div>
+  <div class="cover-content">
+    <p class="cover-subbrand">WMB Digital</p>
+    <h1 class="cover-title">Yang Mana<br><em>Keutamaan?</em></h1>
+    <p class="cover-subtitle">Panduan Praktikal Untuk Kenal Pasti dan Laksanakan Keutamaan Hidup —<br>Berdasarkan Prinsip <em>First Things First</em>, Essentialism, dan Ilmu Produktiviti Terkini</p>
+    <div class="cover-line"></div>
+    <p class="cover-author">WMB Digital</p>
+  </div>
+  <p class="cover-scroll">Baca Buku</p>
+</section>
+
+<!-- ════════════════════════════════════════ TOC ════════════════════════════════════════ -->
+<nav class="toc" id="isi-kandungan">
+  <h2>Isi Kandungan</h2>
+  <hr>
+
+  <p class="toc-act">Act 1 &mdash; Mengenali Masalah</p>
+  <a class="toc-item" href="#bab1"><span class="toc-num">1</span><span class="toc-title">Mengapa Kita Sibuk Tapi Tidak Produktif?</span><span class="toc-sub">&mdash; Clock vs Compass</span></a>
+  <a class="toc-item" href="#bab2"><span class="toc-num">2</span><span class="toc-title">Balang Kehidupan</span><span class="toc-sub">&mdash; Big Rocks &amp; 80/20</span></a>
+  <a class="toc-item" href="#bab3"><span class="toc-num">3</span><span class="toc-title">Empat Kuadran &mdash; Di Mana Anda?</span><span class="toc-sub">&mdash; Time Management Matrix</span></a>
+
+  <p class="toc-act">Act 2 &mdash; Memahami Keutamaan</p>
+  <a class="toc-item" href="#bab4"><span class="toc-num">4</span><span class="toc-title">Essentialism &mdash; Berani Memilih</span><span class="toc-sub">&mdash; The Disciplined Pursuit of Less</span></a>
+  <a class="toc-item" href="#bab5"><span class="toc-num">5</span><span class="toc-title">Satu Perkara Paling Penting</span><span class="toc-sub">&mdash; Kuasa The One Thing</span></a>
+  <a class="toc-item" href="#bab6"><span class="toc-num">6</span><span class="toc-title">Circle of Influence</span><span class="toc-sub">&mdash; Fokus pada yang Boleh Dikawal</span></a>
+
+  <p class="toc-act">Act 3 &mdash; Melaksanakan</p>
+  <a class="toc-item" href="#bab7"><span class="toc-num">7</span><span class="toc-title">Deep Work &mdash; Seni Fokus Mendalam</span><span class="toc-sub">&mdash; Menghapuskan Gangguan</span></a>
+  <a class="toc-item" href="#bab8"><span class="toc-num">8</span><span class="toc-title">Atomic Habits &mdash; Kuasa Perubahan 1%</span><span class="toc-sub">&mdash; Sistem Kecil, Hasil Besar</span></a>
+  <a class="toc-item" href="#bab9"><span class="toc-num">9</span><span class="toc-title">The Habit Loop</span><span class="toc-sub">&mdash; Memahami dan Mengubah Tabiat</span></a>
+  <a class="toc-item" href="#bab10"><span class="toc-num">10</span><span class="toc-title">Sharpen the Saw &mdash; Jaga Diri</span><span class="toc-sub">&mdash; Pembaharuan Diri</span></a>
+  <a class="toc-item" href="#bab11"><span class="toc-num">11</span><span class="toc-title">Prinsip dan Purpose &mdash; Kompas Hidup</span><span class="toc-sub">&mdash; Hidup Berlandaskan Prinsip</span></a>
+  <a class="toc-item" href="#bab12"><span class="toc-num">12</span><span class="toc-title">Penutup &mdash; Mulakan Hari Ini</span><span class="toc-sub">&mdash; Pelan Tindakan 30 Hari</span></a>
+
+  <div class="toc-app">
+    <a class="toc-item" href="#lampiran"><span class="toc-num">&bull;</span><span class="toc-title">Lampiran &amp; Lembaran Kerja</span></a>
+    <a class="toc-item" href="#rujukan"><span class="toc-num">&bull;</span><span class="toc-title">Rujukan &amp; Bacaan Lanjutan</span></a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════ ACT 1 ════════════════════════════════════════ -->
+<section class="act-divider">
+  <div class="act-divider-inner">
+    <p class="act-label">Act 1</p>
+    <p class="act-number">ACT 1</p>
+    <h2 class="act-title">Mengenali Masalah</h2>
+    <p class="act-desc">Kenapa kita rasa sibuk tapi tak produktif &mdash; mengenalpasti punca sebenar kekeliruan keutamaan</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ BAB 1 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab1">
+  <div class="chapter-hero">
+    <img src="images/bab01-clock-compass.png" alt="Clock dan Compass">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 1</p>
+      <h1>Mengapa Kita Sibuk Tapi Tidak Produktif?</h1>
+      <p class="chap-sub">Pengenalan kepada masalah asas &mdash; Clock vs Compass</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <div class="epigraph"><p>&ldquo;Saya sibuk&rdquo; &mdash; ayat yang paling dibanggakan, tapi paling tidak bermakna.</p></div>
+
+    <p>Pernah tak awak rasa hari-hari berlalu laju sangat? Bangun pagi, gosok gigi, minum kopi, pegang telefon, tengok mesej, balas email, scroll Facebook, scroll TikTok, scroll Instagram &mdash; dan tiba-tiba dah pukul 12 tengah hari. &ldquo;Apa yang saya buat pagi tadi?&rdquo; Awak tak ingat. Yang awak tahu, awak sibuk. Tapi kalau difikir balik, apa yang betul-betul selesai? Mungkin satu dua benda kecil. Tapi yang besar? Yang penting? Yang sepatutnya selesai minggu lepas? Itu masih tergantung.</p>
+
+    <p>Fenomena ini bukan sesuatu yang asing. Ia berlaku di seluruh dunia, termasuk di Malaysia. Dalam bahasa Inggeris, ada satu istilah yang cukup tepat menggambarkan situasi ini: <em>being busy versus being productive</em>. Sibuk tak sama dengan produktif. Tapi ramai antara kita tersilap anggap dua perkara ini sebagai benda yang sama.</p>
+
+    <hr>
+
+    <h2>Clock vs Compass &mdash; Dua Alat, Dua Arah Berbeza</h2>
+
+    <p>Stephen Covey, dalam bukunya <em>First Things First</em>, memperkenalkan satu metafora yang sangat powerful: <em>Clock vs Compass</em>. Dalam Bahasa Melayu, jam vs kompas.</p>
+
+    <p><strong>Jam</strong> adalah tentang <em>berapa cepat</em> kita bergerak. Ia soal kecekapan. Efisiensi. Macam mana kita boleh selesaikan lebih banyak kerja dalam masa yang lebih singkat. Berapa banyak email yang kita balas dalam satu jam. Berapa banyak meeting yang kita hadiri dalam sehari. Berapa banyak <em>task</em> yang kita <em>check off</em> dari <em>to-do list</em>.</p>
+
+    <p><strong>Kompas</strong> pula adalah tentang <em>arah</em>. Ke mana kita hendak pergi? Adakah semua kerja yang kita buat ni membawa kita ke arah yang betul? Atau kita lari laju-laju, tapi lari dalam bulatan?</p>
+
+    <p>Covey kata: ramai antara kita terlalu fokus pada jam. Kita nak semuanya laju. Kita nak selesaikan banyak perkara dalam satu masa. Kita bangga dengan <em>multitasking</em>. Kita rasa kalau kita sibuk, itu bermakna kita penting. Bermakna kita diperlukan. Bermakna kita sedang mencapai sesuatu.</p>
+
+    <p>Tapi hakikatnya? Kita mungkin sedang berlari ke arah yang salah.</p>
+
+    <p>Bayangkan awak memandu kereta dari Kuala Lumpur ke Pulau Pinang. Awak pandu laju &mdash; 180 km/j. Dalam masa tiga jam, awak dah sampai Alor Setar. Awak kata, &ldquo;Wah, laju saya sampai.&rdquo; Tapi masalahnya, awak nak pergi Penang, bukan Alor Setar. Awak sampai tempat lain. Laju, tapi salah arah. Itulah perbezaan antara clock dan compass.</p>
+
+    <p>Inilah masalah utama yang dihadapi oleh ramai orang moden, termasuk kita di Malaysia. Kita semua sangat <em>efficient</em> &mdash; kita pandai selesaikan kerja dengan cepat. Tapi kita belum tentu <em>effective</em> &mdash; kerja yang kita selesaikan tu belum tentu kerja yang betul.</p>
+
+    <hr>
+
+    <h2>Kecekapan vs Keberkesanan &mdash; Dua Bahasa Berbeza</h2>
+
+    <p><strong>Kecekapan (Efficiency)</strong> adalah tentang <em>doing things right</em> &mdash; buat kerja dengan cara yang betul. Gunakan masa minimum. Gunakan tenaga minimum. Jangan bazir sumber. Kalau dulu ambil masa dua jam siapkan satu laporan, sekarang dengan AI dan ChatGPT, setengah jam dah siap. Itu cekap.</p>
+
+    <p><strong>Keberkesanan (Effectiveness)</strong> pula adalah tentang <em>doing the right things</em> &mdash; buat kerja yang betul. Laporan tu, betul ke patut awak buat? Atau sepatutnya orang lain yang buat? Atau sepatutnya tak payah buat langsung sebab laporan tu tak guna?</p>
+
+    <blockquote><p>&ldquo;There is nothing so useless as doing efficiently that which should not be done at all.&rdquo; &mdash; Peter Drucker</p></blockquote>
+
+    <p>Ini bukan soal teknologi. Ini soal pilihan. Kita boleh jadi sangat cekap dalam perkara yang tak berkesan. Contoh mudah: ada seorang eksekutif di sebuah syarikat di Kuala Lumpur. Setiap hari dia luangkan satu jam untuk <em>proofread</em> email pasukan dia sebelum email tu dihantar. Dia cekap &mdash; dia proofread dengan laju, dengan teliti. Tapi keberkesanannya? Mungkin lebih baik dia ajar pasukan dia cara menulis email yang betul, supaya dia tak perlu proofread setiap kali.</p>
+
+    <hr>
+
+    <h2>&ldquo;Sibuk&rdquo; Sebagai Status Simbol</h2>
+
+    <p>Cuba awak perhatikan. Bila orang tanya, &ldquo;Apa khabar?&rdquo;, apa jawapan standard kita? &ldquo;Khabar baik. Sibuk la.&rdquo; Atau &ldquo;Macam biasa, sibuk.&rdquo; Atau kalau nak lagi impressif: &ldquo;Sibuk gila, bang. Hampir tak cukup tangan.&rdquo;</p>
+
+    <p>Kenapa kita rasa perlu cakap yang kita sibuk? Kenapa diam-diam kita bangga dengan kesibukan?</p>
+
+    <p>Ini yang menarik. Dalam masyarakat kita, <strong>kesibukan sudah menjadi status simbol</strong>. Kalau awak sibuk, bermakna awak penting. Bermakna awak ada kerja. Bermakna awak diperlukan. Bermakna awak tidak penganggur.</p>
+
+    <p>Kita dah lupa apa erti <em>idle time</em>. Masa lapang. Masa tak buat apa-apa. Dalam dunia moden, masa lapang dirasakan seperti musuh. Kita mesti <em>optimize</em> setiap minit.</p>
+
+    <p>Greg McKeown, dalam bukunya <em>Essentialism</em>, menyebut bahawa kita hidup dalam budaya di mana &ldquo;kita menghargai <em>having it all</em> dan <em>doing it all</em>.&rdquo; Kita nak semua. Kita nak kaya, nak ada karier hebat, nak ada keluarga bahagia, nak ada tubuh badan sihat, nak ada hobi, nak ada side hustle, nak travel, nak ada social life. Semua sekali gus.</p>
+
+    <hr>
+
+    <h2>Kebenaran Yang Sukar</h2>
+
+    <p>Covey, dalam <em>7 Habits of Highly Effective People</em>, mengingatkan kita tentang satu kebenaran yang sukar: <strong>Kita sentiasa ada pilihan.</strong> Mungkin kita rasa kita tak ada pilihan. Mungkin kita rasa kita terperangkap. Tapi hakikatnya, antara stimulus dan response, ada ruang. Dalam ruang itulah letaknya kebebasan kita untuk memilih.</p>
+
+    <p>Kita tak boleh kawal apa yang berlaku pada kita. Tapi kita boleh kawal apa yang kita buat tentangnya.</p>
+
+    <hr>
+
+    <h2>Tiga Soalan Paling Penting</h2>
+
+    <p><strong>Soalan 1:</strong> Dalam sejam yang lepas, apa yang betul-betul penting yang awak dah capai?</p>
+    <p><strong>Soalan 2:</strong> Kalau awak tahu esok awak kena outstation dan tak boleh buat kerja langsung, apa satu benda yang awak mesti selesaikan hari ni?</p>
+    <p><strong>Soalan 3:</strong> Kenapa? Kenapa awak sibuk? Kenapa awak rasa perlu sibuk?</p>
+
+    <hr>
+
+    <h2>Apa Yang Kita Akan Belajar Dalam Buku Ini</h2>
+
+    <p>Buku ini bukanlah buku <em>self-help</em> tipikal yang bagi awak 10 tips macam mana nak jadi lebih produktif. Buku ni adalah tentang <strong>keutamaan</strong> &mdash; tentang memilih dengan sengaja perkara yang paling penting dalam hidup awak.</p>
+
+    <p><strong>Buku ini bukan tentang buat lebih banyak. Buku ini tentang buat lebih sedikit &mdash; tetapi yang betul.</strong></p>
+
+    <div class="refleksi">
+      <h3>Refleksi Akhir Bab 1</h3>
+      <ol>
+        <li>Apakah satu perkara yang awak lakukan setiap hari yang sebenarnya tak perlu dilakukan langsung?</li>
+        <li>Adakah awak rasa sibuk atau produktif? &mdash; bezakan.</li>
+        <li>Kalau awak ada satu jam esok yang tidak terganggu langsung, apa yang akan awak lakukan?</li>
+        <li>Apa yang paling awak takutkan jika awak berhenti menjadi &ldquo;sibuk&rdquo;?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 2 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 2 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab2">
+  <div class="chapter-hero">
+    <img src="images/bab02-big-rocks-jar.png" alt="Balang Kehidupan">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 2</p>
+      <h1>Balang Kehidupan</h1>
+      <p class="chap-sub">Konsep Big Rocks dan memilih keutamaan</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <div class="epigraph"><p>&ldquo;Jangan isi pasir dulu. Batu besar dulu.&rdquo;</p></div>
+
+    <p>Ada satu demonstrasi klasik yang sering digunakan dalam kursus pengurusan masa. Saya nak awak bayangkan.</p>
+
+    <p>Seorang profesor berdiri di hadapan kelas. Dia letak sebuah balang kaca kosong di atas meja. Kemudian, dia keluarkan beberapa biji batu besar &mdash; sebesar penumbuk &mdash; dan mula masukkan ke dalam balang. Satu, dua, tiga, empat. Balang tu dah nampak penuh. &ldquo;Penuh ke?&rdquo; tanya profesor. &ldquo;Penuh!&rdquo; jawab pelajar.</p>
+
+    <p>Kemudian profesor tu keluarkan batu kerikil &mdash; kecil-kecil &mdash; dan masukkan ke dalam balang. Kerikil tu masuk ke celah-celah antara batu besar. Dia goncang sikit. Lagi. Lagi. Sampai semua kerikil masuk. &ldquo;Sekarang, penuh ke?&rdquo; &ldquo;Penuh!&rdquo; jawab pelajar lagi.</p>
+
+    <p>Profesor tu senyum. Dia keluarkan pasir halus dan tuang ke dalam balang. Pasir tu mengisi ruang yang tinggal. &ldquo;Penuh?&rdquo; &ldquo;Penuh!&rdquo; kali ni suara pelajar kurang yakin.</p>
+
+    <p>Profesor tu ambil segelas air dan tuang ke dalam balang. Air tu meresap ke dalam pasir. &ldquo;Sekarang?&rdquo; tanya profesor. Pelajar senyap.</p>
+
+    <p>Kemudian profesor tu tanya soalan paling penting: <strong>&ldquo;Apa pengajaran dari demonstrasi ni?&rdquo;</strong></p>
+
+    <p>Seorang pelajar angkat tangan: &ldquo;Tidak kira sesibuk mana pun jadual kita, kita boleh muatkan lagi jika kita betul-betul berusaha.&rdquo;</p>
+
+    <p>&ldquo;Bukan,&rdquo; jawab profesor. <strong>&ldquo;Pengajaran sebenarnya ialah: kalau batu besar tak dimasukkan dulu, ia tak akan muat langsung.&rdquo;</strong></p>
+
+    <hr>
+
+    <h2>Batu Besar Dalam Hidup Kita</h2>
+
+    <p>Demonstrasi balang kehidupan ni ringkas, tapi kuasanya luar biasa. Ia mengajar kita satu prinsip yang sangat mudah tapi susah nak diamalkan: <strong>Letakkan keutamaan awak dahulu, sebelum perkara remeh mengambil semua ruang.</strong></p>
+
+    <p><strong>Batu besar</strong> adalah perkara yang paling penting dalam hidup awak. Perkara yang memberi nilai paling besar. Perkara yang kalau awak tak buat, awak akan menyesal.</p>
+    <p><strong>Batu kerikil</strong> adalah perkara yang perlu dibuat, tapi tak semendesak batu besar.</p>
+    <p><strong>Pasir</strong> adalah perkara remeh yang mengisi masa.</p>
+    <p><strong>Air</strong> pula adalah segala gangguan yang tak terduga.</p>
+
+    <hr>
+
+    <h2>Di Mana Silapnya?</h2>
+
+    <p>Masalahnya bukan pada pasir tu sendiri. Media sosial, sembang-sembang, urusan harian &mdash; semua tu ada tempatnya. Masalahnya ialah <strong>kita biarkan pasir mengambil tempat yang sepatutnya untuk batu besar</strong>.</p>
+
+    <p><strong>Kita perlu faham: setiap kali kita kata &ldquo;ya&rdquo; pada sesuatu, kita sebenarnya kata &ldquo;tidak&rdquo; pada perkara lain.</strong></p>
+
+    <hr>
+
+    <h2>Prinsip Pareto: 80/20</h2>
+
+    <p>Vilfredo Pareto, seorang ahli ekonomi Itali pada tahun 1906, perasan bahawa 80% tanah di Itali dimiliki oleh 20% rakyatnya. Prinsip ni dah diadaptasi dalam pelbagai bidang:</p>
+
+    <ul>
+      <li><strong>Dalam perniagaan:</strong> 80% jualan datang dari 20% pelanggan.</li>
+      <li><strong>Dalam kerja:</strong> 80% hasil datang dari 20% aktiviti.</li>
+      <li><strong>Dalam pakaian:</strong> 80% masa kita pakai 20% baju yang kita ada.</li>
+    </ul>
+
+    <p>Maksudnya: <strong>daripada semua yang kita lakukan, hanya sebahagian kecil yang benar-benar memberi impak besar.</strong></p>
+
+    <hr>
+
+    <h2>Essentialism &mdash; Less But Better</h2>
+
+    <p>Greg McKeown dalam bukunya <em>Essentialism</em> memperkenalkan satu pendekatan yang radikal: <em>Less but Better</em>. Essentialism bukan tentang macam mana nak buat lebih banyak. Ia adalah tentang <strong>macam mana nak buat perkara yang betul</strong>.</p>
+
+    <p>McKeown kata: &ldquo;Jika awak tak mengutamakan hidup awak, orang lain yang akan buatnya untuk awak.&rdquo;</p>
+
+    <div class="refleksi">
+      <h3>Refleksi Akhir Bab 2</h3>
+      <ol>
+        <li>Apakah tiga batu besar dalam hidup awak sekarang? Tulis dengan spesifik.</li>
+        <li>Apa pasir utama yang mengambil masa awak setiap hari &mdash; dan boleh awak kurangkan?</li>
+        <li>Apa satu batu besar yang awak tahu penting, tapi selalu awak tangguhkan? Kenapa?</li>
+        <li>Kalau esok awak kena outstation dan hanya boleh bawa SATU batu besar untuk diselesaikan, apa yang akan awak bawa?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 3 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 3 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab3">
+  <div class="chapter-hero">
+    <img src="images/bab03-four-quadrants.png" alt="Empat Kuadran">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 3</p>
+      <h1>Empat Kuadran &mdash; Di Mana Anda?</h1>
+      <p class="chap-sub">Memahami Matrix Masa Stephen Covey</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <div class="epigraph"><p>&ldquo;Semua orang ada 24 jam. Bezanya: di mana masa itu dihabiskan?&rdquo;</p></div>
+
+    <p>Dalam Bab 1, kita belajar pasal jam dan kompas. Dalam Bab 2, kita belajar pasal balang kehidupan dan batu besar. Sekarang, dalam Bab 3, kita akan belajar satu alat yang paling praktikal untuk mendiagnosis ke mana sebenarnya masa kita pergi. Alat ni dikenali sebagai <strong>Time Management Matrix</strong> atau <strong>Matriks Pengurusan Masa</strong> &mdash; diperkenalkan oleh Stephen Covey dalam bukunya <em>7 Habits of Highly Effective People</em> dan dikembangkan lagi dalam <em>First Things First</em>.</p>
+
+    <h2>Empat Kuadran Kehidupan</h2>
+
+    <p>Covey membahagikan semua aktiviti kita kepada dua dimensi:</p>
+    <ol>
+      <li><strong>Urgent (Segera)</strong> &mdash; perkara yang menuntut perhatian <em>sekarang</em>.</li>
+      <li><strong>Important (Penting)</strong> &mdash; perkara yang memberi sumbangan besar kepada misi, nilai, dan matlamat hidup kita.</li>
+    </ol>
+
+    <pre>                          URGENT              NOT URGENT
+
+IMPORTANT          KUADRAN I               KUADRAN II
+                   Krisis & Deadline       Kualiti & Kepimpinan
+
+NOT IMPORTANT      KUADRAN III             KUADRAN IV
+                   Penipuan                Pembaziran</pre>
+
+    <hr>
+
+    <h2>Kuadran I: Krisis dan Deadline</h2>
+    <p>Kuadran I adalah untuk perkara yang <em>urgent</em> DAN <em>penting</em>. Ini adalah kuadran krisis, kecemasan, dan deadline yang mendesak. Orang yang hidup dalam Kuadran I akan rasa stres, seperti <em>firefighter</em> &mdash; padam api sini, api sana menyala.</p>
+
+    <p>Covey memberi amaran: <strong>Kuadran I ni perlu, tapi jangan tinggal di sini.</strong></p>
+
+    <hr>
+
+    <h2>Kuadran II: Kualiti dan Kepimpinan</h2>
+    <p><strong>&ldquo;Ini tak urgent, tapi ia sangat penting.&rdquo;</strong></p>
+    <p>Kuadran II adalah perkara yang <em>penting</em> tapi <em>tak urgent</em>. Inilah kuadran yang paling <em>powerful</em> &mdash; tapi yang paling kerap diabaikan. Mengapa? Sebab ia tak menjerit. Tak ada deadline. Tak ada notifikasi. Diam saja.</p>
+
+    <p>Contoh Kuadran II: perancangan jangka panjang, hubungan, penjagaan kesihatan, pembelajaran, persediaan, refleksi dan meditasi.</p>
+
+    <p><strong>Bagaimana nak hidup lebih banyak di Kuadran II?</strong></p>
+    <ol>
+      <li><strong>Jadualkan masa untuk Kuadran II dalam kalendar.</strong> &mdash; <em>Block time</em> setiap hari.</li>
+      <li><strong>Gunakan <em>Weekly Review</em>.</strong> &mdash; Setiap Jumaat atau Ahad, luangkan 30 minit untuk review.</li>
+      <li><strong>Mulakan dengan satu Kuadran II.</strong> &mdash; Jangan cuba ubah semua sekali gus.</li>
+      <li><strong>Letak <em>reminder</em>.</strong> &mdash; Sticky note di skrin komputer.</li>
+      <li><strong>Cari <em>accountability partner</em>.</strong></li>
+    </ol>
+
+    <hr>
+
+    <h2>Kuadran III: Penipuan</h2>
+    <p>Kuadran III adalah perangkap paling bahaya. Sebab kuadran ni nampak macam Kuadran I. Bunyi <em>urgent</em>. Tapi hakikatnya: <strong>ia tak penting langsung.</strong> Inilah sebab Covey panggil ia <em>Penipuan</em>.</p>
+
+    <p>Contoh: meeting yang tak perlu, email dan mesej yang tak penting, gangguan dari rakan sekerja, notifikasi.</p>
+
+    <hr>
+
+    <h2>Kuadran IV: Pembaziran</h2>
+    <p>Kuadran IV adalah aktiviti yang tak urgent dan tak penting. Ini adalah <em>pure waste</em> &mdash; pembaziran masa tulen. Contoh: menonton video random berjam-jam, scrolling media sosial tanpa tujuan.</p>
+
+    <hr>
+
+    <h2>Di Mana Awak Sekarang?</h2>
+
+    <p>Kebanyakan orang akan dapati corak macam ni:</p>
+    <ul>
+      <li><strong>Kuadran I: 30-40%</strong> &mdash; krisis dan deadline bertali arus.</li>
+      <li><strong>Kuadran II: 10-20%</strong> &mdash; sangat sikit. Inilah masalahnya.</li>
+      <li><strong>Kuadran III: 30-40%</strong> &mdash; sibuk tapi tak penting.</li>
+      <li><strong>Kuadran IV: 10-20%</strong> &mdash; pembaziran.</li>
+    </ul>
+
+    <p><strong>Matlamat kita: terbalikkan.</strong> Kuadran II naikkan ke atas 50-60%.</p>
+
+    <hr>
+
+    <h2>Strategi Untuk Berpindah ke Kuadran II</h2>
+
+    <h3>Prinsip Eisenhower</h3>
+    <ol>
+      <li><strong>Penting &amp; Urgent</strong> &rarr; <em>Do it now.</em></li>
+      <li><strong>Penting &amp; Tak Urgent</strong> &rarr; <em>Schedule it.</em></li>
+      <li><strong>Tak Penting &amp; Urgent</strong> &rarr; <em>Delegate it.</em></li>
+      <li><strong>Tak Penting &amp; Tak Urgent</strong> &rarr; <em>Delete it.</em></li>
+    </ol>
+
+    <div class="refleksi">
+      <h3>Refleksi Akhir Bab 3</h3>
+      <ol>
+        <li>Dalam minggu lepas, anggarkan peratusan masa awak di setiap kuadran. Di mana paling banyak?</li>
+        <li>Apa satu aktiviti Kuadran II yang awak tahu akan memberi impak besar, tapi selalu awak tangguhkan?</li>
+        <li>Apa sumber utama Kuadran III dalam hidup awak?</li>
+        <li>Apa aktiviti Kuadran IV yang awak selalu buat sebagai <em>escape</em> dari kepenatan?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 4 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ ACT 2 ════════════════════════════════════════ -->
+<section class="act-divider">
+  <div class="act-divider-inner">
+    <p class="act-label">Act 2</p>
+    <p class="act-number">ACT 2</p>
+    <h2 class="act-title">Memahami Keutamaan</h2>
+    <p class="act-desc">Kerangka dan konsep untuk kenal pasti apa yang benar-benar penting dalam hidup</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ BAB 4 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab4">
+  <div class="chapter-hero">
+    <img src="images/bab04-essentialism-funnel.png" alt="Essentialism Funnel">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 4</p>
+      <h1>Essentialism &mdash; Berani Memilih</h1>
+      <p class="chap-sub">The Disciplined Pursuit of Less</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <p>Zainab seorang guru di sebuah sekolah menengah di Shah Alam. Setiap pagi, dia bangun jam 5.30, siapkan sarapan untuk anak-anak, hantar mereka ke sekolah, kemudian terus ke sekolahnya sendiri. Selepas waktu mengajar, dia ada mesyuarat panitia, kemudian mesyuarat kokurikulum, kemudian kena hadiri kursus dalam talian. Sampai rumah jam 7 malam, dia masih perlu semak buku latihan, siapkan Rancangan Pengajaran Harian (RPH), dan kalau ada masa, buat kerja sampingan menjual kuih secara online.</p>
+
+    <p>Zainab bukan malas. Dia antara guru yang paling rajin. Tapi bila ditanya, &ldquo;Apa yang paling penting untuk awak tahun ini?&rdquo; dia terdiam. Dia tak sempat fikir. Dia terlalu sibuk untuk berhenti dan bertanya soalan itu.</p>
+
+    <p>Cerita Zainab bukan cerita dia seorang. Ini cerita kita semua.</p>
+
+    <hr>
+
+    <h2>Kemunculan Essentialism</h2>
+
+    <p>Greg McKeown, dalam bukunya <em>Essentialism: The Disciplined Pursuit of Less</em>, membuat satu pemerhatian yang tajam: kita hidup di zaman di mana &ldquo;lebih&rdquo; dianggap &ldquo;lebih baik&rdquo;. Lagi sibuk, lagi hebat. Lagi banyak benda yang kita buat, lagi bernilai kita sebagai manusia. Tapi itu penipuan.</p>
+
+    <p>Essentialism menawarkan jalan keluar. Bukan dengan memberi kita lebih banyak tips produktiviti. Sebaliknya, ia mengajak kita untuk berhenti, dan bertanya soalan yang paling sukar: <strong>&ldquo;Adakah saya buat perkara yang betul?&rdquo;</strong></p>
+
+    <hr>
+
+    <h2>&ldquo;Less But Better&rdquo;: Satu Mantra, Satu Hidup</h2>
+
+    <p>Di tengah-tengah Essentialism ada satu mantra ringkas: <strong>&ldquo;Less but Better&rdquo;</strong> &mdash; Kurang tapi Lebih Baik. Bukan &ldquo;kurang dan sambil lewa&rdquo;. Bukan &ldquo;kurang dan malas&rdquo;. Tapi &ldquo;kurang tapi dengan kualiti yang lebih tinggi.&rdquo;</p>
+
+    <p>Fikirkan tentang orkestra simfoni. Bila seorang pemain biola bermain, dia tak main semua not dalam satu masa. Bunyi itu akan jadi hiruk-pikuk. Sebaliknya, dia pilih not yang tepat pada masa yang tepat.</p>
+
+    <hr>
+
+    <h2>90% Rule: Ujian Ketegasan</h2>
+
+    <p>McKeown memperkenalkan satu alat yang sangat praktikal &mdash; <strong>The 90% Rule</strong>. Apabila awak menilai sesuatu peluang atau pilihan, nilai ia pada satu skala dari 0 hingga 100. Kalau skor keseluruhan kurang daripada 90 peratus &mdash; maka jawapannya adalah <strong>TIDAK</strong>.</p>
+
+    <p>Bukan &ldquo;mungkin&rdquo;. Bukan &ldquo;nanti saya fikir-fikir dulu&rdquo;. Tapi TIDAK.</p>
+
+    <hr>
+
+    <h2>Priority: Satu Keutamaan</h2>
+
+    <p>Tahukah awak bahawa perkataan &ldquo;priority&rdquo; pada asalnya tidak ada bentuk jamak? Ia sentiasa dalam bentuk singular &mdash; bermaksud &ldquo;satu perkara yang paling utama.&rdquo; Barulah pada abad ke-20 kita mula guna perkataan <em>priorities</em> &mdash; jamak.</p>
+
+    <p>McKeown menyatakan dengan jelas: <strong>&ldquo;If you have more than one priority, you have none.&rdquo;</strong></p>
+
+    <hr>
+
+    <h2>Trade-off: Anda Boleh Buat Apa Sahaja, Tapi Bukan Semua</h2>
+
+    <p>Ini mungkin pengajaran Essentialism yang paling sukar untuk diterima: <strong>awak boleh buat apa sahaja, tapi awak tak boleh buat SEMUA.</strong></p>
+
+    <p>Anda boleh jadi seorang guru yang cemerlang. Tapi awak tak boleh jadi guru cemerlang, usahawan kuih tersohor, atlet maraton, aktivis sosial, influencer Instagram, dan ibu bapa contoh &mdash; semua dalam satu masa yang sama.</p>
+
+    <hr>
+
+    <h2>Explore, Eliminate, Execute</h2>
+
+    <h3>1. Explore &mdash; Cari Yang Paling Penting</h3>
+    <p>McKeown kata kita perlu: <em>Escape</em> (ambil masa menyendiri), <em>Look</em> (lihat yang memberi impak sebenar), <em>Play</em> (bereksperimen), <em>Sleep</em> (rehat yang cukup), <em>Select</em> (pilih dengan kriteria ketat).</p>
+
+    <h3>2. Eliminate &mdash; Buang Yang Lain</h3>
+    <p>Lepas kita kenal pasti apa yang penting, langkah kedua adalah membuang yang lain. Ini bahagian paling sukar.</p>
+
+    <h3>3. Execute &mdash; Laksana Dengan Cemerlang</h3>
+    <p>Buat perkara yang penting dengan cara yang paling berkesan. <em>Subtract, small wins, routine, focus.</em></p>
+
+    <hr>
+
+    <h2>Kuasa Berkata TIDAK dengan Sopan</h2>
+
+    <p>Beberapa cara untuk berkata tidak dengan sopan:</p>
+    <ol>
+      <li>Tawarkan alternatif</li>
+      <li>Gunakan &ldquo;saya tak boleh&rdquo; dan bukannya &ldquo;saya tak mahu&rdquo;</li>
+      <li>Beritahu keutamaan awak</li>
+      <li>Jangan terlalu banyak memberi alasan</li>
+    </ol>
+
+    <blockquote><p>&ldquo;If you don&rsquo;t prioritize your life, someone else will.&rdquo; &mdash; Greg McKeown</p></blockquote>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Dalam senarai panjang &ldquo;prioriti&rdquo; awak sekarang, yang mana satu sebenarnya paling penting?</li>
+        <li>Apakah satu perkara yang awak dah lama buat hanya sebab &ldquo;dah start&rdquo; (sunk cost)?</li>
+        <li>Siapa atau situasi apa yang paling sukar untuk awak katakan &ldquo;tidak&rdquo;?</li>
+        <li>Apakah satu komitmen yang awak boleh tarik diri minggu ini untuk memberi ruang kepada yang lebih penting?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 5 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 5 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab5">
+  <div class="chapter-hero">
+    <img src="images/bab05-domino-effect.png" alt="Domino Effect">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 5</p>
+      <h1>Satu Perkara Paling Penting</h1>
+      <p class="chap-sub">The One Thing yang mengubah segala-galanya</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <p>Kisah benar. Seorang usahawan muda di Johor Bahru, namakan dia Hafiz, memulakan perniagaan menjual baju Melayu secara online. Dalam masa enam bulan, dia dah buka tiga &ldquo;cabang&rdquo; perniagaan: jual baju, jual tudung, dan jadi ejen pelancongan umrah. Dia fikir, &ldquo;Lebih banyak, lebih untung.&rdquo;</p>
+
+    <p>Enam bulan kemudian, dia hampir bankrap. Stok baju tak habis jual, tudung langsung tak laku, dan agensi umrahnya cuma dapat tiga pelanggan. Hafiz penat, tekanan, dan duit habis.</p>
+
+    <p>Kemudian seorang mentor bertanya soalan mudah: <strong>&ldquo;Apa satu perkara yang paling menguntungkan dalam perniagaan awak?&rdquo;</strong></p>
+
+    <hr>
+
+    <h2>The One Thing: Kuasa Fokus</h2>
+
+    <p>Gary Keller, dalam buku <em>The One Thing: The Surprisingly Simple Truth Behind Extraordinary Results</em>, mengemukakan idea yang sangat mudah, tapi dalam masa yang sama sangat mendalam: <strong>Kejayaan luar biasa datang bukan dari melakukan pelbagai perkara, tapi dari fokus pada satu perkara yang tepat.</strong></p>
+
+    <p>Orang yang benar-benar berjaya &mdash; dalam bidang perniagaan, sukan, seni, akademik &mdash; mereka bukan orang yang pandai buat banyak benda. Mereka adalah orang yang <strong>sangat pandai dalam satu benda</strong>.</p>
+
+    <hr>
+
+    <h2>The Focusing Question</h2>
+
+    <p>Di tengah-tengah buku <em>The One Thing</em> ada satu soalan yang Keller panggil <strong>The Focusing Question</strong>. Bunyinya begini:</p>
+
+    <blockquote><p><strong>&ldquo;Apa SATU perkara yang boleh saya buat, supaya dengan melakukannya, segala-galanya menjadi lebih mudah atau tidak perlu?&rdquo;</strong></p></blockquote>
+
+    <p>Perhatikan setiap elemen dalam soalan ini:</p>
+    <ul>
+      <li><strong>&ldquo;Apa SATU perkara&hellip;&rdquo;</strong> &mdash; Bukan lima. Bukan tiga. SATU.</li>
+      <li><strong>&ldquo;&hellip;yang boleh saya buat&hellip;&rdquo;</strong> &mdash; Fokus pada tindakan yang boleh awak kawal.</li>
+      <li><strong>&ldquo;&hellip;supaya dengan melakukannya&hellip;&rdquo;</strong> &mdash; Tindakan ini adalah pencetus.</li>
+      <li><strong>&ldquo;&hellip;segala-galanya menjadi lebih mudah atau tidak perlu?&rdquo;</strong> &mdash; Satu perkara yang memberi kesan domino.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Kesan Domino</h2>
+
+    <p>Pernah awak perhatikan permainan domino? Satu bata domino yang jatuh boleh menjatuhkan bata kedua yang 50% lebih besar daripadanya. Pada penghujung rantai, satu bata domino kecil boleh menjatuhkan bata yang beribu kali ganda saiznya.</p>
+
+    <p><strong>Inilah The Domino Effect.</strong> Dalam kehidupan, satu tindakan yang betul &mdash; kecil sekalipun &mdash; boleh mencetuskan satu rantaian kejayaan yang besar.</p>
+
+    <hr>
+
+    <h2>Time Blocking: Lindungi Masa untuk ONE Thing</h2>
+
+    <p>Keller perkenalkan konsep <strong>Time Blocking</strong>. Ideanya mudah: <strong>Blokkan 4 jam pertama setiap hari untuk ONE Thing awak.</strong></p>
+
+    <p>Bukan 30 minit. Bukan sejam. Tapi 4 jam. Setiap hari. Tanpa gangguan.</p>
+
+    <hr>
+
+    <h2>Enam Pembohongan Tentang Produktiviti</h2>
+
+    <ol>
+      <li><strong>&ldquo;Semua Benda Sama Penting&rdquo;</strong> &mdash; Padahal, dalam setiap senarai, pasti ada satu item yang paling memberi impak.</li>
+      <li><strong>&ldquo;Multitasking Itu Berkesan&rdquo;</strong> &mdash; Multitasking adalah &ldquo;tukar fokus dengan pantas antara beberapa perkara,&rdquo; dan setiap pertukaran ada kos.</li>
+      <li><strong>&ldquo;Hidup yang Berdisiplin&rdquo;</strong> &mdash; Kita cuma perlukan disiplin untuk SATU tabiat yang betul.</li>
+      <li><strong>&ldquo;Willpower Sentiasa Ada&rdquo;</strong> &mdash; Willpower menurun sepanjang hari. Guna waktu puncak untuk ONE Thing.</li>
+      <li><strong>&ldquo;Keseimbangan Hidup&rdquo;</strong> &mdash; Kehidupan adalah tentang ketidakseimbangan yang berterusan.</li>
+      <li><strong>&ldquo;Besar Itu Buruk&rdquo;</strong> &mdash; Besarkan impian awak. Target besar memaksa awak cari ONE Thing yang betul.</li>
+    </ol>
+
+    <hr>
+
+    <h2>Empat Pencuri Produktiviti</h2>
+    <ol>
+      <li>Tak Mampu Berkata &ldquo;Tidak&rdquo;</li>
+      <li>Takut Kacau Ganggu</li>
+      <li>Tabiat Buruk</li>
+      <li>Persekitaran yang Tak Mendukung</li>
+    </ol>
+
+    <hr>
+
+    <h2>Domino Progresif</h2>
+
+    <p>Tanyakan pada diri sendiri soalan ini secara berturut-turut:</p>
+    <ul>
+      <li>Untuk 10 tahun: Apa SATU perkara yang boleh saya buat sekarang?</li>
+      <li>Untuk tahun ini: Apa SATU perkara yang selari dengan target 10 tahun saya?</li>
+      <li>Untuk bulan ini: Apa SATU perkara yang selari dengan target tahunan saya?</li>
+      <li>Untuk minggu ini: Apa SATU perkara yang selari dengan target bulanan saya?</li>
+      <li>Untuk hari ini: Apa SATU perkara yang perlu saya buat HARI INI?</li>
+      <li>Sekarang juga: Apa SATU perkara yang boleh saya buat SEKARANG?</li>
+    </ul>
+
+    <blockquote><p>&ldquo;Go small. Ignore the noise. Focus on your ONE Thing.&rdquo; &mdash; Gary Keller</p></blockquote>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Jika awak hanya boleh fokus pada SATU perkara dalam kerjaya awak untuk setahun akan datang, apakah perkara itu?</li>
+        <li>Apakah satu tabiat yang, jika awak lakukan setiap hari, akan memberi kesan domino paling besar?</li>
+        <li>Manakah antara Enam Pembohongan yang paling kuat mempengaruhi cara awak bekerja sekarang?</li>
+        <li>Fikirkan satu perkara yang awak boleh berhenti lakukan SEKARANG &mdash; yang akan membebaskan masa untuk ONE Thing awak.</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 6 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 6 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab6">
+  <div class="chapter-hero">
+    <img src="images/bab06-circle-influence.png" alt="Circle of Influence">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 6</p>
+      <h1>Circle of Influence</h1>
+      <p class="chap-sub">Fokus pada yang Boleh Dikawal &mdash; Proactive vs Reactive</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <div class="epigraph"><p>&ldquo;Antara Stimulus dan Respon, Ada Ruang untuk Pilih.&rdquo;</p></div>
+
+    <p>Kuala Lumpur, 2023. Seorang pegawai kanan di sebuah kementerian, namakan Shahrul, sedang menghadapi tekanan yang amat berat. Bajet kementeriannya dipotong sebanyak 30%. Anak buahnya ramai yang dipindahkan. Arahan baru dari atasan datang setiap minggu.</p>
+
+    <p>Dalam satu sesi coaching, seorang mentor bertanya: <strong>&ldquo;Antara semua masalah ni, yang mana satu boleh awak kawal?&rdquo;</strong></p>
+
+    <hr>
+
+    <h2>Dari Covey: Circle of Influence</h2>
+
+    <p>Stephen R. Covey, dalam buku klasik <em>The 7 Habits of Highly Effective People</em>, memperkenalkan satu konsep yang mudah tapi amat berkuasa: <strong>Circle of Influence</strong> dan <strong>Circle of Concern</strong>.</p>
+
+    <p><strong>Bulatan Luar &mdash; Circle of Concern:</strong> Semua perkara yang awak ambil peduli. Ekonomi negara, politik Malaysia, harga minyak dunia, cuaca, tindakan bos, gosip kawan sepejabat, apa orang fikir pasal awak, trafik jam 5.30 petang.</p>
+
+    <p><strong>Bulatan Dalam &mdash; Circle of Influence:</strong> Perkara yang awak boleh buat sesuatu mengenainya. Cara awak bertindak balas, sikap awak, perkataan yang awak pilih, masa awak, kualiti kerja awak, kesihatan awak, hubungan dengan keluarga terdekat.</p>
+
+    <hr>
+
+    <h2>Antara Stimulus dan Respon: Kuasa Pilihan</h2>
+
+    <p>Viktor Frankl, seorang psikiatri yang terselamat dari kem tahanan Nazi, menulis dalam bukunya <em>Man&rsquo;s Search for Meaning</em>:</p>
+
+    <blockquote><p>&ldquo;Antara stimulus dan respon, ada ruang. Dalam ruang itu, ada kuasa kita untuk memilih respon kita. Dalam respon kita, terletak pertumbuhan dan kebebasan kita.&rdquo;</p></blockquote>
+
+    <p>Covey mengambil idea ini dan menjadikannya sebagai tabiat pertama dalam 7 Habits: <strong>Be Proactive</strong>.</p>
+
+    <hr>
+
+    <h2>Bahasa Reaktif vs Bahasa Proaktif</h2>
+
+    <p><strong>ORANG REAKTIF</strong> berkata: &ldquo;Saya tak boleh buat apa-apa,&rdquo; &ldquo;Macam tu lah saya,&rdquo; &ldquo;Dia buat saya marah,&rdquo; &ldquo;Saya terpaksa buat macam ni.&rdquo;</p>
+    <p><strong>ORANG PROAKTIF</strong> berkata: &ldquo;Mari kita tengok apa pilihan kita,&rdquo; &ldquo;Saya boleh ubah pendekatan saya,&rdquo; &ldquo;Saya pilih untuk buat macam ni.&rdquo;</p>
+
+    <hr>
+
+    <h2>Kembangkan Circle of Influence</h2>
+
+    <p>Satu lagi pandangan menarik dari Covey: <strong>bila awak fokus pada Circle of Influence, ia akan membesar. Bila awak fokus pada Circle of Concern, ia akan mengecut.</strong></p>
+
+    <p>Ini adalah paradox yang indah. Bila awak ambil tindakan dalam lingkungan kawalan awak &mdash; walaupun kecil &mdash; awak rasa <em>empowered</em>. Rasa <em>empowered</em> ini memberi keyakinan. Keyakinan ini membolehkan awak ambil tindakan yang lebih besar. Circle of Influence awak mengembang.</p>
+
+    <hr>
+
+    <h2>Lepaskan Apa yang Di Luar Kawalan</h2>
+
+    <p>Apa yang perlu kita lepaskan:</p>
+    <ol>
+      <li>Tindakan orang lain</li>
+      <li>Keadaan ekonomi</li>
+      <li>Masa lampau</li>
+      <li>Keputusan pihak atasan</li>
+      <li>Cuaca</li>
+      <li>Pendapat orang</li>
+    </ol>
+
+    <blockquote><p>&ldquo;God, grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference.&rdquo;</p></blockquote>
+
+    <hr>
+
+    <h2>Aplikasi Praktikal</h2>
+
+    <p><strong>Trafik Jam:</strong> Daripada merungut, pilih masa bertolak, dengar podcast bermanfaat dalam kereta.</p>
+    <p><strong>Gaji Tak Naik:</strong> Daripada menyalahkan ekonomi, ambil kursus online,tingkatkan prestasi, cari side hustle.</p>
+    <p><strong>Anak Tak Nak Belajar:</strong> Daripada marah-marah, tetapkan &ldquo;no gadget time,&rdquo; luangkan 15 minit teman anak baca buku.</p>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Dalam hidup awak sekarang, apakah satu atau dua perkara besar dalam Circle of Concern yang mengambil terlalu banyak tenaga mental?</li>
+        <li>Apakah satu langkah kecil &mdash; dalam Circle of Influence awak &mdash; yang boleh awak ambil minggu ini?</li>
+        <li>Fikirkan satu situasi di mana awak rasa &ldquo;terpaksa&rdquo; buat sesuatu. Bolehkah awak ubah bahasa itu kepada &ldquo;saya pilih untuk&rdquo;?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 7 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ ACT 3 ════════════════════════════════════════ -->
+<section class="act-divider">
+  <div class="act-divider-inner">
+    <p class="act-label">Act 3</p>
+    <p class="act-number">ACT 3</p>
+    <h2 class="act-title">Melaksanakan</h2>
+    <p class="act-desc">Sistem praktikal, tabiat harian dan amalan untuk hidup berlandaskan keutamaan</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ BAB 7 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab7">
+  <div class="chapter-hero">
+    <img src="images/bab07-deep-shallow.png" alt="Deep Work">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 7</p>
+      <h1>Deep Work &mdash; Seni Fokus Mendalam</h1>
+      <p class="chap-sub">Menghapuskan Gangguan, Menghasilkan Kualiti</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <p>Cuba bayangkan pagi hari seorang pekerja biasa di Kuala Lumpur. Dia bangun, terus capai telefon. Scroll WhatsApp &mdash; 15 mesej belum dibaca. Scroll Facebook &mdash; 20 updates. Scroll Instagram &mdash; stories dari kawan-kawan. Semua ini sebelum dia bangun dari katil.</p>
+
+    <p>Sampai di pejabat, dia buka laptop. Email masuk: 47 belum dibaca. Tengah hari dia rasa macam sibuk sangat, tapi kerja besar yang paling penting langsung tak disentuh.</p>
+
+    <p>Bunyi biasa? Ini bukan cerita seorang dua &mdash; ini realiti majoriti rakyat Malaysia yang bekerja dalam ekonomi digital hari ini.</p>
+
+    <hr>
+
+    <h2>Deep Work vs Shallow Work</h2>
+
+    <p>Cal Newport, seorang profesor sains komputer di Georgetown University, menulis buku <em>Deep Work: Rules for Focused Success in a Distracted World</em>. Dalam buku itu, dia buat satu pemisahan yang jelas:</p>
+
+    <p><strong>Deep Work</strong> ialah aktiviti profesional yang memerlukan tumpuan penuh, mendorong kemampuan kognitif ke tahap maksimum, dan menghasilkan nilai yang sukar ditiru. Contoh: menulis laporan strategik, menganalisis data kewangan, menulis kod program, belajar kemahiran baru.</p>
+
+    <p><strong>Shallow Work</strong> ialah tugas-tugas yang tak memerlukan banyak pemikiran. Contoh: membalas email, scroll media sosial, menghadiri meeting yang tak relevan.</p>
+
+    <p>Masalah utama kita: <strong>kebanyakan masa kita habiskan dengan Shallow Work, tapi kita mengharapkan hasil Deep Work.</strong></p>
+
+    <hr>
+
+    <h2>Attention Residue &mdash; Musuh Senyap Produktiviti</h2>
+
+    <p>Attention residue berlaku bila kita tukar dari satu tugas ke tugas lain. Otak kita tak boleh switch serta-merta. Kajian menunjukkan bahawa bila seseorang terganggu, ia mengambil masa purata <strong>23 minit</strong> untuk kembali fokus sepenuhnya.</p>
+
+    <p>Dua puluh tiga minit! Jadi bila dalam sejam, kita check telefon 5 kali &mdash; lebih 2 jam fokus yang terbakar.</p>
+
+    <hr>
+
+    <h2>Empat Peraturan Deep Work</h2>
+
+    <h3>Peraturan #1: Work Deeply</h3>
+    <p>Newport mencadangkan empat pendekatan: <em>Monastic</em> (tolak semua gangguan), <em>Bimodal</em> (bahagikan masa), <em>Rhythmic</em> (buat deep work pada masa sama setiap hari &mdash; paling praktikal), <em>Journalistic</em> (bila ada masa lapang, terus masuk deep work).</p>
+
+    <h3>Peraturan #2: Embrace Boredom</h3>
+    <p>Kita dah hilang keupayaan untuk bosan. Dalam lif 30 saat, kita capai telefon. Masalahnya: <strong>otak perlu dilatih untuk fokus, sama macam otot.</strong></p>
+
+    <h3>Peraturan #3: Quit Social Media</h3>
+    <p>Tanya: <strong>&ldquo;Adakah ia menyumbang secara signifikan kepada matlamat utama saya?&rdquo;</strong></p>
+
+    <h3>Peraturan #4: Drain the Shallows</h3>
+    <p>Target: maksimum 30-40% masa untuk shallow work. Selebihnya untuk deep work.</p>
+
+    <hr>
+
+    <h2>Fixed-Schedule Productivity</h2>
+    <p>Prinsipnya mudah: <strong>Buat komitmen untuk berhenti kerja pada waktu tetap, dan biarkan kekangan ini memaksa kita untuk jadi lebih produktif.</strong></p>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Dalam sehari biasa, berapa peratus masa anda dihabiskan untuk Deep Work dan berapa untuk Shallow Work?</li>
+        <li>Jika anda kena berhenti kerja pada pukul 5:30 petang setiap hari &mdash; apa yang akan berubah?</li>
+        <li>Media sosial yang mana memberi nilai sebenar dalam hidup anda, dan yang mana cuma pencuri masa?</li>
+        <li>Satu perubahan kecil yang boleh anda buat minggu ini untuk melatih fokus mendalam?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 8 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 8 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab8">
+  <div class="chapter-hero">
+    <img src="images/bab08-atomic-habits-loop.png" alt="Atomic Habits">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 8</p>
+      <h1>Atomic Habits &mdash; Kuasa Perubahan 1%</h1>
+      <p class="chap-sub">Sistem kecil yang membawa hasil besar</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <p>Bayangkan dua orang sahabat: Ali dan Abu. Kedua-dua mahu sihat.</p>
+
+    <p>Ali: &ldquo;Tahun ni aku nak transformasi total! Gym every day, kurus 20kg, stop semua junk food!&rdquo;</p>
+    <p>Abu: &ldquo;Aku just nak mula dengan bangun 15 minit awal setiap pagi. Lepas tu jalan kaki keliling taman sehari 5 minit.&rdquo;</p>
+
+    <p>Siapa yang korang rasa akan berjaya?</p>
+
+    <p>Ali, minggu pertama &mdash; gym 3 kali. Minggu kedua &mdash; gym 2 kali. Bulan kedua &mdash; dah lupa langsung. Abu, sebaliknya, konsisten. Tanpa sedar, dia dah kurus 5kg, lebih bertenaga, dan rasa lebih positif.</p>
+
+    <hr>
+
+    <h2>1% Lebih Baik Setiap Hari</h2>
+
+    <p>James Clear, penulis <em>Atomic Habits</em>, memperkenalkan satu konsep yang sangat mudah tetapi mendalam:</p>
+
+    <p><strong>1% Rule: Jika anda menjadi 1% lebih baik setiap hari, dalam setahun anda akan menjadi 37 kali lebih baik.</strong></p>
+
+    <p>Sebaliknya, jika anda menjadi 1% lebih buruk setiap hari, dalam setahun anda akan menghampiri sifar.</p>
+
+    <p>Matematiknya: <strong>1.01^365 = 37.78</strong> vs <strong>0.99^365 = 0.03</strong></p>
+
+    <hr>
+
+    <h2>Plateau of Latent Potential</h2>
+
+    <p>Ini mungkin konsep paling penting dalam bab ini. Satu fasa di mana hasil dari usaha kita tak nampak, walaupun kita dah berusaha bersungguh-sungguh. Ibaratkan batu ais yang mencair. Setiap darjah peningkatan suhu ais tak nampak berubah. Tapi bila suhu sampai 32&deg;F &mdash; tiba-tiba ia cair.</p>
+
+    <p>Masalahnya: kebanyakan orang berhenti di hari 15-20 sebab mereka tak nampak hasil.</p>
+
+    <blockquote><p>&ldquo;When you finally break through the Plateau of Latent Potential, people will call it an overnight success.&rdquo; &mdash; James Clear</p></blockquote>
+
+    <hr>
+
+    <h2>Identity-Based Habits</h2>
+
+    <p><strong>Tiga lapisan perubahan tingkah laku:</strong></p>
+    <ol>
+      <li><strong>Outcomes (Hasil)</strong> &mdash; Apa yang anda mahu capai.</li>
+      <li><strong>Process (Proses)</strong> &mdash; Apa yang anda lakukan.</li>
+      <li><strong>Identity (Identiti)</strong> &mdash; Apa yang anda percaya. Lapisan paling dalam.</li>
+    </ol>
+
+    <p>Kebanyakan perubahan gagal sebab kita mula dari lapisan luar. Contoh: &ldquo;Aku nak stop merokok&rdquo; (hasil) vs &ldquo;Aku bukan perokok&rdquo; (identiti).</p>
+
+    <hr>
+
+    <h2>Empat Undang-Undang Perubahan Tabiat</h2>
+
+    <h3>Undang-Undang #1: Make It Obvious</h3>
+    <p>Guna <em>Implementation Intention</em>: &ldquo;Saya akan [TINDAKAN] pada [MASA] di [TEMPAT].&rdquo; Guna <em>Habit Stacking</em>: lekapkan tabiat baru pada tabiat sedia ada.</p>
+
+    <h3>Undang-Undang #2: Make It Attractive</h3>
+    <p>Guna <em>Temptation Bundling</em>: gabungkan tabiat yang perlu dibuat dengan tabiat yang suka dibuat.</p>
+
+    <h3>Undang-Undang #3: Make It Easy</h3>
+    <p><strong>The Two-Minute Rule:</strong> Setiap tabiat baru mesti boleh dibuat dalam masa kurang 2 minit. &ldquo;Baca buku sejam&rdquo; &rarr; &ldquo;Baca satu muka surat.&rdquo;</p>
+
+    <h3>Undang-Undang #4: Make It Satisfying</h3>
+    <p>Beri ganjaran segera pada diri sendiri. Guna <em>Habit Tracker</em> &mdash; setiap kali tanda &ldquo;done&rdquo; pada streak, otak rasa puas.</p>
+
+    <hr>
+
+    <h2>Systems Not Goals</h2>
+
+    <p>James Clear membuat satu pemisahan yang penting: <strong>Goals vs Systems</strong>.</p>
+
+    <p><strong>Goal</strong> = hasil yang nak dicapai. &ldquo;Aku nak lari 5km.&rdquo;<br>
+    <strong>System</strong> = proses untuk ke sana. &ldquo;Aku akan lari 10 minit setiap pagi.&rdquo;</p>
+
+    <blockquote><p>&ldquo;You do not rise to the level of your goals. You fall to the level of your systems.&rdquo; &mdash; James Clear</p></blockquote>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Cuba ingat satu tabiat yang anda cuba bina tapi gagal. Dengan Empat Undang-Undang ini, yang mana satu jadi punca kegagalan?</li>
+        <li>Dalam hidup anda sekarang, adakah anda lebih fokus pada goals atau systems?</li>
+        <li>Dengan 1% rule &mdash; apakah satu tabiat kecil yang boleh buat perbezaan besar dalam setahun?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 9 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 9 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab9">
+  <div class="chapter-hero">
+    <img src="images/bab09-habit-loop.png" alt="Habit Loop">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 9</p>
+      <h1>The Habit Loop</h1>
+      <p class="chap-sub">Memahami dan Mengubah Tabiat</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <p>Pada tahun 1990-an, seorang lelaki bernama Eugene Pauly diserang virus yang merosakkan bahagian otaknya &mdash; hippocampus. Akibatnya, Eugene kehilangan keupayaan untuk mengingat. Dia tak ingat apa yang berlaku semalam.</p>
+
+    <p>Tapi ada satu perkara yang pelik. Setiap hari, isteri Eugene akan bawa dia berjalan-jalan. Walaupun Eugene tak ingat pernah berjalan di situ, lama-kelamaan dia mula <strong>automatik</strong> mengikut laluan yang betul. Dia boleh cari dapur, bilik air, pintu belakang &mdash; semua tanpa perlu berfikir.</p>
+
+    <p>Kisah Eugene membuktikan satu perkara penting: <strong>Tabiat bukan ingatan sedar. Tabiat adalah sistem automatik dalam otak yang berfungsi tanpa kita sedari.</strong></p>
+
+    <hr>
+
+    <h2>Cue &rarr; Routine &rarr; Reward: The Habit Loop</h2>
+
+    <p>Charles Duhigg, dalam buku <em>The Power of Habit</em>, memperkenalkan <strong>The Habit Loop</strong>:</p>
+
+    <ol>
+      <li><strong>Cue (Isyarat)</strong> &mdash; Apa yang mencetuskan tabiat.</li>
+      <li><strong>Routine (Rutin)</strong> &mdash; Tindakan yang dilakukan.</li>
+      <li><strong>Reward (Ganjaran)</strong> &mdash; Apa yang diperoleh dari tindakan itu.</li>
+    </ol>
+
+    <p><strong>Tabiat minum kopi setiap pagi:</strong> Cue = Jam 8 pagi. Routine = Bangun, bancuh kopi. Reward = Rasa segar.</p>
+    <p><strong>Tabiat scroll telefon:</strong> Cue = Rasa bosan. Routine = Capai telefon. Reward = Rasa terhibur.</p>
+
+    <hr>
+
+    <h2>The Golden Rule of Habit Change</h2>
+
+    <blockquote><p>&ldquo;To change a habit, keep the same cue and the same reward, but insert a new routine.&rdquo;</p></blockquote>
+
+    <p>Maksudnya: Jangan lawan cue. Jangan buang reward. Hanya ubah apa yang anda BUAT antara cue dan reward.</p>
+
+    <p><strong>Contoh:</strong> Roslan nak berhenti merokok. Cue: lepas makan. Reward: rasa tenang. Routine BARU: Kunyah gula-gula getah atau tarik nafas dalam 10 kali.</p>
+
+    <hr>
+
+    <h2>Keystone Habits &mdash; Satu Tabiat Yang Ubah Segalanya</h2>
+
+    <p>Keystone Habits bukan tabiat yang paling besar atau paling susah. Ia tabiat kecil yang, bila diamalkan, akan menyebabkan satu rantai perubahan.</p>
+
+    <p><strong>Contoh Keystone Habits:</strong></p>
+    <ul>
+      <li><strong>Senaman</strong> &mdash; Orang yang mula bersenam secara konsisten secara automatik mula makan lebih sihat, kurang merokok, lebih produktif.</li>
+      <li><strong>Membuat Katil</strong> &mdash; Kemenangan pertama hari itu. Dari situ, momentum untuk buat benda baik lain lebih mudah.</li>
+      <li><strong>Solat Subuh berjemaah</strong> &mdash; Bangun awal, produktif waktu pagi, lebih tenang mental.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Willpower Sebagai Otot</h2>
+
+    <p><strong>Boleh lesu</strong> &mdash; Bila kita guna willpower banyak, ia akan habis (<em>ego depletion</em>).<br>
+    <strong>Boleh dilatih</strong> &mdash; Macam otot, kalau kita latih willpower secara konsisten, ia akan jadi lebih kuat.</p>
+
+    <p>Implikasi: Buat keputusan penting waktu pagi, kurangkan keputusan kecil, wujudkan rutin supaya tak perlu guna willpower.</p>
+
+    <hr>
+
+    <h2>Small Wins &mdash; Kemenangan Kecil, Momentum Besar</h2>
+
+    <p><strong>Small Wins</strong> adalah kemenangan-kemenangan kecil yang kita capai setiap hari. Pada mulanya, ia nampak remeh. Tapi fungsi sebenar small wins adalah untuk mencetuskan <strong>momentum</strong>.</p>
+
+    <blockquote><p>&ldquo;Champions don&rsquo;t do extraordinary things. They do ordinary things, but they do them without thinking.&rdquo; &mdash; Charles Duhigg</p></blockquote>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Cuba pilih satu tabiat buruk yang nak diubah. Tulis: apa Cue, Routine, dan Reward-nya.</li>
+        <li>Apakah satu Keystone Habit yang boleh anda mula amalkan?</li>
+        <li>Bila willpower anda paling kuat &mdash; pagi, tengah hari, atau malam?</li>
+        <li>Apa craving sebenar di sebalik tabiat digital anda?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 10 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 10 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab10">
+  <div class="chapter-hero">
+    <img src="images/bab10-sharpen-saw.png" alt="Sharpen the Saw">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 10</p>
+      <h1>Sharpen the Saw &mdash; Jaga Diri</h1>
+      <p class="chap-sub">Pembaharuan diri untuk kelestarian</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <blockquote><p>&ldquo;Give me six hours to chop down a tree and I will spend the first four sharpening the axe.&rdquo; &mdash; Abraham Lincoln</p></blockquote>
+
+    <p>Abraham Lincoln tahu sesuatu yang kita selalu lupa. Kalau kapak tumpul, sepuluh jam pun tak cukup untuk menebang pokok. Tapi kalau kapak tajam, empat jam dah siap. Masalahnya, kita sibuk sangat menebang sampai lupa nak tajamkan kapak.</p>
+
+    <p>Dalam dunia produktiviti, kita diajar untuk buat lebih, capai lebih, hasil lebih. Tapi jarang sekali ada yang cakap: <em>awak kena jaga diri awak.</em></p>
+
+    <hr>
+
+    <h2>Apa Itu &ldquo;Sharpen the Saw&rdquo;?</h2>
+
+    <p>Stephen Covey memperkenalkan &ldquo;Sharpen the Saw&rdquo; sebagai habit ke-7 dalam <em>The 7 Habits of Highly Effective People</em>. Ia adalah habit yang menyokong semua habit lain. Empat dimensi utama:</p>
+
+    <ol>
+      <li><strong>Fizikal</strong> &mdash; badan, kesihatan, tenaga</li>
+      <li><strong>Mental</strong> &mdash; ilmu, bacaan, pemikiran</li>
+      <li><strong>Sosial/Emosi</strong> &mdash; hubungan, perkhidmatan, empati</li>
+      <li><strong>Spiritual</strong> &mdash; nilai, tujuan hidup, makna</li>
+    </ol>
+
+    <hr>
+
+    <h2>Dimensi Fizikal: Badan Adalah Amanah</h2>
+
+    <p><strong>Senaman:</strong> Jalan kaki 20-30 minit sehari. Regangan. Bodyweight exercises.</p>
+    <p><strong>Pemakanan:</strong> Makan makanan sebenar. Kurangkan gula. Protein yang cukup. Sayur dalam setiap hidangan.</p>
+    <p><strong>Rehat:</strong> Tidur 7-8 jam sehari. Power nap 20 minit. Rehat dari skrin setiap 45-60 minit.</p>
+
+    <hr>
+
+    <h2>Dimensi Mental: Tajamkan Minda</h2>
+
+    <p><strong>Bacaan:</strong> Baca 10-20 muka surat sehari. Baca pelbagai genre &mdash; sejarah, falsafah, psikologi, biografi.</p>
+    <p><strong>Penulisan:</strong> Jurnal harian &mdash; 5-10 minit tulis apa yang awak fikir, rasa, dan belajar.</p>
+    <p><strong>Pembelajaran Berterusan:</strong> Ambil kursus online. Ikut perkembangan industri. Belajar kemahiran baru.</p>
+
+    <hr>
+
+    <h2>Dimensi Sosial/Emosi: Hubungan Yang Bermakna</h2>
+
+    <p>Stephen Covey kata: &ldquo;Seek first to understand, then to be understood.&rdquo; Bila orang bercakap dengan awak, dengar betul-betul. Jangan potong. Jangan bagi nasihat kalau tak diminta.</p>
+
+    <hr>
+
+    <h2>Dimensi Spiritual: Tujuan dan Makna</h2>
+
+    <p>Luangkan masa untuk diam. Meditasi 5-10 minit sehari. Jurnal syukur &mdash; tulis tiga perkara yang awak syukuri setiap hari.</p>
+
+    <p>Viktor Frankl dalam <em>Man&rsquo;s Search for Meaning</em> tulis: &ldquo;He who has a why to live for can bear almost any how.&rdquo; Bila awak ada tujuan yang jelas, cabaran jadi lebih mudah dihadapi.</p>
+
+    <hr>
+
+    <h2>Amalan Harian Renewal</h2>
+
+    <p><strong>Pagi:</strong> Minum air kosong, regangan ringkas, baca 5-10 muka surat, tulis jurnal.</p>
+    <p><strong>Tengah Hari:</strong> Rehat dari skrin, power nap kalau perlu.</p>
+    <p><strong>Malam:</strong> Refleksi, baca lagi, matikan skrin 30 minit sebelum tidur.</p>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Empat dimensi (fizikal, mental, sosial/emosi, spiritual): yang mana paling terabai dalam hidup awak sekarang?</li>
+        <li>Apa SATU perubahan kecil yang awak boleh buat dalam 24 jam ini untuk jaga diri awak?</li>
+        <li>Kalau awak teruskan gaya hidup sekarang tanpa perubahan, di mana awak dalam 5 tahun?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 11 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 11 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab11">
+  <div class="chapter-hero">
+    <img src="images/bab11-compass.png" alt="Kompas Hidup">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 11</p>
+      <h1>Prinsip dan Purpose &mdash; Kompas Hidup</h1>
+      <p class="chap-sub">Hidup berlandaskan prinsip yang kekal</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <blockquote><p>&ldquo;If you don&rsquo;t know where you&rsquo;re going, any road will take you there.&rdquo; &mdash; Lewis Carroll</p></blockquote>
+
+    <p>Alice sampai di persimpangan jalan dan bertanya kepada Kucing Cheshire: &ldquo;Saya nak pergi mana, ya?&rdquo; Kucing tu jawab: &ldquo;Itu bergantung pada ke mana awak nak pergi.&rdquo;</p>
+
+    <p>Hidup kita pun begitu. Kalau kita tak tahu hala tujuan, kita akan ikut sahaja arus.</p>
+
+    <hr>
+
+    <h2>Law of the Farm: Tiada Jalan Pintas</h2>
+
+    <p>Stephen Covey memperkenalkan &ldquo;The Law of the Farm&rdquo; dalam <em>Principle-Centered Leadership</em>. Katanya, dalam kehidupan, tiada jalan pintas. Awak tak boleh tipu tanah.</p>
+
+    <p>Bayangkan seorang petani. Dia nak tanam padi. Dia kena bajak tanah, tabur benih, siram, baja, cabut rumput, tunggu musim menuai. Dia tak boleh kata: &ldquo;Esok saya nak menuai.&rdquo;</p>
+
+    <p><strong>Awak tuai apa yang awak tanam.</strong> Mungkin lambat. Mungkin awak tak nampak hasil sekarang. Tapi percayalah, setiap usaha yang betul akan membuahkan hasil pada waktunya.</p>
+
+    <hr>
+
+    <h2>Begin with the End in Mind</h2>
+
+    <p>Habit ke-2 Covey ialah <em>Begin with the End in Mind</em>. Sebelum awak mulakan apa-apa, bayangkan dulu hasil akhirnya. Kalau awak nak bina rumah, awak lukis pelan dulu.</p>
+
+    <p><strong>Latihan: Bayangkan Hari Terakhir</strong></p>
+    <p>Covey cadangkan satu latihan: bayangkan awak sedang menghadiri majlis pengkebumian awak sendiri. Ada empat orang yang akan berucap &mdash; ahli keluarga, kawan baik, rakan sekerja, ahli komuniti. Apa yang mereka akan kata?</p>
+
+    <hr>
+
+    <h2>Personal Mission Statement</h2>
+
+    <p>Covey kata: &ldquo;Personal mission statement is like a constitution for your life.&rdquo; Ia adalah dokumen yang menjadi rujukan tertinggi dalam setiap keputusan.</p>
+
+    <p><strong>Cara menulis:</strong></p>
+    <ol>
+      <li><strong>Refleksi</strong> &mdash; Apa yang paling penting dalam hidup saya?</li>
+      <li><strong>Senaraikan nilai</strong> &mdash; 5-10 nilai yang paling penting.</li>
+      <li><strong>Tulis draf</strong> &mdash; dalam 3-5 ayat.</li>
+      <li><strong>Semak dan ubah suai</strong> &mdash; misi peribadi boleh berubah ikut perjalanan hidup.</li>
+    </ol>
+
+    <hr>
+
+    <h2>Prinsip Sebagai Kompas</h2>
+
+    <p>Ada beza antara <strong>kompas</strong> dan <strong>jam</strong>. Jam memberitahu masa &mdash; apa yang perlu dibuat <em>sekarang</em>. Kompas memberitahu arah &mdash; ke mana kita nak pergi <em>selamanya</em>.</p>
+
+    <p>Prinsip adalah bintang utara. Ia tetap di tempatnya. Ia tak berubah. Bila awak sesat, awak pandang bintang utara untuk tahu arah.</p>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Dalam bidang apa awak sering cuba ambil &ldquo;jalan pintas&rdquo;? Kenapa?</li>
+        <li>Kalau awak ada setahun lagi nak hidup, apa yang akan awak ubah?</li>
+        <li>Tulis satu ayat: prinsip apa yang paling penting dalam hidup awak?</li>
+        <li>Bayangkan cucu awak tanya: &ldquo;Atuk/Nenek, apa prinsip hidup atuk/nenek?&rdquo; Apa jawapan awak?</li>
+      </ol>
+    </div>
+
+    <p class="continue-reading">&mdash; Bersambung ke Bab 12 &mdash;</p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ BAB 12 ════════════════════════════════════════ -->
+<article class="chapter-page" id="bab12">
+  <div class="chapter-hero">
+    <img src="images/bab12-journey-path.png" alt="Perjalanan Hidup">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <p class="chap-num">Bab 12</p>
+      <h1>Penutup &mdash; Mulakan Dengan Satu Perkara Hari Ini</h1>
+      <p class="chap-sub">Dari ilmu kepada amalan</p>
+    </div>
+  </div>
+  <div class="chapter-body">
+
+    <blockquote><p>&ldquo;The journey of a thousand miles begins with a single step.&rdquo; &mdash; Lao Tzu</p></blockquote>
+
+    <p>Tahniah. Awak telah sampai ke penghujung buku ini.</p>
+
+    <p>Tapi saya nak cakap benda yang jujur: <strong>Membaca buku ini tak akan ubah hidup awak.</strong></p>
+
+    <p>Buku ini tak buat apa-apa. Kuasanya bukan pada apa yang tertulis, tapi pada apa yang awak buat <em>selepas</em> menutup halaman terakhir. Pengetahuan tanpa tindakan adalah seperti benih yang disimpan dalam balang &mdash; takkan pernah tumbuh.</p>
+
+    <hr>
+
+    <h2>Peta Jalan Ringkas</h2>
+
+    <p><strong>Act 1: Mengenali Masalah</strong> &mdash; Bab 1 (Clock vs Compass), Bab 2 (Balang Kehidupan), Bab 3 (Empat Kuadran).</p>
+    <p><strong>Act 2: Memahami Keutamaan</strong> &mdash; Bab 4 (Essentialism), Bab 5 (The One Thing), Bab 6 (Circle of Influence).</p>
+    <p><strong>Act 3: Melaksanakan</strong> &mdash; Bab 7 (Deep Work), Bab 8 (Atomic Habits), Bab 9 (Habit Loop), Bab 10 (Sharpen the Saw), Bab 11 (Prinsip &amp; Purpose).</p>
+
+    <hr>
+
+    <h2>The Focusing Question</h2>
+
+    <blockquote><p><strong>&ldquo;Apa SATU perkara yang boleh saya buat, dengan melakukannya, segalanya yang lain akan jadi lebih mudah atau tak perlu?&rdquo;</strong></p></blockquote>
+
+    <p>Inilah soalan paling power dalam buku ini. Ia paksa otak awak untuk fokus pada SATU, fikir kesan domino, utamakan yang paling penting.</p>
+
+    <hr>
+
+    <h2>Pelan Tindakan 30 Hari</h2>
+
+    <h3>Minggu 1: Asas (Hari 1-7)</h3>
+    <p><strong>Hari 1:</strong> Tulis apa satu perkara yang nak awak capai dalam 30 hari ni.<br>
+    <strong>Hari 2:</strong> Kenal pasti masa paling produktif awak.<br>
+    <strong>Hari 3:</strong> Buat Kuadran Masa untuk hari ni.<br>
+    <strong>Hari 4:</strong> Pilih satu benda dalam Kuadran 2 dan buat 25 minit.<br>
+    <strong>Hari 5:</strong> Kenal pasti satu gangguan utama dan hadkan masa penggunaannya separuh.<br>
+    <strong>Hari 6:</strong> Tolak satu permintaan dengan baik.<br>
+    <strong>Hari 7:</strong> Rehat. Betul-betul rehat.</p>
+
+    <h3>Minggu 2: Sistem (Hari 8-14)</h3>
+    <p><strong>Hari 8:</strong> Tulis Personal Mission Statement awak dalam 3-5 ayat.<br>
+    <strong>Hari 9:</strong> Buat senarai &ldquo;Not-To-Do&rdquo;.<br>
+    <strong>Hari 10:</strong> Pilih satu alat dan guna dengan konsisten.<br>
+    <strong>Hari 11:</strong> Tulis 3 matlamat untuk hari ni. Pilih satu yang paling penting.<br>
+    <strong>Hari 12:</strong> Lakukan Deep Work 2 jam tanpa gangguan.<br>
+    <strong>Hari 13:</strong> Luangkan masa dengan satu orang yang penting.<br>
+    <strong>Hari 14:</strong> Refleksi mingguan.</p>
+
+    <h3>Minggu 3: Momentum (Hari 15-21)</h3>
+    <p><strong>Hari 15:</strong> Buat &ldquo;time block&rdquo; untuk minggu depan.<br>
+    <strong>Hari 16:</strong> Lakukan satu aktiviti fizikal 30 minit.<br>
+    <strong>Hari 17:</strong> Baca 20 muka surat buku.<br>
+    <strong>Hari 18:</strong> &ldquo;Makan katak&rdquo; &mdash; buat benda paling susah dulu awal pagi.<br>
+    <strong>Hari 19:</strong> Audit satu tabiat.<br>
+    <strong>Hari 20:</strong> Tulis jurnal syukur.<br>
+    <strong>Hari 21:</strong> Buat sesuatu yang memberi manfaat pada orang lain.</p>
+
+    <h3>Minggu 4: Pengukuhan (Hari 22-30)</h3>
+    <p><strong>Hari 22:</strong> Reset. Semak semula &ldquo;satu perkara&rdquo; awak.<br>
+    <strong>Hari 23:</strong> Buang satu barang yang tak perlu.<br>
+    <strong>Hari 24:</strong> Meditasi 10 minit tanpa gangguan.<br>
+    <strong>Hari 25:</strong> Bagi pujian ikhlas pada tiga orang.<br>
+    <strong>Hari 26:</strong> Belajar satu kemahiran baru.<br>
+    <strong>Hari 27:</strong> Buat keputusan yang awak dah tangguh.<br>
+    <strong>Hari 28:</strong> Rehat.<br>
+    <strong>Hari 29:</strong> Tulis refleksi 30 hari.<br>
+    <strong>Hari 30:</strong> Rayakan!</p>
+
+    <hr>
+
+    <h2>Kesilapan Yang Akan Awak Buat (Dan Ini Normal)</h2>
+
+    <p>Sejujurnya, awak mungkin akan gagal. Mungkin minggu pertama ok. Minggu kedua mula longgar. Minggu ketiga, awak lupa langsung.</p>
+
+    <p>Ini normal. <strong>Yang membezakan mereka yang berjaya dengan yang tak, bukan kegagalan &mdash; tapi apa lepas kegagalan.</strong></p>
+
+    <p>Yang berjaya: &ldquo;Ok, semalam gagal. Hari ni saya mula semula.&rdquo;<br>
+    Yang gagal: &ldquo;Saya dah gagal. Buat apa nak teruskan?&rdquo;</p>
+
+    <hr>
+
+    <h2>Mulakan Sekarang, Jangan Nanti</h2>
+
+    <p>Bila awak kata &ldquo;nanti&rdquo;, apa yang sebenarnya berlaku adalah: <em>awak telah memutuskan untuk tak buat</em>.</p>
+
+    <p>Tutup buku ini. Ambil telefon awak. Letak dalam mod senyap. Diam selama 60 saat. Tarik nafas dalam-dalam. Tanya diri: <strong>&ldquo;Apa SATU perkara yang paling penting untuk saya buat hari ni?&rdquo;</strong></p>
+
+    <p>Dengar jawapannya. Dan buat. Sekarang.</p>
+
+    <hr>
+
+    <blockquote><p>&ldquo;The key is not to prioritize what&rsquo;s on your schedule, but to schedule your priorities.&rdquo; &mdash; Stephen R. Covey</p></blockquote>
+
+    <div class="refleksi">
+      <h3>Soalan Reflektif</h3>
+      <ol>
+        <li>Apa SATU perkara yang awak akan mula buat SELEPAS baca buku ini?</li>
+        <li>Apa satu benda yang awak akan BERHENTI buat mulai hari ini?</li>
+        <li>Siapa satu orang yang boleh menjadi accountability partner awak?</li>
+        <li>Dalam 6 bulan, macam mana hidup awak kalau awak konsisten dengan satu perubahan ini?</li>
+      </ol>
+    </div>
+
+    <p style="text-align:center; font-family:var(--display); font-style:italic; color:var(--text-light); margin-top:3rem;">
+      <em>Yang Mana Keutamaan?</em> &mdash; WMB Digital
+    </p>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ LAMPIRAN ════════════════════════════════════════ -->
+<section class="act-divider" id="lampiran">
+  <div class="act-divider-inner">
+    <p class="act-label">Lampiran</p>
+    <p class="act-number">&amp;</p>
+    <h2 class="act-title">Lembaran Kerja</h2>
+    <p class="act-desc">Template praktikal untuk membantu awak mempraktikkan apa yang telah dipelajari</p>
+  </div>
+</section>
+
+<article class="chapter-page">
+  <div class="chapter-body appendix-body">
+
+    <blockquote><p>&ldquo;Kertas kosong adalah tempat lahirnya idea.&rdquo;</p></blockquote>
+
+    <p>Lampiran ini disediakan untuk membantu awak mempraktikkan apa yang telah dipelajari. Setiap template boleh difotostat atau disalin ke dalam jurnal peribadi. Isi dengan pensel &mdash; kerana jawapan awak mungkin berubah mengikut masa.</p>
+
+    <hr>
+
+    <h2>Lampiran A: Template Kuadran Masa</h2>
+
+    <table>
+      <tr><th></th><th>MENDESAK</th><th>TAK MENDESAK</th></tr>
+      <tr><td><strong>PENTING</strong></td><td><strong>Kuadran 1:</strong> KRISIS<br>&nbsp;<br>&nbsp;</td><td><strong>Kuadran 2:</strong> KEUTAMAAN<br>&nbsp;<br>&nbsp;</td></tr>
+      <tr><td><strong>TAK PENTING</strong></td><td><strong>Kuadran 3:</strong> GANGGUAN<br>&nbsp;<br>&nbsp;</td><td><strong>Kuadran 4:</strong> PEMBAZIRAN<br>&nbsp;<br>&nbsp;</td></tr>
+    </table>
+
+    <p><strong>Refleksi:</strong> Kuadran mana yang paling penuh? Kuadran mana yang patut awak kurangkan? Satu tugasan dalam Kuadran 2 yang awak akan mulakan minggu ini?</p>
+
+    <hr>
+
+    <h2>Lampiran B: Template The Focusing Question</h2>
+
+    <blockquote><p><strong>&ldquo;Apa SATU perkara yang boleh saya buat, dengan melakukannya, segalanya yang lain akan jadi lebih mudah atau tak perlu?&rdquo;</strong></p></blockquote>
+
+    <p><strong>Untuk Kerjaya:</strong><br>
+    Satu perkara: ________________________________<br>
+    Bila saya akan buat? Hari: _____ Masa: _____</p>
+
+    <p><strong>Untuk Kewangan:</strong><br>
+    Satu perkara: ________________________________<br>
+    Bila saya akan buat? Hari: _____ Masa: _____</p>
+
+    <p><strong>Untuk Kesihatan:</strong><br>
+    Satu perkara: ________________________________<br>
+    Bila saya akan buat? Hari: _____ Masa: _____</p>
+
+    <p><strong>Untuk Keluarga:</strong><br>
+    Satu perkara: ________________________________<br>
+    Bila saya akan buat? Hari: _____ Masa: _____</p>
+
+    <hr>
+
+    <h2>Lampiran C: Template Focusing Question Harian</h2>
+
+    <p><strong>Tarikh:</strong> _______________</p>
+    <p><strong>Apa satu perkara PALING penting yang perlu saya selesaikan hari ini?</strong><br>
+    ________________________________________________</p>
+    <p><strong>Mengapa ia penting?</strong><br>
+    ________________________________________________</p>
+    <p><strong>Bila saya akan buat?</strong> Masa: _______________</p>
+    <p><strong>Apa gangguan utama yang perlu dielakkan?</strong><br>
+    1. __________________________________<br>
+    2. __________________________________</p>
+    <p><strong>Satu perkara yang saya SYUKURI hari ini:</strong><br>
+    ________________________________________________</p>
+    <p><strong>Adakah saya selesaikan satu perkara utama?</strong> [Ya / Tidak / Separuh]</p>
+
+    <hr>
+
+    <h2>Lampiran D: Template Habit Tracker 30 Hari</h2>
+
+    <p><strong>Tabiat baru saya:</strong> ____________________________________</p>
+    <p><strong>Mengapa saya nak bina tabiat ini?</strong><br>
+    ________________________________________________</p>
+    <p><strong>Bila saya akan buat?</strong> ______________________<br>
+    <strong>Di mana?</strong> ______________________<br>
+    <strong>Trigger:</strong> ______________________</p>
+
+    <table>
+      <tr><th>Hari</th><th>Selesai?</th><th>Nota</th></tr>
+      <tr><td>1-7</td><td></td><td></td></tr>
+      <tr><td>8-14</td><td></td><td></td></tr>
+      <tr><td>15-21</td><td></td><td></td></tr>
+      <tr><td>22-30</td><td></td><td></td></tr>
+    </table>
+
+    <p><strong>Refleksi:</strong> Hari berjaya: _____ / 30 hari. Nak teruskan? [Ya / Tak]</p>
+
+    <hr>
+
+    <h2>Lampiran E: Template &ldquo;Start, Stop, Continue&rdquo;</h2>
+
+    <p><strong>Minggu:</strong> _______________</p>
+    <p><strong>Start</strong> &mdash; Apa yang perlu saya MULAKAN buat?<br>
+    1. ________________________________<br>
+    2. ________________________________<br>
+    3. ________________________________</p>
+    <p><strong>Stop</strong> &mdash; Apa yang perlu saya BERHENTI buat?<br>
+    1. ________________________________<br>
+    2. ________________________________<br>
+    3. ________________________________</p>
+    <p><strong>Continue</strong> &mdash; Apa yang perlu saya TERUSKAN buat?<br>
+    1. ________________________________<br>
+    2. ________________________________<br>
+    3. ________________________________</p>
+
+    <hr>
+
+    <h2>Lampiran F: Template Senarai &ldquo;Not-To-Do&rdquo;</h2>
+
+    <table>
+      <tr><th>Perkara</th><th>Kenapa Saya Nak Berhenti</th><th>Mulai Bila</th></tr>
+      <tr><td>1.</td><td></td><td></td></tr>
+      <tr><td>2.</td><td></td><td></td></tr>
+      <tr><td>3.</td><td></td><td></td></tr>
+    </table>
+
+    <hr>
+
+    <h2>Lampiran G: Template Refleksi Bulanan</h2>
+
+    <p><strong>Kemenangan:</strong> Apa pencapaian terbesar saya bulan ini?</p>
+    <p><strong>Cabaran:</strong> Apa cabaran terbesar saya bulan ini? Apa yang saya belajar?</p>
+    <p><strong>Keutamaan:</strong> Adakah saya fokus pada perkara yang betul?</p>
+    <p><strong>Untuk Bulan Depan:</strong> Satu perkara nak FOKUS. Satu perkara nak BERHENTI. Satu perkara nak MULAKAN.</p>
+
+    <hr>
+
+    <h2>Lampiran H: Soalan Reflektif Pantas</h2>
+
+    <p><strong>Harian:</strong> Apa satu perkara paling penting untuk saya hari ni? Adakah saya menjaga diri saya hari ini? Apa yang saya syukuri?</p>
+    <p><strong>Mingguan:</strong> Minggu ini: adakah saya lebih fokus atau lebih reaktif? Satu perkara yang saya akan buat lain minggu depan.</p>
+    <p><strong>Bulanan:</strong> Adakah saya fokus pada Kuadran 2? Prinsip mana yang saya kompromi bulan ini?</p>
+    <p><strong>Tahunan:</strong> Adakah saya lebih baik daripada setahun lepas? Apa pelajaran terbesar tahun ini?</p>
+
+    <hr>
+
+    <h2 id="rujukan">Lampiran I: Rujukan dan Bacaan Lanjutan</h2>
+
+    <p><strong>Produktiviti dan Keutamaan:</strong></p>
+    <table>
+      <tr><th>Tajuk</th><th>Penulis</th></tr>
+      <tr><td><em>The 7 Habits of Highly Effective People</em></td><td>Stephen R. Covey</td></tr>
+      <tr><td><em>The 8th Habit: From Effectiveness to Greatness</em></td><td>Stephen R. Covey</td></tr>
+      <tr><td><em>First Things First</em></td><td>Stephen R. Covey</td></tr>
+      <tr><td><em>Essentialism: The Disciplined Pursuit of Less</em></td><td>Greg McKeown</td></tr>
+      <tr><td><em>The ONE Thing</em></td><td>Gary Keller</td></tr>
+      <tr><td><em>Deep Work</em></td><td>Cal Newport</td></tr>
+      <tr><td><em>Atomic Habits</em></td><td>James Clear</td></tr>
+      <tr><td><em>The Power of Habit</em></td><td>Charles Duhigg</td></tr>
+      <tr><td><em>Getting Things Done</em></td><td>David Allen</td></tr>
+      <tr><td><em>The Effective Executive</em></td><td>Peter Drucker</td></tr>
+    </table>
+
+    <p><strong>Pemikiran dan Falsafah:</strong></p>
+    <table>
+      <tr><th>Tajuk</th><th>Penulis</th></tr>
+      <tr><td><em>Thinking, Fast and Slow</em></td><td>Daniel Kahneman</td></tr>
+      <tr><td><em>Man&rsquo;s Search for Meaning</em></td><td>Viktor Frankl</td></tr>
+      <tr><td><em>Daring Greatly</em></td><td>Bren&eacute; Brown</td></tr>
+      <tr><td><em>Meditations</em></td><td>Marcus Aurelius</td></tr>
+      <tr><td><em>The Obstacle is the Way</em></td><td>Ryan Holiday</td></tr>
+    </table>
+
+    <p><strong>Kewangan dan Kerjaya:</strong></p>
+    <table>
+      <tr><th>Tajuk</th><th>Penulis</th></tr>
+      <tr><td><em>Rich Dad Poor Dad</em></td><td>Robert Kiyosaki</td></tr>
+      <tr><td><em>The Psychology of Money</em></td><td>Morgan Housel</td></tr>
+      <tr><td><em>Die With Zero</em></td><td>Bill Perkins</td></tr>
+    </table>
+
+    <p><strong>Tempatan Malaysia:</strong></p>
+    <table>
+      <tr><th>Tajuk</th><th>Penulis</th></tr>
+      <tr><td><em>Aku OK, CE</em></td><td>Ahmad Yazid</td></tr>
+      <tr><td><em>Tak Perlu Kaya Baru Bahagia</em></td><td>Syafiq Ridzuan</td></tr>
+      <tr><td><em>Rich Malaysia, Poor Malaysians</em></td><td>Dr. Muhammed Abdul Khalid</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>Lampiran J: Halaman Komitmen Peribadi</h2>
+
+    <p>Selepas membaca buku ini, saya, _______________________________, berkomitmen untuk:</p>
+    <p><strong>Satu perkara yang akan saya MULAKAN buat:</strong><br>
+    ________________________________________________</p>
+    <p><strong>Satu perkara yang akan saya BERHENTI buat:</strong><br>
+    ________________________________________________</p>
+    <p><strong>Satu perkara yang akan saya TERUSKAN buat:</strong><br>
+    ________________________________________________</p>
+    <p><strong>Tanda tangan:</strong> ___________________________</p>
+
+    <hr>
+
+    <blockquote><p>&ldquo;Buku ini adalah milik awak. Tulis padanya. Coret padanya. Isi templatnya. Jadikan ia milik awak. Sebab pengetahuan yang tak diamalkan adalah seperti harta karun yang disimpan dalam peti &mdash; tak guna pada sesiapa.&rdquo; &mdash; WMB DIGITAL</p></blockquote>
+
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════ FOOTER ════════════════════════════════════════ -->
+<footer class="book-footer">
+  <p><strong>Yang Mana Keutamaan?</strong></p>
+  <p>WMB Digital &bull; Malaysia</p>
+  <p style="margin-top:0.5rem; opacity:0.6; font-size:0.75rem;">Berdasarkan prinsip <em>First Things First</em>, Essentialism, The One Thing, Atomic Habits, Deep Work, dan The Power of Habit</p>
+  <p style="margin-top:0.5rem; opacity:0.4; font-size:0.7rem;">&copy; 2025 WMB Digital. Hak cipta terpelihara.</p>
+</footer>
+
+</body>
+</html>
